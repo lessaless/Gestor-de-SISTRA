@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "691470c9e49321d617c48001",
+    "status": "Aguardando Definições (AGD)"
+  },
+  {
+    "_id": "691470c9e49321d617c48002",
+    "status": "Licitação Autorizada (LIA)"
+  },
+  {
+    "_id": "691470c9e49321d617c48003",
+    "status": "Obra Cancelada com Projeto Concluído (OCN)"
+  },
+  {
+    "_id": "691470c9e49321d617c48004",
+    "status": "Obra Concluída (OBC)"
+  },
+  {
+    "_id": "691470c9e49321d617c48005",
+    "status": "Obra Iniciada (OBI)"
+  },
+  {
+    "_id": "691470c9e49321d617c48006",
+    "status": "Obra Suspensa (OSP)"
+  },
+  {
+    "_id": "691470c9e49321d617c48007",
+    "status": "Projeto Cancelado (PCN)"
+  },
+  {
+    "_id": "691470c9e49321d617c48008",
+    "status": "Projeto Concluído (PRC)"
+  },
+  {
+    "_id": "691470c9e49321d617c48009",
+    "status": "Projeto Iniciado (PRI)"
+  },
+  {
+    "_id": "691470c9e49321d617c4800a",
+    "status": "Projeto Iniciado e Interrompido (PII)"
+  },
+  {
+    "_id": "691470c9e49321d617c4800b",
+    "status": "Projeto Suspenso (PSP)"
+  }
+]

@@ -1,0 +1,65 @@
+/* Estilos gerais */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+/* Estilos do Canvas */
+  
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #039bf4;
+  background: linear-gradient(0deg,#039bf4,#080b4f 100%);/* cor do céu */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+  
+.canvas {
+  position: fixed;/* se precisar que o overflow hidden funcione (se for diminuir os canvas), não pode ser fixed*/
+  left: 0;
+  top: 0px;
+}
+  
+/* Estilos das mensagens */
+  
+.message-container {
+  top: 10px;
+  /* width: 100%; */
+  position: absolute;
+  padding: 10px;
+  padding-top: 30px;
+  background-color: #00000091;
+  /* border-radius: 10px; */
+  box-shadow: 0px 0px 10px #000000a3;
+  backdrop-filter: blur(20px);
+}
+  
+.message-header {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  margin-bottom: 20px;
+  font-weight: 550;
+}
+
+.message-body {
+  text-align: left;
+  font-size: 15px;
+  color: ghostwhite;
+  font-weight: 550;
+  margin: 0;
+}
+
+.message-body a {
+  color: red;
+  font-weight: bold;
+}
+
+.message-body a:hover {
+  color: orangered;
+}

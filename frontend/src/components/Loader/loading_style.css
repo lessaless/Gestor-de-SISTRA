@@ -1,0 +1,171 @@
+.loader {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg1);
+  /* background-image: url("./engenhariaLogo.png");
+  background-size: 240px;
+  background-position: center;
+  background-repeat: no-repeat; */
+}
+
+.logo-bg {
+  position: absolute;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+
+  /* gradiente aplicado */
+  background: radial-gradient(circle, var(--color-logo1) 25%, var(--color-logo2) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 240px 240px;
+
+  /* máscara */
+  mask-image: url("./engenhariaLogo.png");
+  mask-size: 240px 240px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+@keyframes electron-circle1 {
+  from {
+    transform: rotateX(75deg) rotateZ(20deg);
+  }
+
+  to {
+    transform: rotateX(75deg) rotateZ(380deg);
+  }
+}
+
+@keyframes electron-circle2 {
+  from {
+    transform: rotateY(65deg) rotateX(45deg) rotateZ(-30deg);
+  }
+
+  to {
+    transform: rotateY(65deg) rotateX(45deg) rotateZ(330deg);
+  }
+}
+
+@keyframes electron-circle3 {
+  from {
+    transform: rotateY(-65deg) rotateX(45deg) rotateZ(100deg);
+  }
+
+  to {
+    transform: rotateY(-65deg) rotateX(45deg) rotateZ(460deg);
+  }
+}
+
+@keyframes electron1 {
+  from {
+    transform: rotateZ(-20deg) rotateX(-75deg);
+  }
+
+  to {
+    transform: rotateZ(-380deg) rotateX(-75deg);
+  }
+}
+
+@keyframes electron2 {
+  from {
+    transform: rotateZ(30deg) rotateX(-45deg) rotateY(-65deg);
+  }
+
+  to {
+    transform: rotateZ(-330deg) rotateX(-45deg) rotateY(-65deg);
+  }
+}
+
+@keyframes electron3 {
+  from {
+    transform: rotateZ(-100deg) rotateX(-45deg) rotateY(65deg);
+  }
+
+  to {
+    transform: rotateZ(-460deg) rotateX(-45deg) rotateY(65deg);
+  }
+}
+
+
+.atom {
+  z-index: 1;
+  margin: 50px auto;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+
+.electron {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  transform-style: preserve-3d;
+}
+
+.electron:before {
+  z-index: 100;
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 12px;
+  height: 12px;
+  background: var(--color-logo1);
+  /* background: blue; */
+  border: 1px solid var(--color-borderdefault);
+  /* border: 1px solid red; */
+  border-radius: 6px;
+  transform-origin: 50% 50% 0;
+}
+
+.electron:nth-child(1) {
+  transform: rotateX(75deg) rotateZ(20deg);
+  animation: electron-circle1 1s linear infinite;
+}
+
+.electron:nth-child(2) {
+  transform: rotateY(65deg) rotateX(45deg) rotateZ(-30deg);
+  animation: electron-circle2 1s linear infinite;
+}
+
+.electron:nth-child(3) {
+  transform: rotateY(-65deg) rotateX(45deg) rotateZ(100deg);
+  animation: electron-circle3 1s linear infinite;
+}
+
+.electron:nth-child(1):before {
+  transform: rotateZ(-20deg) rotateX(-75deg);
+  animation: electron1 1s linear infinite;
+}
+
+.electron:nth-child(2):before {
+  transform: rotateZ(30deg) rotateX(-45deg) rotateY(-65deg);
+  animation: electron2 1s linear infinite;
+}
+
+.electron:nth-child(3):before {
+  transform: rotateZ(-100deg) rotateX(-45deg) rotateY(65deg);
+  animation: electron3 1s linear infinite;
+}
+
+.mensagem {
+  color: var(--color-font4light)
+}

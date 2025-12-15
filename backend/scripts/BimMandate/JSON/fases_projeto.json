@@ -1,0 +1,6 @@
+[
+  { "codigo": "EP", "titulo": "Estudo Preliminar" },
+  { "codigo": "PE", "titulo": "Projeto Executivo" },
+  { "codigo": "DC", "titulo": "Detalhamento Construtivo" },
+  { "codigo": "AB", "titulo": "As Built" }
+]

@@ -1,0 +1,117 @@
+[
+  {
+    "codigo": "01",
+    "titulo": "INSTALAÇÕES ADMINISTRATIVAS",
+    "descricao": "Setores administrativos, escritórios, prédio do comando, auditório, salão."
+  },
+  {
+    "codigo": "02",
+    "titulo": "INFRAESTRUTURA AEROPORTUÁRIA",
+    "descricao": "Pista de pouso e decolagem, pista de táxi, pátio de aeronaves, sistemas de drenagem e sinalização de aeródromos, auxílios à navegação aérea."
+  },
+  {
+    "codigo": "03",
+    "titulo": "HANGARES",
+    "descricao": "Hangar, hangaretes."
+  },
+  {
+    "codigo": "04",
+    "titulo": "TERMINAIS",
+    "descricao": "Terminal ou estação de passageiros, sala de autoridades, terminal de cargas."
+  },
+  {
+    "codigo": "05",
+    "titulo": "INSTALAÇÕES OPERACIONAIS",
+    "descricao": "Torre de controle, sala de apoio ao voo."
+  },
+  {
+    "codigo": "06",
+    "titulo": "MATERIAL BÉLICO",
+    "descricao": "Seção de material bélico, paióis."
+  },
+  {
+    "codigo": "07",
+    "titulo": "CONTRAINCÊNDIO DE AERÓDROMOS",
+    "descricao": "Seções contraincêndio de aeródromos."
+  },
+  {
+    "codigo": "08",
+    "titulo": "SAÚDE",
+    "descricao": "Hospital, clínica, laboratório, farmácia."
+  },
+  {
+    "codigo": "09",
+    "titulo": "ENSINO E PESQUISA",
+    "descricao": "Sala de aula, biblioteca, laboratório, auditório, banco de ensaios."
+  },
+  {
+    "codigo": "10",
+    "titulo": "GUARDA E SEGURANÇA",
+    "descricao": "Corpo da guarda, guarita, abrigo."
+  },
+  {
+    "codigo": "11",
+    "titulo": "ALIMENTAÇÃO",
+    "descricao": "Cozinha, rancho, refeitório, despensa, câmara frigorífica."
+  },
+  {
+    "codigo": "12",
+    "titulo": "ALOJAMENTO",
+    "descricao": "Alojamento, vestiário."
+  },
+  {
+    "codigo": "13",
+    "titulo": "INSTALAÇÕES AUTOMOTIVAS",
+    "descricao": "Oficina, garagem, posto de abastecimento de veículos, área de lavagem de veículos."
+  },
+  {
+    "codigo": "14",
+    "titulo": "HOTELARIA",
+    "descricao": "Hotel de trânsito"
+  },
+  {
+    "codigo": "15",
+    "titulo": "ESPORTE",
+    "descricao": "Ginásio, piscina, quadra, área esportiva"
+  },
+  {
+    "codigo": "16",
+    "titulo": "CAPELANIA",
+    "descricao": "Capela, igreja."
+  },
+  {
+    "codigo": "17",
+    "titulo": "DEPÓSITOS",
+    "descricao": "Depósito em geral, almoxarifado."
+  },
+  {
+    "codigo": "18",
+    "titulo": "MORADIA",
+    "descricao": "Próprios nacionais residenciais (PNRs)"
+  },
+  {
+    "codigo": "19",
+    "titulo": "INFRAESTRUTURA VIÁRIA",
+    "descricao": "Vias, pontes, passarelas, estacionamentos, sistemas de drenagem e sinalização de vias, passeios, ciclovias, acessos."
+  },
+  {
+    "codigo": "20",
+    "titulo": "INFRAESTRUTURA ELÉTRICA",
+    "descricao": "Rede elétrica, rede de lógica, subestação, central telefônica."
+  },
+  {
+    "codigo": "21",
+    "titulo": "INFRAESTRUTURA DE SANEAMENTO",
+    "descricao": "Rede de água, rede de esgoto, estação de tratamento (água, esgoto, efluentes industriais), fossa, poço de infiltração, reservatório."
+  },
+  {
+    "codigo": "22",
+    "titulo": "DIVISAS",
+    "descricao": "Muro, cerca, portão, grade."
+  },
+  {
+    "codigo": "99",
+    "titulo": "OUTROS",
+    "descricao": "Benfeitorias não listadas acima."
+  }
+]

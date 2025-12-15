@@ -1,0 +1,212 @@
+[
+    {
+        "codigo": "GER",
+        "titulo": "Geral",
+        "subdisciplinas": []
+    },
+    {
+        "codigo": "ARQ",
+        "titulo": "Arquitetura",
+        "subdisciplinas": [
+            {
+                "codigo": "ARG",
+                "titulo": "Arquitetura Geral"
+            },
+            {
+                "codigo": "MOB",
+                "titulo": "Mobiliário"
+            },
+            {
+                "codigo": "COV",
+                "titulo": "Comunicação Visual"
+            },
+            {
+                "codigo": "PAI",
+                "titulo": "Paisagismo"
+            },
+            {
+                "codigo": "IMP",
+                "titulo": "Implantação"
+            },
+            {
+                "codigo": "IPB",
+                "titulo": "Impermeabilização"
+            }
+        ]
+    },
+    {
+        "codigo": "EST",
+        "titulo": "Estruturas",
+        "subdisciplinas": [
+            {
+                "codigo": "MET",
+                "titulo": "Estrutura Metálica"
+            },
+            {
+                "codigo": "MAD",
+                "titulo": "Estrutura de Madeira"
+            },
+            {
+                "codigo": "CAR",
+                "titulo": "Estrutura de Concreto Armado"
+            }
+        ]
+    },
+    {
+        "codigo": "FUN",
+        "titulo": "Fundações",
+        "subdisciplinas": []
+    },
+    {
+        "codigo": "ELT",
+        "titulo": "Instalações Elétricas e Eletrônicas",
+        "subdisciplinas": [
+            {
+                "codigo": "PDA",
+                "titulo": "Aterramento e Sistema de Proteção Descarga Atmosférica"
+            },
+            {
+                "codigo": "ATE",
+                "titulo": "Aterramento Externo"
+            },
+            {
+                "codigo": "SDA",
+                "titulo": "Sistema de Detecção e Alarme de Incêndio"
+            },
+            {
+                "codigo": "BTE",
+                "titulo": "Baixa Tensão"
+            },
+            {
+                "codigo": "MTE",
+                "titulo": "Média Tensão"
+            },
+            {
+                "codigo": "SGF",
+                "titulo": "Sistema Geração Fotovoltaico"
+            },
+            {
+                "codigo": "VES",
+                "titulo": "Vigilância Eletrônica e Segurança"
+            },
+            {
+                "codigo": "TLD",
+                "titulo": "Sistema de Telefonia e Dados"
+            }
+        ]
+    },
+    {
+        "codigo": "MEC",
+        "titulo": "Instalações Mecânicas",
+        "subdisciplinas": [
+            {
+                "codigo": "CLI",
+                "titulo": "Climatização"
+            },
+            {
+                "codigo": "ARC",
+                "titulo": "Ar Comprimido"
+            },
+            {
+                "codigo": "EXT",
+                "titulo": "Exaustão"
+            },
+            {
+                "codigo": "VET",
+                "titulo": "Ventilação"
+            },
+            {
+                "codigo": "OLC",
+                "titulo": "Óleo Combustível"
+            },
+            {
+                "codigo": "GSC",
+                "titulo": "Gás Combustível"
+            },
+            {
+                "codigo": "EQM",
+                "titulo": "Equipamentos Mecânicos"
+            },
+            {
+                "codigo": "EVD",
+                "titulo": "Elevadores"
+            },
+            {
+                "codigo": "VAP",
+                "titulo": "Vapor"
+            }
+        ]
+    },
+    {
+        "codigo": "HID",
+        "titulo": "Instalações Hidráulicas e Sanitárias",
+        "subdisciplinas": [
+            {
+                "codigo": "ESG",
+                "titulo": "Esgoto"
+            },
+            {
+                "codigo": "AFR",
+                "titulo": "Água Fria"
+            },
+            {
+                "codigo": "AQU",
+                "titulo": "Água Quente"
+            },
+            {
+                "codigo": "APL",
+                "titulo": "Águas Pluviais"
+            },
+            {
+                "codigo": "REX",
+                "titulo": "Rede Externa"
+            }
+        ]
+    },
+    {
+        "codigo": "INC",
+        "titulo": "Instalações Contra Incêndio",
+        "subdisciplinas": []
+    },
+    {
+        "codigo": "IES",
+        "titulo": "Infraestrutura",
+        "subdisciplinas": [
+            {
+                "codigo": "TER",
+                "titulo": "Terraplanagem"
+            },
+            {
+                "codigo": "PAV",
+                "titulo": "Pavimentação"
+            },
+            {
+                "codigo": "DRE",
+                "titulo": "Drenagem"
+            },
+            {
+                "codigo": "GEO",
+                "titulo": "Geométrico"
+            },
+            {
+                "codigo": "SIN",
+                "titulo": "Sinalização"
+            }
+        ]
+    },
+    {
+        "codigo": "AMB",
+        "titulo": "Meio Ambiente",
+        "subdisciplinas": []
+    },
+    {
+        "codigo": "DIV",
+        "titulo": "Serviços Diversos",
+        "subdisciplinas": []
+    },
+    {
+        "codigo": "ORC",
+        "titulo": "Orçamento",
+        "subdisciplinas": []
+    }
+]

@@ -1,0 +1,130 @@
+[
+    {
+        "codigo": "DE",
+        "titulo": "Desenho"
+    },
+    {
+        "codigo": "MR",
+        "titulo": "Modelo Revit"
+    },
+    {
+        "codigo": "MI",
+        "titulo": "Modelo IFC"
+    },
+    {
+        "codigo": "MF",
+        "titulo": "Modelo Federado"
+    },
+    {
+        "codigo": "ET",
+        "titulo": "Especificação Técnica"
+    },
+    {
+        "codigo": "MC",
+        "titulo": "Memorial de Cálculo"
+    },
+    {
+        "codigo": "MD",
+        "titulo": "Memorial Descritivo"
+    },
+    {
+        "codigo": "RT",
+        "titulo": "Relatório Técnico"
+    },
+    {
+        "codigo": "PT",
+        "titulo": "Parecer Técnico"
+    },
+    {
+        "codigo": "CN",
+        "titulo": "Caderno de Necessidades"
+    },
+    {
+        "codigo": "NT",
+        "titulo": "Nota Técnica"
+    },
+    {
+        "codigo": "NS",
+        "titulo": "Nota de Serviço"
+    },
+    {
+        "codigo": "LS",
+        "titulo": "Lista de Serviço"
+    },
+    {
+        "codigo": "RE",
+        "titulo": "Recomendações Para Elaboração do Edital"
+    },
+    {
+        "codigo": "TJ",
+        "titulo": "Termo de Justificativas Técnicas Relevantes"
+    },
+    {
+        "codigo": "EP",
+        "titulo": "Estudo Técnico Preliminar De Engenharia"
+    },
+    {
+        "codigo": "EV",
+        "titulo": "Estudo de Viabilidade"
+    },
+    {
+        "codigo": "PG",
+        "titulo": "Plano Geral"
+    },
+    {
+        "codigo": "LA",
+        "titulo": "Laudo"
+    },
+    {
+        "codigo": "MA",
+        "titulo": "Manual"
+    },
+    {
+        "codigo": "TA",
+        "titulo": "Termo de Abertura de Projeto"
+    },
+    {
+        "codigo": "TE",
+        "titulo": "Termo de Encerramento de Projeto"
+    },
+    {
+        "codigo": "PB",
+        "titulo": "Plano de Execução BIM"
+    },
+    {
+        "codigo": "PO",
+        "titulo": "Planilha Orçamentária"
+    },
+    {
+        "codigo": "PP",
+        "titulo": "Pesquisa de Preço"
+    },
+    {
+        "codigo": "CF",
+        "titulo": "Cronograma Físico-Financeiro"
+    },
+    {
+        "codigo": "CM",
+        "titulo": "Critério de Medição"
+    },
+    {
+        "codigo": "MDC",
+        "titulo": "Memorial Descritivo e Cálculo"
+    },
+    {
+        "codigo": "AP",
+        "titulo": "Apresentação do Projeto"
+    },
+    {
+        "codigo": "TM",
+        "titulo": "Termo de Modificação do Projeto"
+    },
+    {
+        "codigo": "TR",
+        "titulo": "Termo de Condições para Autorização de Modificações de Projeto"
+    },
+    {
+        "codigo": "OD",
+        "titulo": "Outros Documentos"
+    }
+]

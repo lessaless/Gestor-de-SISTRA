@@ -1,0 +1,2795 @@
+[
+  {
+    "estado": "ACRE",
+    "UF": "AC",
+    "codigo": "01",
+    "OM_titulo": "DTCEA-CZ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO -CRUZEIRO DO SUL"
+  },
+  {
+    "estado": "ACRE",
+    "UF": "AC",
+    "codigo": "02",
+    "OM_titulo": "DTCEA-RB",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: RIO BRANCO"
+  },
+  {
+    "estado": "ALAGOAS",
+    "UF": "AL",
+    "codigo": "01",
+    "OM_titulo": "DTCEA-MO",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO -MACEIÓ"
+  },
+  {
+    "estado": "AMAPÁ",
+    "UF": "AP",
+    "codigo": "01",
+    "OM_titulo": "DESTAE-MQ",
+    "OM_descricao": "DESTACAMENTO DE AERONÁUTICA DE MACAPÁ"
+  },
+  {
+    "estado": "AMAPÁ",
+    "UF": "AP",
+    "codigo": "02",
+    "OM_titulo": "DTCEA-OI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – OIAPOQUE"
+  },
+  {
+    "estado": "AMAPÁ",
+    "UF": "AP",
+    "codigo": "03",
+    "OM_titulo": "DTCEA-MQ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: MACAPÁ"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "01",
+    "OM_titulo": "SERIPA VII",
+    "OM_descricao": "SÉTIMO SERVIÇO REGIONAL DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "02",
+    "OM_titulo": "VII COMAR",
+    "OM_descricao": "VII COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "03",
+    "OM_titulo": "BAMN",
+    "OM_descricao": "BASE AÉREA DE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "04",
+    "OM_titulo": "PAMN",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "05",
+    "OM_titulo": "CINDACTA IV",
+    "OM_descricao": "QUARTO CENTRO INTEGRADO DE DEFESA AÉREA E CONTROLE DE TRÁFEGO AÉREO"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "06",
+    "OM_titulo": "SEREP-MN",
+    "OM_descricao": "SERVIÇO DE RECRUTAMENTO E PREPARO DE PESSOAL DA AERONÁUTICA DE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "07",
+    "OM_titulo": "HAMN",
+    "OM_descricao": "HOSPITAL DE AERONÁUTICA DE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "08",
+    "OM_titulo": "ALA 8",
+    "OM_descricao": "ALA 8"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "09",
+    "OM_titulo": "GAP-MN",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "10",
+    "OM_titulo": "DASG",
+    "OM_descricao": "DESTACAMENTO DA AERONÁUTICA DE SÃO GABRIEL DA CACHOEIRA"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "11",
+    "OM_titulo": "DTCEA-EI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – EIRUNEPÉ"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "12",
+    "OM_titulo": "DTCEA-MY",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – EIRUNEPÉ"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "13",
+    "OM_titulo": "DTCEA-TT",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – TABATINGA"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "14",
+    "OM_titulo": "DPVDT-71",
+    "OM_descricao": "DESTACAMENTO DE PROTEÇÃO AO VÔO, DETECÇÃO E TELECOMUNICAÇÕES MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "15",
+    "OM_titulo": "DSM-MN",
+    "OM_descricao": "DESTACAMENTO DE SUPRIMENTOS E MANUTENÇÃO DE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "16",
+    "OM_titulo": "1º/4º GAV – ESQUADRÃO PACAU",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO QUARTO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "17",
+    "OM_titulo": "2º GDAAE",
+    "OM_descricao": "SEGUNDO GRUPO DE DEFESA ANTIAÉREA"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "18",
+    "OM_titulo": "7º/8º GAV – ESQUADRÃO HÁRPIA",
+    "OM_descricao": "SETIMO ESQUADRÃO DO OITAVO GRUPO DE AVIAÇÃO - ESQUADRÃO HÁRPIA"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "19",
+    "OM_titulo": "SERINFRA-MN",
+    "OM_descricao": "SERVIÇO REGIONAL DE INFRAESTRUTURA DA AERONÁUTICA DE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "20",
+    "OM_titulo": "BINFAE-MN",
+    "OM_descricao": "BATALHÃO DE INFANTARIA DA AERONÁUTICA ESPECIALDE MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "21",
+    "OM_titulo": "DTCEA-EG",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: EDUARDO GOMES"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "23",
+    "OM_titulo": "DTCEA-MN",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: MANAUS"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "22",
+    "OM_titulo": "DTCEA-UA",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: SÃO GABRIEL DA CACHOEIRA"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "24",
+    "OM_titulo": "DTCEA-TF",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: TEFÉ"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "25",
+    "OM_titulo": "DPVDT-74",
+    "OM_descricao": "DESTACAMENTO DE PROTEÇÃO AO VÔO, DETECÇÃO ETELECOMUNICAÇÕES: TABATINGA"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "26",
+    "OM_titulo": "7º ETA – ESQUADRÃO COBRA",
+    "OM_descricao": "SÉTIMO ESQUADRÃO DE TRANSPORTE AÉREO"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "27",
+    "OM_titulo": "1º/9º GAV - ESQUADRÃO ARARA",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO NONO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "AMAZONAS",
+    "UF": "AM",
+    "codigo": "28",
+    "OM_titulo": "2º PEF",
+    "OM_descricao": "2º PELOTÃO ESPECIAL DE FRONTEIRA - QUERARI"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "01",
+    "OM_titulo": "BASV",
+    "OM_descricao": "BASE AÉREA DE SALVADOR"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "02",
+    "OM_titulo": "CEMCOHA",
+    "OM_descricao": "CENTRO MILITAR DE CONVENÇÕES E HOSPEDAGENS DA AERONÁUTICA"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "03",
+    "OM_titulo": "DTCEA-LP",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO -BOM JESUS DA LAPA"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "04",
+    "OM_titulo": "DTCEA-SV",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - SALVADOR"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "05",
+    "OM_titulo": "1º/7º GAV",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO SÉTIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "06",
+    "OM_titulo": "DESTAE-CV",
+    "OM_descricao": "DESTACAMENTO DE AERONÁUTICA DE CARAVELAS"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "07",
+    "OM_titulo": "DTCEA-PS",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: PORTO SEGURO"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "08",
+    "OM_titulo": "1º/7º GAV - ESQUADRÃO ORUNGAN",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO SÉTIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "BAHIA",
+    "UF": "BA",
+    "codigo": "09",
+    "OM_titulo": "PASV",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE SALVADOR"
+  },
+  {
+    "estado": "CEARÁ",
+    "UF": "CE",
+    "codigo": "01",
+    "OM_titulo": "BAFZ",
+    "OM_descricao": "BASE AÉREA DE FORTALEZA"
+  },
+  {
+    "estado": "CEARÁ",
+    "UF": "CE",
+    "codigo": "02",
+    "OM_titulo": "GAP-FZ",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE FORTALEZA"
+  },
+  {
+    "estado": "CEARÁ",
+    "UF": "CE",
+    "codigo": "03",
+    "OM_titulo": "DTCEA-FZ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: FORTALEZA"
+  },
+  {
+    "estado": "CEARÁ",
+    "UF": "CE",
+    "codigo": "04",
+    "OM_titulo": "PAFZ",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE FORTALEZA"
+  },
+  {
+    "estado": "CEARÁ",
+    "UF": "CE",
+    "codigo": "05",
+    "OM_titulo": "ITA-FZ",
+    "OM_descricao": "INSTITUTO TÉCNOLÓGICO DE AERONÁUTICA - FORTALEZA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "01",
+    "OM_titulo": "COMAER",
+    "OM_descricao": "COMANDO DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "02",
+    "OM_titulo": "GABAER",
+    "OM_descricao": "GABINETE DO COMANDANTE DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "03",
+    "OM_titulo": "GTE",
+    "OM_descricao": "GRUPO DE TRANSPORTE ESPECIAL"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "04",
+    "OM_titulo": "ASPAER",
+    "OM_descricao": "ASSESSORIA PARLAMENTAR E DE RELAÇÕES INSTITUCIONAIS DO COMANDANTE DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "05",
+    "OM_titulo": "CENIPA",
+    "OM_descricao": "CENTRO DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES. AERONÁUTICOS"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "06",
+    "OM_titulo": "SERIPA VI",
+    "OM_descricao": "SEXTO SERVIÇO REGIONAL DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "07",
+    "OM_titulo": "CENCIAR",
+    "OM_descricao": "CENTRO DE CONTROLE INTERNO DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "08",
+    "OM_titulo": "CECOMSAER",
+    "OM_descricao": "CENTRO DE COMUNICAÇÃO SOCIAL DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "09",
+    "OM_titulo": "CIAER",
+    "OM_descricao": "CENTRO DE INTELIGÊNCIA DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "10",
+    "OM_titulo": "CPO",
+    "OM_descricao": "COMISSÃO DE PROMOÇÃO DE OFICIAIS DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "11",
+    "OM_titulo": "EMAER",
+    "OM_descricao": "ESTADO-MAIOR DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "12",
+    "OM_titulo": "COJAER",
+    "OM_descricao": "CONSULTORIA JURÍDICA ADJUNTA DO COMANDO DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "13",
+    "OM_titulo": "COMAE",
+    "OM_descricao": "COMANDO DE OPERAÇÕES AEROESPACIAIS"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "14",
+    "OM_titulo": "CCISE",
+    "OM_descricao": "COMISSÃO DE IMPLANTAÇÃO DE SISTEMAS ESPACIAIS"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "15",
+    "OM_titulo": "ESG BRASÍLIA",
+    "OM_descricao": "ESCOLA SUPERIOR DE GUERRA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "16",
+    "OM_titulo": "SEFA",
+    "OM_descricao": "SECRETARIA DE ECONOMIA, FINANÇAS E ADMINISTRAÇÃO DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "17",
+    "OM_titulo": "DIREF",
+    "OM_descricao": "DIRETORIA DE ECONOMIA, FINANÇAS E ADMINISTRAÇÃO DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "18",
+    "OM_titulo": "VI COMAR",
+    "OM_descricao": "VI COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "19",
+    "OM_titulo": "BABR",
+    "OM_descricao": "BASE AÉREA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "20",
+    "OM_titulo": "GAP-BR",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "21",
+    "OM_titulo": "GAP-DF",
+    "OM_descricao": "GRUPAMENTO DE APOIO DO DISTRITO FEDERAL"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "22",
+    "OM_titulo": "PABR",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "23",
+    "OM_titulo": "COMPREP",
+    "OM_descricao": "COMANDO GERAL DE PREPARO"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "24",
+    "OM_titulo": "BDAAE",
+    "OM_descricao": "PRIMEIRA BRIGADA DE DEFESA ANTIAÉREA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "25",
+    "OM_titulo": "CINDACTA I",
+    "OM_descricao": "PRIMEIRO CENTRO INTEGRADO DE DEFESA AÉREA E CONTROLE DE TRÁFEGO AÉREO"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "26",
+    "OM_titulo": "COMGEP",
+    "OM_descricao": "COMANDO GERAL DE PESSOAL DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "27",
+    "OM_titulo": "SEREP-BR",
+    "OM_descricao": "SERVIÇO DE RECRUTAMENTO E PREPARO DE PESSOAL DA AERONÁUTICA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "28",
+    "OM_titulo": "DIRENS",
+    "OM_descricao": "DIRETORIA DE ENSINO DA AERONÁUTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "29",
+    "OM_titulo": "HFAB",
+    "OM_descricao": "HOSPITAL DE FORÇA AÉREA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "30",
+    "OM_titulo": "OABR",
+    "OM_descricao": "ODONTOCLINICA DA AERONÁUTICA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "31",
+    "OM_titulo": "CCA-BR",
+    "OM_descricao": "CENTRO DE COMPUTAÇÃO DA AERONÁUTICA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "32",
+    "OM_titulo": "ALA 1",
+    "OM_descricao": "ALA 1"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "33",
+    "OM_titulo": "BIFAE-BR",
+    "OM_descricao": "BATALHÃO DE INFANTARIA DA AERONÁUTICA ESPECIAL DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "34",
+    "OM_titulo": "COMDCIBER",
+    "OM_descricao": "COMANDO DE DEFESA CIBERNÉTICA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "35",
+    "OM_titulo": "DTCEA-GA",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - GAMA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "36",
+    "OM_titulo": "6º ETA – ESQUADRÃO GUARÁ",
+    "OM_descricao": "SEXTO ESQUADRÃO DE TRANSPORTE AÉREO"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "37",
+    "OM_titulo": "SERINFRA-BR",
+    "OM_descricao": "SERVIÇO REGIONAL DE INFRAESTURUTRA DA AERONÁUTICA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "38",
+    "OM_titulo": "CCA-BR",
+    "OM_descricao": "CENTRO DE COMPUTAÇÃO DA AERONÁUTICA DE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "39",
+    "OM_titulo": "BINFAE-DF",
+    "OM_descricao": "BATALHÃO DE INFANTARIA DA AERONÁUTICA ESPECIALDE BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "40",
+    "OM_titulo": "COMAE",
+    "OM_descricao": "COMANDO DE OPERAÇÕES AEROESPACIAIS"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "41",
+    "OM_titulo": "DTCEA-BR",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: BRASÍLIA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "42",
+    "OM_titulo": "DTS",
+    "OM_descricao": "DESTACAMENTO DE TELECOMUNICAÇÕES POR SATÉLITE"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "43",
+    "OM_titulo": "III FAE",
+    "OM_descricao": "TERCEIRA FORÇA AÉREA"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "44",
+    "OM_titulo": "HFA",
+    "OM_descricao": "HOSPITAL DAS FORÇAS ARMADAS"
+  },
+  {
+    "estado": "DISTRITO FEDERAL",
+    "UF": "DF",
+    "codigo": "45",
+    "OM_titulo": "STM",
+    "OM_descricao": "SUPERIOR TRIBUNAL MILITAR"
+  },
+  {
+    "estado": "ESPÍRITO SANTO",
+    "UF": "ES",
+    "codigo": "01",
+    "OM_titulo": "DTCEA-STA",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – SANTA TERESA"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "01",
+    "OM_titulo": "BAAN",
+    "OM_descricao": "BASE AÉREA DE ANÁPOLIS"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "02",
+    "OM_titulo": "PAAN",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE ANÁPOLIS"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "03",
+    "OM_titulo": "GAC INFRA-AN",
+    "OM_descricao": "GRUPO DE ACOMPANHAMENTO E CONTROLE DE INFRAESTRUTURA DE ANÁPOLIS"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "04",
+    "OM_titulo": "ALA 2",
+    "OM_descricao": "ALA 2"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "05",
+    "OM_titulo": "GAP-AN",
+    "OM_descricao": "GRUPAMENTO DE APOIO DEANÁPOLIS"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "06",
+    "OM_titulo": "DTCEA-AN",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - ANÁPOLIS"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "07",
+    "OM_titulo": "1ºGDA – ESQUADRÃO JAGUAR",
+    "OM_descricao": "PRIMEIRO GRUPO DE DEFESA AÉREA"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "08",
+    "OM_titulo": "2º/6º GAV",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO SEXTO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "09",
+    "OM_titulo": "1º/6º GAV - ESQUADRÃO CARCARÁ",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO SEXTO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "10",
+    "OM_titulo": "2º/6º GAV - ESQUADRÃO GUARDIÃO",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO SEXTO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "11",
+    "OM_titulo": "1º GDA - ESQUADRÃO JAGUAR",
+    "OM_descricao": "PRIMEIRO GRUPO DE DEFESA AÉREA"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "12",
+    "OM_titulo": "1º GTT - ESQUADRÃO ZEUS",
+    "OM_descricao": "PRIMEIRO GRUPO DE TRANSPORTE DE TROPA"
+  },
+  {
+    "estado": "GOIÁS",
+    "UF": "GO",
+    "codigo": "13",
+    "OM_titulo": "3º GDAAE",
+    "OM_descricao": "TERCEIRO GRUPO DE DEFESA ANTIAÉREA"
+  },
+  {
+    "estado": "MARANHÃO",
+    "UF": "MA",
+    "codigo": "01",
+    "OM_titulo": "CLA",
+    "OM_descricao": "CENTRO DE LANÇAMENTO DE ALCÂNTARA"
+  },
+  {
+    "estado": "MARANHÃO",
+    "UF": "MA",
+    "codigo": "02",
+    "OM_titulo": "ECE",
+    "OM_descricao": "ESCOLA CAMINHO DAS ESTRELAS"
+  },
+  {
+    "estado": "MARANHÃO",
+    "UF": "MA",
+    "codigo": "03",
+    "OM_titulo": "DTCEA-SL",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – SÃO LUÍS"
+  },
+  {
+    "estado": "MARANHÃO",
+    "UF": "MA",
+    "codigo": "04",
+    "OM_titulo": "PAAK",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE ALCÂNTARA"
+  },
+  {
+    "estado": "MARANHÃO",
+    "UF": "MA",
+    "codigo": "05",
+    "OM_titulo": "DTCEA-IZ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: IMPERATRIZ"
+  },
+  {
+    "estado": "MARANHÃO",
+    "UF": "MA",
+    "codigo": "06",
+    "OM_titulo": "GAP-AK",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE ALCÂNTARA"
+  },
+  {
+    "estado": "MATO GROSSO",
+    "UF": "MT",
+    "codigo": "01",
+    "OM_titulo": "DTCEA-FA",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – SÃO FÉLIX DO ARAGUAIA"
+  },
+  {
+    "estado": "MATO GROSSO",
+    "UF": "MT",
+    "codigo": "02",
+    "OM_titulo": "DTCEA-BW",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – BARRA DO GARÇAS"
+  },
+  {
+    "estado": "MATO GROSSO",
+    "UF": "MT",
+    "codigo": "03",
+    "OM_titulo": "DTCEA-CY",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – CUIABÁ"
+  },
+  {
+    "estado": "MATO GROSSO",
+    "UF": "MT",
+    "codigo": "04",
+    "OM_titulo": "DTCEA-SI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DESINOP"
+  },
+  {
+    "estado": "MATO GROSSO",
+    "UF": "MT",
+    "codigo": "05",
+    "OM_titulo": "DTCEA-GI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: CHAPADA DOS GUIMARÃES"
+  },
+  {
+    "estado": "MATO GROSSO",
+    "UF": "MT",
+    "codigo": "06",
+    "OM_titulo": "DTCEA-EP",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: PORTO ESPERIDIÃO"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "01",
+    "OM_titulo": "VIII COMAR",
+    "OM_descricao": "VIII COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "02",
+    "OM_titulo": "BACG",
+    "OM_descricao": "BASE AÉREA DE CAMPO GRANDE"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "03",
+    "OM_titulo": "ALA 5",
+    "OM_descricao": "ALA 5"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "04",
+    "OM_titulo": "DTCEA-CG",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – CAMPO GRANDE"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "05",
+    "OM_titulo": "EAS-PARA-SAR",
+    "OM_descricao": "ESQUADRÃO AEROTERRESTRE DE SALVAMENTO (PARA-SAR)"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "06",
+    "OM_titulo": "2º/10º GAV – ESQUADRÃO PELICANO",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO DÉCIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "07",
+    "OM_titulo": "PACG",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE CAMPO GRANDE"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "08",
+    "OM_titulo": "DTCEA-JGI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DEJARAGUARI"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "09",
+    "OM_titulo": "DTCEA-FA",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DESÃO FÉLIX DO ARAGUAIA"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "10",
+    "OM_titulo": "DTCEA-CR",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: CORUMBÁ"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "11",
+    "OM_titulo": "1º/15º GAV -ESQUADRÃO ONÇA",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO DÉCIMO QUINTO GRUPO DEAVIAÇÃO"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "12",
+    "OM_titulo": "3º/3º GAV - ESQUADRÃO FLECHA",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DO TERCEIRO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "MATO GROSSO DO SUL",
+    "UF": "MS",
+    "codigo": "13",
+    "OM_titulo": "GAP-CG",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE CAMPO GRANDE"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "01",
+    "OM_titulo": "GAP-LS",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE LAGOA SANTA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "02",
+    "OM_titulo": "PALS",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE LAGOA SANTA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "03",
+    "OM_titulo": "CIAAR",
+    "OM_descricao": "CENTRO DE INSTRUÇÃO E ADAPTAÇÃO DA AERONÁUTICA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "04",
+    "OM_titulo": "EPCAR",
+    "OM_descricao": "ESCOLA PREPARATÓRIA DE CADETES DO AR"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "05",
+    "OM_titulo": "PAMA-LS",
+    "OM_descricao": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "06",
+    "OM_titulo": "DTCEA-BQ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – BARBACENA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "07",
+    "OM_titulo": "DTCEA-LS",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – LAGOA SANTA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "08",
+    "OM_titulo": "DTCEA-TRM",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – TRÊS MARIAS"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "09",
+    "OM_titulo": "GAP-BQ",
+    "OM_descricao": "GRUPAMENTO DE APOIO DEBARBACENA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "10",
+    "OM_titulo": "PABH",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE BELO HORIZONTE"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "11",
+    "OM_titulo": "DESTAE-BQ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO : BARBACENA"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "12",
+    "OM_titulo": "DTCEAE-CF",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO : CONFINS"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "13",
+    "OM_titulo": "DTCEA-PIE",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: SERRA DA PIEDADE"
+  },
+  {
+    "estado": "MINAS GERAIS",
+    "UF": "MG",
+    "codigo": "14",
+    "OM_titulo": "PABQ",
+    "OM_descricao": "PREFEITURA DE AERONÁURTICA DE BARBACENA"
+  },
+  {
+    "estado": "PARANÁ",
+    "UF": "PR",
+    "codigo": "01",
+    "OM_titulo": "CINDACTA II",
+    "OM_descricao": "SEGUNDO CENTRO INTEGRADO DE DEFESA AÉREA E CONTROLE DE TRÁFEGO AÉREO"
+  },
+  {
+    "estado": "PARANÁ",
+    "UF": "PR",
+    "codigo": "02",
+    "OM_titulo": "PACT",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE CURITIBA"
+  },
+  {
+    "estado": "PARANÁ",
+    "UF": "PR",
+    "codigo": "03",
+    "OM_titulo": "GAP-CT",
+    "OM_descricao": "GRUPAMENTO DE APOIO DECURITIBA"
+  },
+  {
+    "estado": "PARANÁ",
+    "UF": "PR",
+    "codigo": "04",
+    "OM_titulo": "DTCEA-CT",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – CURITIBA"
+  },
+  {
+    "estado": "PARANÁ",
+    "UF": "PR",
+    "codigo": "05",
+    "OM_titulo": "DTCEA-BI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – BACACHERI"
+  },
+  {
+    "estado": "PARANÁ",
+    "UF": "PR",
+    "codigo": "06",
+    "OM_titulo": "DTCEA-CDI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: CATANDUVAS"
+  },
+  {
+    "estado": "PARANÁ",
+    "UF": "PR",
+    "codigo": "07",
+    "OM_titulo": "DTCEA-FI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: FOZ DO IGUAÇU"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "01",
+    "OM_titulo": "I COMAR",
+    "OM_descricao": "I COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "02",
+    "OM_titulo": "BABE",
+    "OM_descricao": "BASE AÉREA DE BELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "03",
+    "OM_titulo": "PABE",
+    "OM_descricao": "PREFEITURA DA AERONÁUTICA DE BELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "04",
+    "OM_titulo": "CTRB",
+    "OM_descricao": "COLÉGIO TENENTE RÊGO BARROS"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "05",
+    "OM_titulo": "COMARA",
+    "OM_descricao": "COMISSÃO DE AEROPORTOS DA REGIÃO AMAZÔNICA"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "06",
+    "OM_titulo": "CPBV",
+    "OM_descricao": "CAMPO DE PROVAS BRIGADEIRO VELLOSO"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "07",
+    "OM_titulo": "SEREP-BE",
+    "OM_descricao": "SERVIÇO DE RECRUTAMENTO E PREPARO DE PESSOAL DA AERONÁUTICA DE BELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "08",
+    "OM_titulo": "HABE",
+    "OM_descricao": "HOSPITAL DE AERONÁUTICA DE BELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "09",
+    "OM_titulo": "SERIPA I",
+    "OM_descricao": "PRIMEIRO SERVIÇO REGIONAL DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "10",
+    "OM_titulo": "ALA 9",
+    "OM_descricao": "ALA 9"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "11",
+    "OM_titulo": "GAP-BE",
+    "OM_descricao": "GRUPAMENTO DE APOIO DEBELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "12",
+    "OM_titulo": "DTCEA-EK",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – JACAREACANGA"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "13",
+    "OM_titulo": "DTCEA-CC",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – CACHIMBO"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "14",
+    "OM_titulo": "DTCEA-SN",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO – SANTARÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "15",
+    "OM_titulo": "1º ETA - ESQUADRÃO TRACAJÁ",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DE TRANSPORTE AÉREO"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "16",
+    "OM_titulo": "3º/7º GAV - ESQUADRÃO NETUNO",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DO SÉTIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "17",
+    "OM_titulo": "SERINFRA-BE",
+    "OM_descricao": "SERVIÇO REGIONAL DE INFRAESTURUTRA DA AERONÁUTICA DE BELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "18",
+    "OM_titulo": "BINFAE-BE",
+    "OM_descricao": "BATALHÃO DE INFANTARIA DA AERONÁUTICA ESPECIALDE BELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "19",
+    "OM_titulo": "DTCEA-BE",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: BELÉM"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "20",
+    "OM_titulo": "DTCEA-FX",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: SÃO FÉLIX DO XINGU"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "21",
+    "OM_titulo": "ETRB",
+    "OM_descricao": "ESCOLA TENENTE REGO BARROS"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "22",
+    "OM_titulo": "3º/7º GAV - ESQUADRÃO NETUNO",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DO SÉTIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "PARÁ",
+    "UF": "PA",
+    "codigo": "23",
+    "OM_titulo": "GSD-BE",
+    "OM_descricao": "GRUPO DE SEGURANÇA E DEFESA DE BELÉM (GSD-BE)ALA 9"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "01",
+    "OM_titulo": "II COMAR",
+    "OM_descricao": "II COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "02",
+    "OM_titulo": "BARF",
+    "OM_descricao": "BASE AÉREA DE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "03",
+    "OM_titulo": "PARF",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "04",
+    "OM_titulo": "CINDACTA III",
+    "OM_descricao": "TERCEIRO CENTRO INTEGRADO DE DEFESA AÉREA E CONTROLE DE TRÁFEGO AÉREO"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "05",
+    "OM_titulo": "SERIPA II",
+    "OM_descricao": "SEGUNDO SERVIÇO REGIONAL DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "06",
+    "OM_titulo": "SEREP-RF",
+    "OM_descricao": "SERVIÇO DE RECRUTAMENTO E PREPARO DE PESSOAL DA AERONÁUTICA DE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "07",
+    "OM_titulo": "HARF",
+    "OM_descricao": "HOSPITAL DE AERONÁUTICA DE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "08",
+    "OM_titulo": "OARF",
+    "OM_descricao": "ODONTOCLINICA DA AERONÁUTICA DE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "09",
+    "OM_titulo": "GAP-RF",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "10",
+    "OM_titulo": "DTCEA-FN",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - FERNANDO DE NORONHA"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "11",
+    "OM_titulo": "DTCEA-RF",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO -RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "12",
+    "OM_titulo": "PAMA-RF",
+    "OM_descricao": "PARQUE DE MATERIAL AERONÁUTICO DE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "13",
+    "OM_titulo": "BINFAE-RF",
+    "OM_descricao": "BATALHÃO DE INFANTARIA DA AERONÁUTICA ESPECIALDE RECIFE"
+  },
+  {
+    "estado": "PERNAMBUCO",
+    "UF": "PE",
+    "codigo": "14",
+    "OM_titulo": "DESTAE-FN",
+    "OM_descricao": "DESTACAMENTO DE AERONÁUTICA DE FERNANDO DENORONHA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "01",
+    "OM_titulo": "DIRAD",
+    "OM_descricao": "DIRETORIA DE ADMINISTRAÇÃO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "02",
+    "OM_titulo": "PIPAR/BREVET",
+    "OM_descricao": "PAGADORIA DE INATIVOS E PENSIONISTAS DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "03",
+    "OM_titulo": "CAE",
+    "OM_descricao": "CENTRO DE AQUISIÇÕES ESPECÍFICAS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "04",
+    "OM_titulo": "GALC",
+    "OM_descricao": "GRUPAMENTO DE APOIO LOGÍSTICO DE CAMPANHA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "05",
+    "OM_titulo": "III COMAR",
+    "OM_descricao": "III COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "06",
+    "OM_titulo": "BASC",
+    "OM_descricao": "BASE AÉREA DE SANTA CRUZ"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "07",
+    "OM_titulo": "BAAF",
+    "OM_descricao": "BASE AÉREA DOS AFONSOS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "08",
+    "OM_titulo": "BAGL",
+    "OM_descricao": "BASE AÉREA DO GALEÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "09",
+    "OM_titulo": "GAP-GL",
+    "OM_descricao": "GRUPAMENTO DE APOIO DO GALEÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "10",
+    "OM_titulo": "GAP-RJ",
+    "OM_descricao": "GRUPAMENTO DE APOIO DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "11",
+    "OM_titulo": "PAAF",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DOS AFONSOS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "12",
+    "OM_titulo": "PAGL",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DO GALEÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "13",
+    "OM_titulo": "DECEA",
+    "OM_descricao": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉRERO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "14",
+    "OM_titulo": "CISCEA",
+    "OM_descricao": "COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "15",
+    "OM_titulo": "CGNA",
+    "OM_descricao": "CENTRO DE GERENCIAMENTO DA NAVEGAÇÃO AÉREA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "16",
+    "OM_titulo": "GEIV",
+    "OM_descricao": "GRUPO ESPECIAL DE INSPEÇÃO EM VOO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "17",
+    "OM_titulo": "ICA",
+    "OM_descricao": "INSTITUTO DE CARTOGRAFIA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "18",
+    "OM_titulo": "JJAER",
+    "OM_descricao": "JUNTA DE JULGAMENTO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "19",
+    "OM_titulo": "PAME-RJ",
+    "OM_descricao": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "20",
+    "OM_titulo": "1º GCC",
+    "OM_descricao": "PRIMEIRO GRUPO DE COMUNICAÇÕES E CONTROLE"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "21",
+    "OM_titulo": "CIMAER",
+    "OM_descricao": "CENTRO INTEGRADO DE METEREOLOGIA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "22",
+    "OM_titulo": "CENDOC",
+    "OM_descricao": "CENTRO DE DOCUMENTAÇÃO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "23",
+    "OM_titulo": "SEGECAE",
+    "OM_descricao": "SERVIÇO GERAL DE CORRESPONDÊNCIA E ARQUIVO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "24",
+    "OM_titulo": "IPA",
+    "OM_descricao": "INSTITUTO DE PSICOLOGIA DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "25",
+    "OM_titulo": "CDA",
+    "OM_descricao": "COMISSÃO DE DESPORTOS DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "26",
+    "OM_titulo": "DIRAP",
+    "OM_descricao": "DIRETORIA DE ADMINISTRAÇÃO DO PESSOAL"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "27",
+    "OM_titulo": "SEREP-RJ",
+    "OM_descricao": "SERVIÇO DE RECRUTAMENTO E PREPARO DE PESSOAL DA AERONÁUTICA DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "28",
+    "OM_titulo": "ECEMAR",
+    "OM_descricao": "ESCOLA DE COMANDO E ESTADO MAIOR DA AERONAÚTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "29",
+    "OM_titulo": "UNIFA",
+    "OM_descricao": "UNIVERSIDADE DA FORÇA AÉREA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "30",
+    "OM_titulo": "EAOAR",
+    "OM_descricao": "ESCOLA DE APERFEIÇOAMENTO DE OFICIAIS DA AERONAÚTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "31",
+    "OM_titulo": "CBNB",
+    "OM_descricao": "COLÉGIO BRIGADEIRO NEWTON BRAGA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "32",
+    "OM_titulo": "DIRSA",
+    "OM_descricao": "DIRETORIA DE SAÚDE DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "33",
+    "OM_titulo": "HCA",
+    "OM_descricao": "HOSPITAL CENTRAL DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "34",
+    "OM_titulo": "HFAG",
+    "OM_descricao": "HOSPITAL DE FORÇA AÉREA DO GALEÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "35",
+    "OM_titulo": "CEMAL",
+    "OM_descricao": "CENTRO DE MEDICINA AEROESPACIAL"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "36",
+    "OM_titulo": "CGABEG",
+    "OM_descricao": "CASA GERONTOLÓGICA DE AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "37",
+    "OM_titulo": "HAAF",
+    "OM_descricao": "HOSPITAL DE AERONÁUTICA DOS AFONSOS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "38",
+    "OM_titulo": "IMAE",
+    "OM_descricao": "INSTITUTO MEDICINA AEROESPACIAL BRIGADEIRO MÉDICO ROBERTO TEIXEIRA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "39",
+    "OM_titulo": "LAQFA",
+    "OM_descricao": "LABORATÓRIO QUÍMICO- FARMACÊUTICO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "40",
+    "OM_titulo": "OASD",
+    "OM_descricao": "ODONTOCLINICA DA AERONÁUTICA DE SANTOS-DUMONT"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "41",
+    "OM_titulo": "PAMA-GL",
+    "OM_descricao": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "42",
+    "OM_titulo": "PAMB-RJ",
+    "OM_descricao": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "43",
+    "OM_titulo": "CCA-RJ",
+    "OM_descricao": "CENTRO DE COMPUTAÇÃO DA AERONÁUTICA DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "44",
+    "OM_titulo": "INCAER",
+    "OM_descricao": "INSTITUTO HISTÓRICO-CULTURAL DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "45",
+    "OM_titulo": "MUSAL",
+    "OM_descricao": "MUSEU AEROESPACIAL"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "46",
+    "OM_titulo": "SERIPA III",
+    "OM_descricao": "TERCEIRO SERVIÇO REGIONAL DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "47",
+    "OM_titulo": "ASOCEA",
+    "OM_descricao": "ASSESSORIA DE SEGURANÇA OPERACIONAL DO CONTROLE DO ESPAÇO AÉREO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "48",
+    "OM_titulo": "CFIAE",
+    "OM_descricao": "CAIXA DE FINANCIAMENTO IMOBILIÁRIO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "49",
+    "OM_titulo": "ESG RIO",
+    "OM_descricao": "ESCOLA SUPERIOR DE GUERRA DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "50",
+    "OM_titulo": "CTLA",
+    "OM_descricao": "CENTRO DE TRANSPORTE LOGÍSTICO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "51",
+    "OM_titulo": "ALA 11",
+    "OM_descricao": "ALA 11"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "52",
+    "OM_titulo": "ALA 12",
+    "OM_descricao": "ALA 12"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "53",
+    "OM_titulo": "GAPCEA",
+    "OM_descricao": "GRUPAMENTO DE APOIO ÀS UNIDADES DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "54",
+    "OM_titulo": "BIFAE-RJ",
+    "OM_descricao": "BATALHÃO DE INFANTARIA DA AERONÁUTICA ESPECIAL DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "55",
+    "OM_titulo": "CAE",
+    "OM_descricao": "CENTRO DE AQUISIÇÕES ESPECÍFICAS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "56",
+    "OM_titulo": "CGNA",
+    "OM_descricao": "CENTRO DE GERENCIAMENTO DA NAVEGAÇÃO AÉREA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "57",
+    "OM_titulo": "CERNAI",
+    "OM_descricao": "COMISSÃO DE ESTUDOS RELATIVOS À NAVEGAÇÃO AÉREA INTERNACIONAL"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "58",
+    "OM_titulo": "DTCEA-SC",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - SANTA CRUZ"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "59",
+    "OM_titulo": "DTCEA-AF",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - AFONSOS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "60",
+    "OM_titulo": "DTCEA-PCO",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - PICO DO COUTO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "61",
+    "OM_titulo": "GAL",
+    "OM_descricao": "GRUPAMENTO DE APOIO LOGÍSTICO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "62",
+    "OM_titulo": "GSD-AF",
+    "OM_descricao": "GRUPAMENTO DE SEGURANÇA E DEFESA DOS AFONSOS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "63",
+    "OM_titulo": "ICA",
+    "OM_descricao": "INSTITUTO DE CARTOGRAFIA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "64",
+    "OM_titulo": "PAMA-AF",
+    "OM_descricao": "PARQUE DE MATERIAL AERONÁUTICO DOS AFONSO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "65",
+    "OM_titulo": "PASC",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE SANTA CRUZ"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "66",
+    "OM_titulo": "1º/1º GCC",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO PRIMEIRO GRUPO DE COMUNICAÇÕES E CONTROLE"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "67",
+    "OM_titulo": "1º/2º GT - ESQUADRÃO CONDOR",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO SEGUNDO GRUPO DE TRANSPORTE"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "68",
+    "OM_titulo": "II FAE",
+    "OM_descricao": "SEGUNDA FORÇA AÉREA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "69",
+    "OM_titulo": "SEGECAE",
+    "OM_descricao": "SERVIÇO GERAL DE CORRESPONDÊNCIA E ARQUIVO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "70",
+    "OM_titulo": "SDAB",
+    "OM_descricao": "SUBDIRETORIA DE ABASTECIMENTO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "71",
+    "OM_titulo": "GSD-GL",
+    "OM_descricao": "GRUPO DE SEGURANÇA E DEFESA DO GALEÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "72",
+    "OM_titulo": "SERINFRA-RJ",
+    "OM_descricao": "SERVIÇO REGIONAL DE INFRAESTURUTRA DA AERONÁUTICA DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "73",
+    "OM_titulo": "CEAP",
+    "OM_descricao": "CENTRO DE APOIO ADMINISTRATIVO DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "74",
+    "OM_titulo": "CECAFA",
+    "OM_descricao": "CENTRO DE CATALOGAÇÃO DAS FORÇAS ARMADAS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "75",
+    "OM_titulo": "CIEAR",
+    "OM_descricao": "CENTRO DE INSTRUÇÃO ESPECIALIZADA DA AERONÁUTICA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "76",
+    "OM_titulo": "COMFIREM-CELMA",
+    "OM_descricao": "COMISSÃO DE FISCALIZAÇÃO E RECEBIMENTO DE MATERIAL JUNTO À CIA. CELMA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "77",
+    "OM_titulo": "DTCEA-GL",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DOGALEÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "78",
+    "OM_titulo": "DTCEATM-RJ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO ETELEMÁTICA DO RIO DE JANEIRO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "79",
+    "OM_titulo": "3º ETA – ESQUADRÃO PIONEIRO",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DE TRANSPORTE AÉREO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "80",
+    "OM_titulo": "1º/1º GT - ESQUADRÃO GORDO",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO PRIMEIRO GRUPO DE TRANSPORTE"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "81",
+    "OM_titulo": "2º/2º GT - ESQUADRÃO CORSÁRIO",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO SEGUNDO GRUPO DE TRANSPORTE"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "82",
+    "OM_titulo": "3º/8º GAV - ESQUADRÃO PUMA",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DO OITAVO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "83",
+    "OM_titulo": "V FAE",
+    "OM_descricao": "QUINTA FORÇA AÉREA"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "84",
+    "OM_titulo": "GAP-AF",
+    "OM_descricao": "GRUPAMENTO DE APOIO DOS AFONSOS"
+  },
+  {
+    "estado": "RIO DE JANEIRO",
+    "UF": "RJ",
+    "codigo": "85",
+    "OM_titulo": "1º GAVCA - SENTA A PÚA",
+    "OM_descricao": "PRIMEIRO GRUPO DE AVIAÇÃO DE CAÇA"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "01",
+    "OM_titulo": "BANT",
+    "OM_descricao": "BASE AÉREA DE NATAL"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "02",
+    "OM_titulo": "PANT",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE NATAL"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "03",
+    "OM_titulo": "CLBI",
+    "OM_descricao": "CENTRO DE LANÇAMENTO DA BARREIRA DO INFERNO"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "04",
+    "OM_titulo": "ALA 10",
+    "OM_descricao": "ALA 10"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "05",
+    "OM_titulo": "DTCEA-NT",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - NATAL"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "06",
+    "OM_titulo": "GAP-NT",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE NATAL"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "07",
+    "OM_titulo": "1º/11º GAV - ESQUADRÃO GAVIÃO",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO DÉCIMO PRIMEIRO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "08",
+    "OM_titulo": "1º/5º GAV - ESQUADRÃO RUMBA",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO QUINTO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "09",
+    "OM_titulo": "3º/1º GCC",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DO PRIMEIRO GRUPO DE COMUNICAÇÕES E CONTROLE"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "10",
+    "OM_titulo": "DTINFRA-NT",
+    "OM_descricao": "DESTCAMENTO DE INFRAESTRUTUTRA DE NATAL"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "11",
+    "OM_titulo": "DESTAE-MS",
+    "OM_descricao": "DESTACAMENTO DE AERONÁUTICA DE MOSSORÓ"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "12",
+    "OM_titulo": "2º ETA – ESQUADRÃO PASTOR",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DE TRANSPORTE AÉREO"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "13",
+    "OM_titulo": "1º/8º GAV - ESQUADRÃO FALCÃO",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO OITAVO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "14",
+    "OM_titulo": "2º/5º GAV - ESQUADRÃO JOKE",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO QUINTO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "15",
+    "OM_titulo": "I FAE",
+    "OM_descricao": "PRIMEIRA FORÇA AÉREA"
+  },
+  {
+    "estado": "RIO GRANDE DO NORTE",
+    "UF": "RN",
+    "codigo": "16",
+    "OM_titulo": "GITE",
+    "OM_descricao": "GRUPO DE INSTRUÇÃO TÁTICA E ESPECIALIZADA"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "01",
+    "OM_titulo": "V COMAR",
+    "OM_descricao": "V COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "02",
+    "OM_titulo": "BACO",
+    "OM_descricao": "BASE AÉREA DE CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "03",
+    "OM_titulo": "BASM",
+    "OM_descricao": "BASE AÉREA DE SANTA MARIA"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "04",
+    "OM_titulo": "PACO",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "05",
+    "OM_titulo": "SERIPA V",
+    "OM_descricao": "QUINTO SERVIÇO REGIONAL DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "06",
+    "OM_titulo": "SEREP-CO",
+    "OM_descricao": "SERVIÇO DE RECRUTAMENTO E PREPARO DE PESSOAL DA AERONÁUTICA DE CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "07",
+    "OM_titulo": "HACO",
+    "OM_descricao": "HOSPITAL DE AERONÁUTICA DE CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "08",
+    "OM_titulo": "ALA 3",
+    "OM_descricao": "ALA 3"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "09",
+    "OM_titulo": "ALA 4",
+    "OM_descricao": "ALA 4"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "10",
+    "OM_titulo": "GAP-CO",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "11",
+    "OM_titulo": "BINFAE-CO",
+    "OM_descricao": "BATALHÃO DE INFANTARIA DA AERONÁUTICA ESPECIAL DE CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "12",
+    "OM_titulo": "DTCEA-CGU",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - CANGAÇU"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "13",
+    "OM_titulo": "DTCEA-PA",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - PORTO ALEGRE"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "14",
+    "OM_titulo": "DTCEA-UG",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - URUGUAIANA"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "15",
+    "OM_titulo": "PASM",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE SANTA MARIA"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "16",
+    "OM_titulo": "1º/14º GAV - ESQUADRÃO PAMPA",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO DÉCIMO QUARTO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "17",
+    "OM_titulo": "1º GDAAE",
+    "OM_descricao": "PRIMEIRO GRUPO DE DEFESA ANTIAÉREA"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "18",
+    "OM_titulo": "5º/8º GAV - ESQUADRÃO PANTERA",
+    "OM_descricao": "QUINTO ESQUADRÃO DO OITAVO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "19",
+    "OM_titulo": "2º/7º GAV - ESQUADRÃO PHOENIX",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO SÉTI-O GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "20",
+    "OM_titulo": "SERINFRA-CO",
+    "OM_descricao": "SERVIÇO REGIONAL DE INFRAESTURUTRA DA AERONÁUTICA DE CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "21",
+    "OM_titulo": "COMFIREM-AEROELETRÔNICA",
+    "OM_descricao": "COMISSÃO DE FISCALIZAÇÃO E RECEBIMENTO DE MATERIAL E SERVIÇOS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "22",
+    "OM_titulo": "DTCEA-SM",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DESANTA MARIA"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "23",
+    "OM_titulo": "DTCEA-CO",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: CANOAS"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "24",
+    "OM_titulo": "DTCEA-STI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: SANTIAGO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "25",
+    "OM_titulo": "5º ETA – ESQUADRÃO PÉGASO",
+    "OM_descricao": "QUINTO ESQUADRÃO DE TRANSPORTE AÉREO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "26",
+    "OM_titulo": "1º/10º GAV - ESQUADRÃO POKER",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO DÉCIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "27",
+    "OM_titulo": "1º/12º GAV - ESQUADRÃO HÓRUS",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO DÉCIMO SEGUNDO GRUPODE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "28",
+    "OM_titulo": "4º/1º GCC",
+    "OM_descricao": "QUARTO ESQUADRÃO DO PRIMEIRO GRUPO DE COMUNICAÇÕES E CONTROLE"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "29",
+    "OM_titulo": "2º/1º GCC",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO PRIMEIRO GRUPO DE COMUNICAÇÕES E CONTROLE"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "30",
+    "OM_titulo": "3º/10º GAV - ESQUADRÃO CENTAURO",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DO DÉCIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "31",
+    "OM_titulo": "GAP-SM",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE SANTA MARIA"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "32",
+    "OM_titulo": "2º/1º GCC",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO PRIMEIRO GRUPO DE COMUNICAÇÕES E CONTROLE"
+  },
+  {
+    "estado": "RIO GRANDE DO SUL",
+    "UF": "RS",
+    "codigo": "33",
+    "OM_titulo": "3º/10º GAV – ESQUADRÃO CENTAURO",
+    "OM_descricao": "TERCEIRO ESQUADRÃO DO DÉCIMO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "01",
+    "OM_titulo": "BAPV",
+    "OM_descricao": "BASE AÉREA DE PORTO VELHO"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "02",
+    "OM_titulo": "ALA 6",
+    "OM_descricao": "ALA 6"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "03",
+    "OM_titulo": "DTCEA-GM",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - GUAJARÁ-MIRIM"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "04",
+    "OM_titulo": "DTCEA-VH",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - VILHENA"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "05",
+    "OM_titulo": "PAPV",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE PORTO VELHO"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "06",
+    "OM_titulo": "2º/8º GAV - ESQUADRÃO POTI",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO OITAVO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "07",
+    "OM_titulo": "DTCEA-PV",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: PORTO VELHO"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "08",
+    "OM_titulo": "5º/1º GCC",
+    "OM_descricao": "QUINTO ESQUADRÃO DO PRIMEIRO GRUPO DE COMUNICAÇÕES E CONTROLE"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "09",
+    "OM_titulo": "2º/3º GAV - ESQUADRÃO GRIFO",
+    "OM_descricao": "SEGUNDO ESQUADRÃO DO TERCEIRO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RONDÔNIA",
+    "UF": "RO",
+    "codigo": "10",
+    "OM_titulo": "GAP-PV",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE PORTO VELHO"
+  },
+  {
+    "estado": "RORAIMA",
+    "UF": "RR",
+    "codigo": "01",
+    "OM_titulo": "BABV",
+    "OM_descricao": "BASE AÉREA DE BOA VISTA"
+  },
+  {
+    "estado": "RORAIMA",
+    "UF": "RR",
+    "codigo": "02",
+    "OM_titulo": "ALA 7",
+    "OM_descricao": "ALA 7"
+  },
+  {
+    "estado": "RORAIMA",
+    "UF": "RR",
+    "codigo": "03",
+    "OM_titulo": "GAP-BV",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE BOA VISTA"
+  },
+  {
+    "estado": "RORAIMA",
+    "UF": "RR",
+    "codigo": "04",
+    "OM_titulo": "1º/3º GAV - ESQUADRÃO ESCORPIÃO",
+    "OM_descricao": "PRIMEIRO ESQUADRÃO DO TERCEIRO GRUPO DE AVIAÇÃO"
+  },
+  {
+    "estado": "RORAIMA",
+    "UF": "RR",
+    "codigo": "05",
+    "OM_titulo": "DTCEA-BV",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: BOA VISTA"
+  },
+  {
+    "estado": "RORAIMA",
+    "UF": "RR",
+    "codigo": "06",
+    "OM_titulo": "PABV",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE BOA VISTA"
+  },
+  {
+    "estado": "SANTA CATARINA",
+    "UF": "SC",
+    "codigo": "01",
+    "OM_titulo": "BAFL",
+    "OM_descricao": "BASE AÉREA DE FLORIANÓPOLIS"
+  },
+  {
+    "estado": "SANTA CATARINA",
+    "UF": "SC",
+    "codigo": "02",
+    "OM_titulo": "GAP-FL",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE FLORIANÓPOLIS"
+  },
+  {
+    "estado": "SANTA CATARINA",
+    "UF": "SC",
+    "codigo": "03",
+    "OM_titulo": "DTCEA-MDI",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - MORRO DA IGREJA"
+  },
+  {
+    "estado": "SANTA CATARINA",
+    "UF": "SC",
+    "codigo": "04",
+    "OM_titulo": "PAFL",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE FLORIANÓPOLIS"
+  },
+  {
+    "estado": "SANTA CATARINA",
+    "UF": "SC",
+    "codigo": "05",
+    "OM_titulo": "DTCEA-FL",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO: FLORIANÓPOLIS"
+  },
+  {
+    "estado": "SERGIPE",
+    "UF": "SE",
+    "codigo": "01",
+    "OM_titulo": "DTCEA-AR",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - ARACAJÚ"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "01",
+    "OM_titulo": "COMGAP",
+    "OM_descricao": "COMANDO GERAL DE APOIO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "02",
+    "OM_titulo": "FAYS",
+    "OM_descricao": "FAZENDA DA AERONÁUTICA DE PIRASSUNUNGA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "03",
+    "OM_titulo": "IV COMAR",
+    "OM_descricao": "IV COMANDO AÉREO REGIONAL"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "04",
+    "OM_titulo": "BAST",
+    "OM_descricao": "BASE AÉREA DE SANTOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "05",
+    "OM_titulo": "GAP-SP",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE SÃO PAULO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "06",
+    "OM_titulo": "PASP",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE SÃO PAULO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "07",
+    "OM_titulo": "PAGW",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE GUARATINGUETÁ"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "08",
+    "OM_titulo": "PAYS",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE PIRASSUNUNGA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "09",
+    "OM_titulo": "IAOP",
+    "OM_descricao": "INSTITUTO DE APLICAÇÕES OPERACIONAIS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "10",
+    "OM_titulo": "DCTA",
+    "OM_descricao": "DEPARTAMENTO DE CIÊNCIA E TECNOLOGIA AEROESPACIAL"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "11",
+    "OM_titulo": "IAE",
+    "OM_descricao": "INSTITUTO DE AERONÁUTICA E ESPAÇO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "12",
+    "OM_titulo": "COPAC",
+    "OM_descricao": "COMISSÃO COORDENADORA DO PROGRAMA AERONAVE DE COMBATE"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "13",
+    "OM_titulo": "CODCTA",
+    "OM_descricao": "COMISSÃO DE OBRAS DO DEPARTAMENTO DE CIÊNCIA E TECNOLOGIA AEROESPACIAL"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "14",
+    "OM_titulo": "CPORAER-SJ",
+    "OM_descricao": "CENTRO DE PREPARAÇÃO DE OFICIAIS DA RESERVA DA AERONÁUTICA DE SÃO JOSÉ DOS CAMPOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "15",
+    "OM_titulo": "PASJ",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE SÃO JOSÉ DOS CAMPOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "16",
+    "OM_titulo": "GAP-SJ",
+    "OM_descricao": "GRUPAMENTO DE APOIO DE SÃO JOSÉ DOS CAMPOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "17",
+    "OM_titulo": "IEAV",
+    "OM_descricao": "INSTITUTO DE ESTUDOS AVANÇADOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "18",
+    "OM_titulo": "IFI",
+    "OM_descricao": "INSTITUTO DE FOMENTO E COORDENAÇÃO INDUSTRIAL"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "19",
+    "OM_titulo": "IPEV",
+    "OM_descricao": "INSTITUTO DE PESQUISAS E ENSAIOS EM VOO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "20",
+    "OM_titulo": "ITA",
+    "OM_descricao": "INSTITUTO TECNOLÓGICO DA AERONÁUTICA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "21",
+    "OM_titulo": "ICEA",
+    "OM_descricao": "INSTITUTO DE CONTROLE DO ESPAÇO AÉREO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "22",
+    "OM_titulo": "CRCEA-SE/SRPV-SP",
+    "OM_descricao": "CENTRO REGIONAL DE CONTROLE DO ESPAÇO AÉREO SUDESTE"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "23",
+    "OM_titulo": "SEREP-SP",
+    "OM_descricao": "SERVIÇO DE RECRUTAMENTO E PREPARO DE PESSOAL DA AERONÁUTICA DE SÃO PAULO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "24",
+    "OM_titulo": "AFA",
+    "OM_descricao": "ACADEMIA DA FORÇA AÉREA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "25",
+    "OM_titulo": "EEAR",
+    "OM_descricao": "ESCOLA DE ESPECIALISTAS DE AERONÁUTICA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "26",
+    "OM_titulo": "HFASP",
+    "OM_descricao": "HOSPITAL DE FORÇA AÉREA DE SÃO PAULO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "27",
+    "OM_titulo": "CECAT",
+    "OM_descricao": "CENTRO DE CATALOGAÇÃO DA AERONÁUTICA."
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "28",
+    "OM_titulo": "BASP",
+    "OM_descricao": "BASE AÉREA DE SÃO PAULO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "29",
+    "OM_titulo": "ILA",
+    "OM_descricao": "INSTITUTO DE LOGÍSTICA DA AERONÁUTICA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "30",
+    "OM_titulo": "CELOG",
+    "OM_descricao": "CENTRO LOGÍSTICO DA AERONÁUTICA."
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "31",
+    "OM_titulo": "DIRINFRA",
+    "OM_descricao": "DIRETORIA DE INFRAESTRUTURA DA AERONÁUTICA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "32",
+    "OM_titulo": "CEPE",
+    "OM_descricao": "CENTRO DE ESTUDOS E PROJETOS DE ENGENHARIA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "33",
+    "OM_titulo": "DIRMAB",
+    "OM_descricao": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "34",
+    "OM_titulo": "PAMA-SP",
+    "OM_descricao": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "35",
+    "OM_titulo": "DTI",
+    "OM_descricao": "DIRETORIA DE TECNOLOGIA DA INFORMAÇÃO DA AERONÁUTICA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "36",
+    "OM_titulo": "CCA-SJ",
+    "OM_descricao": "CENTRO DE COMPUTAÇÃO DA AERONÁUTICA DE SÃO JOSÉ DOS CAMPOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "37",
+    "OM_titulo": "EDA",
+    "OM_descricao": "ESQUADRÃO DE DEMOSNTRAÇÃO AÉREA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "38",
+    "OM_titulo": "SERIPA IV",
+    "OM_descricao": "QUARTO SERVIÇO REGIONAL DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "39",
+    "OM_titulo": "GAP-GW",
+    "OM_descricao": "GRUPAMENTO DE APOIO DEGUARATIGUETÁ"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "39",
+    "OM_titulo": "GAP-YS",
+    "OM_descricao": "GRUPAMENTO DE APOIO DEPIRASSUNUNGA"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "40",
+    "OM_titulo": "DTCEA-MT",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DE MARTE"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "41",
+    "OM_titulo": "DTCEA-SP",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DE SÃO PAULO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "42",
+    "OM_titulo": "DTCEA-SJ",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO -SÃO JOSÉ DOS CAMPOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "43",
+    "OM_titulo": "DTCEA-ST",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DESANTOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "44",
+    "OM_titulo": "DTCEA-TNB",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO - TANABI"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "45",
+    "OM_titulo": "4º ETA - ESQUADRÃO CARAJÁ",
+    "OM_descricao": "QUARTO ESQUADRÃO DE TRANSPORTE AÉREO"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "46",
+    "OM_titulo": "GAC-PAC",
+    "OM_descricao": "GRUPO DE ACOMPANHAMENTO E CONTROLE – PROGRAMA AERONAVE DE COMBATE"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "47",
+    "OM_titulo": "SERINFRA-RJ",
+    "OM_descricao": "SERVIÇO REGIONAL DE INFRAESTRUTURA DA AERONÁUTICA DE SÃO JOSÉ DOS CAMPOS"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "48",
+    "OM_titulo": "COMFIREM-MRR",
+    "OM_descricao": "COMISSÃO DE FISC. E EXEC. DE CONT. JUNTO À CIA.MOTORES ROLLS-ROYCE S/A"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "49",
+    "OM_titulo": "COMFIREM-EMBRAER",
+    "OM_descricao": "COMISSÃO DE FISC. E EXECUÇÃO DE CONTRATOSJUNTO À EMBRAER"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "50",
+    "OM_titulo": "DTCEA-GW",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO DEGUARATINGUETÁ"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "51",
+    "OM_titulo": "DTCEA-SRO",
+    "OM_descricao": "DESTACAMENTO DE CONTROLE DO ESPAÇO AÉREO:SÃO ROQUE"
+  },
+  {
+    "estado": "SÃO PAULO",
+    "UF": "SP",
+    "codigo": "52",
+    "OM_titulo": "PAST",
+    "OM_descricao": "PREFEITURA DE AERONÁUTICA DE SANTOS"
+  }
+]

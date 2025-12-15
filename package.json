@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@material-ui/icons": "^4.11.3",
+    "@mui/material": "^6.4.7",
+    "@mui/styles": "^6.4.7",
+    "connect-mongo": "^5.1.0",
+    "glob": "^11.0.3"
+  }
+}

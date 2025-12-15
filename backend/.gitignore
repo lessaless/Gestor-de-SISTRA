@@ -1,0 +1,8 @@
+/node_modules
+.env
+/uploads
+/logs
+/utils/listarAssinaturaArquivo/arquivosTeste
+/utils/logs/log-files
+keycloak.json
+/certificados
