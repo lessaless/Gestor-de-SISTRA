@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"9c81f5f21e644786b7407cd2fc1f919f","collectionName":"statusplaninfra","type":"collection"}
