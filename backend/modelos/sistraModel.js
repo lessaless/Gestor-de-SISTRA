@@ -90,6 +90,16 @@ const sistraGeraisSchema = mongoose.Schema({
 		trim: true,
 		required: true
 	},
+	status_final: {
+		type: String,
+		trim: true,
+		required: true
+	},
+	tipo_de_acidente: {
+		type: String,
+		trim: true,
+		required: true
+	},
 
 	// ================= //
 	// Campos para texto

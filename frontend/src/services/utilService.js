@@ -6,7 +6,90 @@ import axios from 'axios';
 const apiUrl = process.env.REACT_APP_BACKEND;
 
 const utilService = {
+	// ============================= //
+	// início documentos SISTRA
+	// ============================= //
+	async obterAgenteCausadorAcidentes(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obteragentecausadoracidentes`, { params: data });
+			console.log("valor de response é", response)
+			return response;
 
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+	async obterHouveDispensaOuAfastamentos(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obterhouvedispensaouafastamentos`, { params: data });
+			console.log("valor de response é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+	async obterNaturezaDaAtividades(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obternaturezadaatividades`, { params: data });
+			console.log("valor de response é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+	async obterTipoDeAcidentes(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obtertipodeacidentes`, { params: data });
+			console.log("valor de response é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+	async obterStatusFinals(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obterstatusfinals`, { params: data });
+			console.log("valor de response é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+	async obterSituacaoGeradoras(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obtersituacaogeradoras`, { params: data });
+			console.log("valor de response é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+
+	async obterParteDoCorpoAtingidas(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obterpartedocorpoatingidas`, { params: data });
+			console.log("valor de response é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+	// ============================= //
+	// Fim documentos SISTRA
+	// ============================= //
 
 	async obterOMs(data) {
 		try {
@@ -153,47 +236,7 @@ const utilService = {
 		}
 	},
 
-	// ============================= //
-	// início documentos SISTRA
-	// ============================= //
-	async obterAgenteCausadorAcidentes(data) {
-		try {
-			const response = await axios.get(`${apiUrl}/api/utils/obteragentecausadoracidentes`, { params: data });
-			console.log("valor de response é", response)
-			return response;
 
-		} catch (error) {
-			console.error(error);
-			throw new Error(error.response.data.message);
-		}
-	},
-
-	async obterSituacaoGeradoras(data) {
-		try {
-			const response = await axios.get(`${apiUrl}/api/utils/obtersituacaogeradoras`, { params: data });
-			console.log("valor de response é", response)
-			return response;
-
-		} catch (error) {
-			console.error(error);
-			throw new Error(error.response.data.message);
-		}
-	},
-
-	async obterParteDoCorpoAtingidas(data) {
-		try {
-			const response = await axios.get(`${apiUrl}/api/utils/obterpartedocorpoatingidas`, { params: data });
-			console.log("valor de response é", response)
-			return response;
-
-		} catch (error) {
-			console.error(error);
-			throw new Error(error.response.data.message);
-		}
-	},
-	// ============================= //
-	// Fim documentos SISTRA
-	// ============================= //
 	async obterStatus(data) {
 		try {
 			//console.log("Entrou no obterStatus do utilService")
