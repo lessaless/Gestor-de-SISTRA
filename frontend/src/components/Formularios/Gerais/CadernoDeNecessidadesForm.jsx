@@ -101,6 +101,11 @@ const CadernoDeNecessidadesForm = () => {
     const [agenteCausadorAcidente, setAgenteCausadorAcidente] = useState([]);
     const [situacaoGeradora, setSituacaoGeradora] = useState([]);
     const [parteDoCorpoAtingida, setParteDoCorpoAtingida] = useState([]);
+    const [houveDispensa, setHouveDispensa] = useState([]);
+    const [naturezaDaAtividade, setNaturezaDaAtividade] = useState([]);
+    const [tipoDeAcidente, setTipoDeAcidente] = useState([]);
+    const [statusFinal, setStatusFinal] = useState([]);
+
     // ================== //
     // fim useState do SISTRA //
     // ================== //
@@ -322,70 +327,112 @@ const CadernoDeNecessidadesForm = () => {
     }, []);
 
 
+    // useEffect(() => {
+    //     //console.log("Mapear lista oms")
+    //     const fetchAgenteCausadorAcidente = async () => {
+    //         try {
+    //             // const listaOMs = await utilService.obterOMs();
+    //             // const listaODS = await utilService.obterODS();
+    //             const listaAgenteCausadorAcidente = await utilService.obterAgenteCausadorAcidentes();
+    //             console.log("Valor de listaAgenteCausadorAcidente é", listaAgenteCausadorAcidente)
+    //             // setOms(listaOMs.data);
+    //             // setOds(listaODS.data);
+    //             setAgenteCausadorAcidente(listaAgenteCausadorAcidente.data);
+    //             console.log("Valores de Agente Causador do Acidente é ", listaAgenteCausadorAcidente.data)
+
+    //         } catch (error) {
+
+    //             toast.error("Erro ao carregar Agente Causador do Acidente.");
+    //         }
+    //     };
+
+    //     fetchAgenteCausadorAcidente();
+    // }, []);
+
+    // useEffect(() => {
+    //     //console.log("Mapear lista oms")
+    //     const fetchSituacaoGeradora = async () => {
+    //         try {
+    //             // const listaOMs = await utilService.obterOMs();
+    //             // const listaODS = await utilService.obterODS();
+    //             const listaSituacaoGeradora = await utilService.obterSituacaoGeradoras();
+    //             console.log("Valor de listaSituacaoGeradora  é", listaSituacaoGeradora)
+    //             // setOms(listaOMs.data);
+    //             // setOds(listaODS.data);
+    //             setSituacaoGeradora(listaSituacaoGeradora.data);
+    //             console.log("Valores de Situação Geradora é ", listaSituacaoGeradora.data)
+
+    //         } catch (error) {
+
+    //             toast.error("Erro ao carregar Situação Geradora.");
+    //         }
+    //     };
+
+    //     fetchSituacaoGeradora();
+    // }, []);
+
     useEffect(() => {
         //console.log("Mapear lista oms")
-        const fetchAgenteCausadorAcidente = async () => {
+        const fetchHouveDispensa = async () => {
             try {
                 // const listaOMs = await utilService.obterOMs();
                 // const listaODS = await utilService.obterODS();
-                const listaAgenteCausadorAcidente = await utilService.obterAgenteCausadorAcidentes();
-                console.log("Valor de listaAgenteCausadorAcidente é", listaAgenteCausadorAcidente)
+                console.log("Entrei em fetchHouveDispensa")
+                const listaHouveDispensa = await utilService.obterHouveDispensas();
+                console.log("Valor de HouveDispensa é", listaHouveDispensa)
                 // setOms(listaOMs.data);
                 // setOds(listaODS.data);
-                setAgenteCausadorAcidente(listaAgenteCausadorAcidente.data);
-                console.log("Valores de Agente Causador do Acidente é ", listaAgenteCausadorAcidente.data)
+                setHouveDispensa(listaHouveDispensa.data);
+                console.log("Valores de Houve Dispensa é ", listaHouveDispensa.data)
 
             } catch (error) {
 
-                toast.error("Erro ao carregar Agente Causador do Acidente.");
+                toast.error("Erro ao carregar Houve Dispensa.");
             }
         };
 
-        fetchAgenteCausadorAcidente();
+        fetchHouveDispensa();
     }, []);
 
     useEffect(() => {
-        //console.log("Mapear lista oms")
-        const fetchSituacaoGeradora = async () => {
+        const fetchAllData = async () => {
             try {
-                // const listaOMs = await utilService.obterOMs();
-                // const listaODS = await utilService.obterODS();
-                const listaSituacaoGeradora  = await utilService.obterSituacaoGeradoras ();
-                console.log("Valor de listaSituacaoGeradora  é", listaSituacaoGeradora )
-                // setOms(listaOMs.data);
-                // setOds(listaODS.data);
-                setSituacaoGeradora(listaSituacaoGeradora .data);
-                console.log("Valores de Situação Geradora é ", listaSituacaoGeradora .data)
+                // Fetch all data in parallel
+                const [
+                    listaAgenteCausador,
+                    listaHouveDispensa,
+                    listaNaturezaAtividade,
+                    listaTipoAcidente,
+                    listaStatusFinal,
+                    listaSituacaoGeradora,
+                    listaParteDoCorpoAtingida
+                ] = await Promise.all([
+                    utilService.obterAgenteCausadorAcidentes(),
+                    utilService.obterHouveDispensas(),
+                    utilService.obterNaturezaDaAtividades(),
+                    utilService.obterTipoDeAcidentes(),
+                    utilService.obterStatusFinals(),
+                    utilService.obterSituacaoGeradoras(),
+                    utilService.obterParteDoCorpoAtingidas()
+                ]);
 
-            } catch (error) {
-
-                toast.error("Erro ao carregar Situação Geradora.");
-            }
-        };
-
-        fetchSituacaoGeradora();
-    }, []);
-
-    useEffect(() => {
-        //console.log("Mapear lista oms")
-        const fetchParteDoCorpoAtingida = async () => {
-            try {
-                // const listaOMs = await utilService.obterOMs();
-                // const listaODS = await utilService.obterODS();
-                const listaParteDoCorpoAtingida = await utilService.obterParteDoCorpoAtingidas();
-                console.log("Valor de listaParteDoCorpoAtingida é", listaParteDoCorpoAtingida)
-                // setOms(listaOMs.data);
-                // setOds(listaODS.data);
+                // Set all state values
+                setAgenteCausadorAcidente(listaAgenteCausador.data);
+                setHouveDispensa(listaHouveDispensa.data);
+                setNaturezaDaAtividade(listaNaturezaAtividade.data);
+                console.log("Valores de Natureza da Atividade é ", listaNaturezaAtividade.data)
+                setTipoDeAcidente(listaTipoAcidente.data);
+                setStatusFinal(listaStatusFinal.data);
+                setSituacaoGeradora(listaSituacaoGeradora.data);
                 setParteDoCorpoAtingida(listaParteDoCorpoAtingida.data);
-                console.log("Valores de Parte do Corpo Atingida é ", listaParteDoCorpoAtingida.data)
 
             } catch (error) {
-
-                toast.error("Erro ao carregar Parte do Corpo Atingida.");
+                console.error("Erro ao carregar dados:", error);
+                toast.error("Erro ao carregar dados do sistema.");
             }
         };
 
-        fetchParteDoCorpoAtingida();
+        fetchAllData();
     }, []);
 
     return (
@@ -478,6 +525,72 @@ const CadernoDeNecessidadesForm = () => {
                         setValue={setValue}
                         value={watch('parte_do_corpo_atingida') ?? ''}
                     />
+
+                    <DirinfraSelect
+                        label='Natureza da Atividade'
+                        name='natureza_atividade'
+                        registro={register}
+                        required={false}
+                        options={naturezaDaAtividade.map(na => ({
+                            value: String(na.codigo),
+                            label: na.descricao,
+                        }))}
+                        erros={errors}
+                        placeholder='Selecione a Natureza da Atividade'
+                        watch={watch}
+                        setValue={setValue}
+                        value={watch('natureza_atividade') ?? ''}
+
+                    />
+
+                    <DirinfraSelect
+                        label='Dispensa ou Afastamento'
+                        name='dispensa_afastamento'
+                        registro={register}
+                        required={false}
+                        options={houveDispensa.map(da => ({
+                            value: String(da.codigo),
+                            label: da.descricao,
+                        }))}
+                        erros={errors}
+                        placeholder='Selecione Dispensa ou Afastamento'
+                        watch={watch}
+                        setValue={setValue}
+                        value={watch('dispensa_afastamento') ?? ''}
+                    />
+
+                    <DirinfraSelect
+                        label='Status Final'
+                        name='status_final'
+                        registro={register}
+                        required={true}
+                        options={statusFinal.map(sf => ({
+                            value: String(sf.codigo),
+                            label: sf.descricao,
+                        }))}
+                        erros={errors}
+                        placeholder='Selecione o Status Final'
+                        watch={watch}
+                        setValue={setValue}
+                        value={watch('status_final') ?? ''}
+                    />
+
+                    <DirinfraSelect
+                        label='Tipo de Acidente'
+                        name='tipo_de_acidente'
+                        registro={register}
+                        required={true}
+                        options={tipoDeAcidente.map(ta => ({
+                            value: String(ta.codigo),
+                            label: ta.descricao,
+                        }))}
+                        erros={errors}
+                        placeholder='Selecione o Tipo de Acidente'
+                        watch={watch}
+                        setValue={setValue}
+                        value={watch('tipo_de_acidente') ?? ''}
+                    />
+
                     <div className='linha'>
                         <em className="obrigatorios">*</em>
                         <DirinfraInput
@@ -551,7 +664,6 @@ const CadernoDeNecessidadesForm = () => {
                             type='date'
                         />
                     </div>
-
                     <div className='linha'>
                         <DirinfraInput
                             name='data_entrega_doc'
@@ -572,11 +684,46 @@ const CadernoDeNecessidadesForm = () => {
                             }}
                         />
                     </div>
+                    <div className='linha'>
+                        <DirinfraInput
+                            name='data_ocorrencia'
+                            erros={errors}
+                            label={Dicionario('data_ocorrencia')}
+                            placeholder='DD/MM/AAAA'
+                            registro={register}
+                            required={false}
+                            type='date'
+                        />
+                    </div>
+                    <div className='linha'>
+                        <DirinfraInput
+                            name='data_envio_form'
+                            erros={errors}
+                            label={Dicionario('data_envio_form')}
+                            placeholder='DD/MM/AAAA'
+                            registro={register}
+                            required={false}
+                            type='date'
+                            min={watch('data_ocorrencia') || undefined} // ✅ HTML5 validation
+                            validar={{  // ✅ React Hook Form validation (already supported by DirinfraInput)
+                                afterOrEqualStart: (value) => {
+                                    const dataInicio = watch('data_ocorrencia');
+                                    if (!value || !dataInicio) return true;
+                                    return value >= dataInicio ||
+                                        'A data de envio não pode ser anterior à data da ocorrência.';
+                                }
+                            }}
+                        />
+                    </div>
                     <PeriodoDeElaboracaoForm
                         register={register}
                         errors={errors}
                         watch={watch}
                         setValue={setValue}
+                        dataInicioField='data_ocorrencia'
+                        dataEntregaField='data_envio_form'
+                    // periodoField uses default 'periodo_elaboracao'
+                    // label uses default from Dicionario
                     />
 
                     <div className='linha'>
@@ -588,6 +735,96 @@ const CadernoDeNecessidadesForm = () => {
                             registro={register}
                         />
                     </div>
+
+                    {/* ====== Campos dissertativos ====== */}
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='descricao_gerais'
+                            erros={errors}
+                            label='Descrição Geral'
+                            placeholder='Descreva detalhadamente o ocorrido.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='causa_gerais'
+                            erros={errors}
+                            label='Causa Geral'
+                            placeholder='Descreva as causas do ocorrido.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='descricao_dispensa'
+                            erros={errors}
+                            label='Descrição da Dispensa'
+                            placeholder='Descreva os detalhes da dispensa ou afastamento.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='local_ocorrencia'
+                            erros={errors}
+                            label='Local da Ocorrência'
+                            placeholder='Descreva o local onde ocorreu o acidente.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='recomendacoes_csmt'
+                            erros={errors}
+                            label='Recomendações CSMT'
+                            placeholder='Informe as recomendações da Comissão de Segurança e Medicina do Trabalho.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='recomendacoes_cipa'
+                            erros={errors}
+                            label='Recomendações CIPA'
+                            placeholder='Informe as recomendações da Comissão Interna de Prevenção de Acidentes.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='acoes_treinamentos'
+                            erros={errors}
+                            label='Ações e Treinamentos'
+                            placeholder='Descreva as ações corretivas e treinamentos necessários.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+
+                    {/* <div className='linha'>
+                        <DirinfraTextarea
+                            name='obs_gerais'
+                            erros={errors}
+                            label='Observações'
+                            placeholder='Digite aqui as informações relevantes que não foram destacadas nos campos anteriores.'
+                            registro={register}
+                            required={false}
+                        />
+                    </div> */}
+                    {/* ====== Fim Campors dissertativos ====== */}
 
                 </div>
 

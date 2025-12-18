@@ -2,9 +2,18 @@ import React, { useEffect } from 'react';
 import DirinfraInput from '../DirinfraInput/DirinfraInput';
 import Dicionario from '../../utils/Dicionario';
 
-const PeriodoDeElaboracaoForm = ({ register, errors, watch, setValue }) => {
-    const dataInicio = watch('data_inicio_confecc_doc');
-    const dataEntrega = watch('data_entrega_doc');
+const PeriodoDeElaboracaoForm = ({ 
+    register, 
+    errors, 
+    watch, 
+    setValue,
+    dataInicioField = 'data_inicio_confecc_doc',
+    dataEntregaField = 'data_entrega_doc',
+    periodoField = 'periodo_elaboracao',
+    label
+}) => {
+    const dataInicio = watch(dataInicioField);
+    const dataEntrega = watch(dataEntregaField);
 
     // Calculate and set the difference whenever dates change
     useEffect(() => {
@@ -15,20 +24,20 @@ const PeriodoDeElaboracaoForm = ({ register, errors, watch, setValue }) => {
             if (!isNaN(inicio.getTime()) && !isNaN(entrega.getTime())) {
                 const diffTime = entrega.getTime() - inicio.getTime();
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                setValue('periodo_elaboracao', diffDays);
+                setValue(periodoField, diffDays);
             } else {
-                setValue('periodo_elaboracao', '');
+                setValue(periodoField, '');
             }
         } else {
-            setValue('periodo_elaboracao', '');
+            setValue(periodoField, '');
         }
-    }, [dataInicio, dataEntrega, setValue]);
+    }, [dataInicio, dataEntrega, setValue, dataInicioField, dataEntregaField, periodoField]);
 
     return (
         <div className='linha'>
             <DirinfraInput
-                label={Dicionario('periodo_elaboracao') || 'Período de Elaboração (dias)'}
-                name='periodo_elaboracao'
+                label={label || Dicionario('periodo_elaboracao') || 'Período de Elaboração (dias)'}
+                name={periodoField}
                 type="text"
                 registro={register}
                 erros={errors}

@@ -20,9 +20,9 @@ const utilService = {
 			throw new Error(error.response.data.message);
 		}
 	},
-	async obterHouveDispensaOuAfastamentos(data) {
+	async obterHouveDispensas(data) {
 		try {
-			const response = await axios.get(`${apiUrl}/api/utils/obterhouvedispensaouafastamentos`, { params: data });
+			const response = await axios.get(`${apiUrl}/api/utils/obterhouvedispensas`, { params: data });
 			console.log("valor de response é", response)
 			return response;
 

@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const { obterAgenteCausadorAcidentes, obterParteDoCorpoAtingidas, obterSituacaoGeradoras, 
+const { obterAgenteCausadorAcidentes, obterParteDoCorpoAtingidas, obterSituacaoGeradoras,
+    obterHouveDispensas, obterNaturezaDaAtividades, obterStatusFinals, 
+    obterTipoDeAcidentes, 
     obterOMs, obterODS, obterEstados, obterMunicipios, obterEfetivo, 
     obterTerrenos, obterBenfeitorias, obterBenfeitoriasBim, 
     obterLocalidades, obterFasesDoProjeto, obterCodigosBim,
@@ -22,7 +24,10 @@ const { obterAgenteCausadorAcidentes, obterParteDoCorpoAtingidas, obterSituacaoG
 router.get("/obteragentecausadoracidentes", obterAgenteCausadorAcidentes);
 router.get("/obtersituacaogeradoras", obterSituacaoGeradoras);
 router.get("/obterpartedocorpoatingidas", obterParteDoCorpoAtingidas);
-
+router.get("/obterhouvedispensas", obterHouveDispensas);
+router.get("/obternaturezadaatividades", obterNaturezaDaAtividades);
+router.get("/obtertipodeacidentes", obterTipoDeAcidentes)
+router.get("/obterstatusfinals", obterStatusFinals)
 
 // ============= //
 //  fim SISTRA  //

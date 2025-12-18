@@ -56,6 +56,78 @@ const cadernoDeNecessidadesSchema = new mongoose.Schema({
         unique: true,
         sparse: true
     },
+    natureza_atividade: {
+        type: String,
+        trim: true
+    },
+
+    dispensa_afastamento: {
+        type: String,
+        trim: true
+    },
+
+    status_final: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    tipo_de_acidente: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    data_ocorrencia: {
+        type: Date,
+        required: true,
+    },
+    data_envio_form: {
+        type: Date,
+        required: true,
+    },
+
+
+    // ================= //
+    // Campos para texto
+    // ================= //
+    descricao_gerais: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    causa_gerais: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    descricao_dispensa: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    local_ocorrencia: {
+        type: String,
+        trim: true,
+        required: true
+    },
+
+    recomendacoes_csmt: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    recomendacoes_cipa: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    acoes_treinamentos: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    // ================= //
+    // Fim para Campos texto
+    // ================= //
     /* id_demanda: {
         type: String,
         trim: true,

@@ -46,9 +46,13 @@ const TMs = require("../modelos/tmModel")
 const TRs = require("../modelos/trModel")
 
 //SISTRA 
-const AgenteCausadorAcidente = require("../modelos/agenteCausadorDoAcidenteModel")
-const SituacaoGeradora = require("../modelos/situacaoGeradoraModel")
-const ParteDoCorpoAtingida = require("../modelos/parteDoCorpoAtingidaModel")
+const AgenteCausadorAcidente = require('../modelos/agenteCausadorDoAcidenteModel');
+const HouveDispensa = require('../modelos/houveDispensaModel');
+const NaturezaDaAtividade = require('../modelos/naturezaDaAtividadeModel');
+const TipoDeAcidente = require('../modelos/tipoDeAcidenteModel');
+const StatusFinal = require('../modelos/statusFinalModel');
+const SituacaoGeradora = require('../modelos/situacaoGeradoraModel');
+const ParteDoCorpoAtingida = require('../modelos/parteDoCorpoAtingidaModel');
 
 // =================== //
 // ===== SISTRA =====  //
@@ -91,6 +95,59 @@ const obterParteDoCorpoAtingidas = asyncHandler(async (req, res) => {
 		throw new Error('Erro ao obter os valores de ParteDoCorpoAtingida');
 	}
 });
+
+const obterHouveDispensas = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'houvedispensa'
+		const houveDispensa = await HouveDispensa.find({}, { descricao: 1, _id: 0 });
+		console.log("Valor de houveDispensa é ", houveDispensa)
+		// Retornar a lista de valores 'houvedispensa'
+		return res.status(200).json(houveDispensa);
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de HouveDispensa');
+	}
+});
+
+const obterNaturezaDaAtividades = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'naturezadaatividades'
+		const naturezaDaAtividade = await NaturezaDaAtividade.find({}, {descricao: 1, _id: 0 });
+		console.log("Valor de naturezaDaAtividade é ", naturezaDaAtividade)
+		// Retornar a lista de valores 'naturezadaatividades'
+		return res.status(200).json(naturezaDaAtividade);
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de NaturezaDaAtividade');
+	}
+});
+
+const obterTipoDeAcidentes = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'tipodeacidentes'
+		const tipoDeAcidente = await TipoDeAcidente.find({}, { descricao: 1, _id: 0 });
+		console.log("Valor de tipoDeAcidente é ", tipoDeAcidente)
+		// Retornar a lista de valores 'tipodeacidentes'
+		return res.status(200).json(tipoDeAcidente);
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de TipoDeAcidente');
+	}
+});
+
+const obterStatusFinals = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'statusfinals'
+		const statusFinal = await StatusFinal.find({}, {descricao: 1, _id: 0 });
+		console.log("Valor de statusFinal é ", statusFinal)
+		// Retornar a lista de valores 'statusfinals'
+		return res.status(200).json(statusFinal);
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de StatusFinal');
+	}
+});
+
 
 
 // =================== //
@@ -600,6 +657,10 @@ module.exports = {
 	obterAgenteCausadorAcidentes,
 	obterSituacaoGeradoras,
 	obterParteDoCorpoAtingidas,
+	obterHouveDispensas,
+	obterNaturezaDaAtividades,
+	obterTipoDeAcidentes,
+	obterStatusFinals,
 	obterODS,
 	obterEstados,
 	obterMunicipios,
