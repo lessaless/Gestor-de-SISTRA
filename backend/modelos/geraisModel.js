@@ -51,7 +51,7 @@ const geraisSchema = mongoose.Schema({
 	titulo_doc: {
 		type: String,
 		trim: true,
-		required: true,
+		required: false,
 	},
 
 	data_doc: {

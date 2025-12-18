@@ -3,11 +3,7 @@ const mongoose = require("../../db/connect");
 const Gerais = require("../geraisModel");
 
 const cadernoDeNecessidadesSchema = new mongoose.Schema({
-    estado_demanda: {
-        type: String,
-        trim: true,
-        required: false,
-    },
+
     localidade_demanda: {
         type: String,
         trim: true,
@@ -56,6 +52,20 @@ const cadernoDeNecessidadesSchema = new mongoose.Schema({
         unique: true,
         sparse: true
     },
+    // =============== //
+    // Início SISTRA //
+    // =============== //
+
+    om_responsavel: {
+        type: String,
+        trim: true,
+        required: false,
+    },
+    estado_demanda: {
+        type: String,
+        trim: true,
+        required: false,
+    },
     natureza_atividade: {
         type: String,
         trim: true
@@ -84,7 +94,9 @@ const cadernoDeNecessidadesSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-
+    // =============== //
+    // Fim SISTRA //
+    // =============== //
 
     // ================= //
     // Campos para texto

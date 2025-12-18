@@ -53,10 +53,36 @@ const TipoDeAcidente = require('../modelos/tipoDeAcidenteModel');
 const StatusFinal = require('../modelos/statusFinalModel');
 const SituacaoGeradora = require('../modelos/situacaoGeradoraModel');
 const ParteDoCorpoAtingida = require('../modelos/parteDoCorpoAtingidaModel');
+const Serinfra = require('../modelos/serinfraModel');
+const DiaDaSemana = require('../modelos/diaDaSemanaModel');
 
 // =================== //
 // ===== SISTRA =====  //
 // =================== //
+const obterSerinfras = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'agentescausadores'
+		const serinfra = await Serinfra.find({}, { serinfra: 1, area_de_atuacao: 1, _id: 0 });
+		console.log("Valor de serinfra é ", serinfra)
+		// Retornar a lista de valores 'serinfras'
+		return res.status(200).json(serinfra);
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de Serinfra');
+	}
+});
+const obterDiaDaSemanas = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'agentescausadores'
+		const diaDaSemana = await DiaDaSemana .find({}, { dia_da_semana: 1, _id: 0 });
+		console.log("Valor de diaDaSemana  é ", diaDaSemana )
+		// Retornar a lista de valores 'agentescausadores'
+		return res.status(200).json(diaDaSemana );
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de DiaDaSemana ');
+	}
+});
 const obterAgenteCausadorAcidentes = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
@@ -654,6 +680,8 @@ const obterTrs = asyncHandler(async (req, res) => {
 
 module.exports = {
 	obterOMs,
+	obterSerinfras,
+	obterDiaDaSemanas,
 	obterAgenteCausadorAcidentes,
 	obterSituacaoGeradoras,
 	obterParteDoCorpoAtingidas,

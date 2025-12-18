@@ -17,7 +17,9 @@ import { DirinfraCopyButton as CopyBtn } from '../../DirinfraCopiaButton/Dirinfr
 import DirinfraSelect from '../../DirinfraSelect/DirinfraSelect';
 import DirinfraSelectModal from '../../DirinfraSelect/DirinfraSelectModal';
 import DisciplinasForm from '../DisciplinasForm';
+import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 import PalavrasChaveForm from '../PalavrasChaveForm';
+
 // ========================================================= //
 import PeriodoDeElaboracaoForm from '../PeriodoDeElaboracaoForm';
 // Calcula o tempo total de produção do documento: GLA
@@ -95,6 +97,9 @@ const CadernoDeNecessidadesForm = () => {
     const [arquivoAlterado, setArquivoAlterado] = useState(false);
     const [demandas, setDemandas] = useState([]);
     const [fasesDoProjeto, setFasesDoProjeto] = useState([]);
+    const [oms, setOms] = useState([]);
+    const [estados, setEstados] = useState([]);
+
     // ================== //
     // useState do SISTRA //
     // ================== //
@@ -105,6 +110,8 @@ const CadernoDeNecessidadesForm = () => {
     const [naturezaDaAtividade, setNaturezaDaAtividade] = useState([]);
     const [tipoDeAcidente, setTipoDeAcidente] = useState([]);
     const [statusFinal, setStatusFinal] = useState([]);
+    const [diadaSemana, setDiaDaSemana] = useState([]);
+
 
     // ================== //
     // fim useState do SISTRA //
@@ -393,6 +400,27 @@ const CadernoDeNecessidadesForm = () => {
 
         fetchHouveDispensa();
     }, []);
+    useEffect(() => {
+        //console.log("Mapear lista oms")
+        const fetchOms = async () => {
+            try {
+                const listaOMs = await utilService.obterOMs();
+               
+                const listaEstados = await utilService.obterEstados();
+                setOms(listaOMs.data);
+                
+                setEstados(listaEstados.data);
+
+            } catch (error) {
+                toast.error("Erro ao carregar OMs, ODS ou Estados");
+            }
+        };
+
+        fetchOms();
+    }, []);
+    // ===================== //
+    // ===== SISTRA ===== //
+    // ===================== //
 
     useEffect(() => {
         const fetchAllData = async () => {
@@ -405,26 +433,36 @@ const CadernoDeNecessidadesForm = () => {
                     listaTipoAcidente,
                     listaStatusFinal,
                     listaSituacaoGeradora,
-                    listaParteDoCorpoAtingida
+                    listaParteDoCorpoAtingida,
+                    listaDiadaSemana
+
+
                 ] = await Promise.all([
+                    
                     utilService.obterAgenteCausadorAcidentes(),
                     utilService.obterHouveDispensas(),
                     utilService.obterNaturezaDaAtividades(),
                     utilService.obterTipoDeAcidentes(),
                     utilService.obterStatusFinals(),
                     utilService.obterSituacaoGeradoras(),
-                    utilService.obterParteDoCorpoAtingidas()
+                    utilService.obterParteDoCorpoAtingidas(),
+                    utilService.obterDiaDaSemanas(),
+
+
                 ]);
 
                 // Set all state values
+                
                 setAgenteCausadorAcidente(listaAgenteCausador.data);
                 setHouveDispensa(listaHouveDispensa.data);
                 setNaturezaDaAtividade(listaNaturezaAtividade.data);
-                console.log("Valores de Natureza da Atividade é ", listaNaturezaAtividade.data)
                 setTipoDeAcidente(listaTipoAcidente.data);
                 setStatusFinal(listaStatusFinal.data);
                 setSituacaoGeradora(listaSituacaoGeradora.data);
                 setParteDoCorpoAtingida(listaParteDoCorpoAtingida.data);
+                setDiaDaSemana(listaDiadaSemana.data);
+
+
 
             } catch (error) {
                 console.error("Erro ao carregar dados:", error);
@@ -434,6 +472,10 @@ const CadernoDeNecessidadesForm = () => {
 
         fetchAllData();
     }, []);
+
+    // ===================== //
+    // ===== Fim SISTRA ===== //
+    // ===================== //
 
     return (
         <>
@@ -445,33 +487,35 @@ const CadernoDeNecessidadesForm = () => {
 
                 <div className='formulario-content'>
 
+
                     <div className='linha'>
-                        <em className="obrigatorios">*</em>
-                        <DirinfraInput
-                            name='titulo_doc'
-                            erros={errors}
-                            label={Dicionario('titulo_doc')}
-                            placeholder='Ex.: Análise de solicitação de aditivo de fundações'
+                        <DirinfraListSelect
+                            label='OM'
+                            name='om_responsavel'
                             registro={register}
                             required={true}
+                            options={oms.map(om => ({ value: om, label: om }))}
+                            erros={errors}
+                            placeholder='Selecione o nome da OM'
+                            setValue={setValue} //Obrigatório para o componente DirinfraListSelect
+                            watch={watch}
+
                         />
                     </div>
-                    <DirinfraSelect
-                        label='Fase Do Projeto'
-                        name='fase_do_projeto'
-                        registro={register}
-                        required={true}
-                        options={fasesDoProjeto.map(fp => ({
-                            value: String(fp.codigo),   // <- stringify to match form value
-                            label: fp.titulo,
-                        }))}
-                        erros={errors}
-                        placeholder='Selecione a Fase do Documento'
-                        watch={watch}
-                        setValue={setValue}
-                        value={watch('fase_do_projeto') ?? ''} // <- controlled by RHF
-                    />
-
+                    <div className='linha'>
+                        <DirinfraSelect
+                            label='Estado'
+                            name='estado_demanda'
+                            registro={register}
+                            required={true}
+                            options={estados.map(estado => ({ value: estado, label: estado }))}
+                            erros={errors}
+                            watch={watch}
+                            placeholder='Sigla do Estado da Ocorrência'
+                            onChange={(e) => setEstados(e.target.value)} // Atualiza o estado selecionado
+                           
+                        />
+                    </div>
 
                     <DirinfraSelectModal
                         label='Agente Causador do Acidente' // interfere no nome dentro da caixa de 
