@@ -10,10 +10,12 @@ const useStyles = makeStyles({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
+        paddingLeft:'12px',
         gap: '5px',
-        width: '100%'
+        width: '750px',
+        
     },
-    labelDirinfra: {
+    labelDirinfra: { //Título, à esquerda
         alignItems: 'center',
         color: 'var(--color-font4light)',
         display: 'flex',
@@ -21,7 +23,7 @@ const useStyles = makeStyles({
         fontWeight: '450',
         justifyContent: 'start',
         minHeight: '15px',
-        paddingLeft:'20px',
+        paddingLeft:'10px',
         minWidth: 'min-content',
         padding: '5px'
     },

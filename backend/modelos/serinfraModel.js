@@ -6,7 +6,7 @@ const serinfraSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	area_de_atuacao: {
+	area_atuacao: {
 		type: String,
 		required: false
 	}

@@ -78,6 +78,61 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+function normalizeUF(v) {
+    return String(v ?? '').trim().toUpperCase();
+}
+function parseAreaToUFs(area) {
+    return String(area ?? '')
+        .split('/')
+        .map(s => s.trim().toUpperCase())
+        .filter(Boolean);
+}
+
+function normalizeText(v) {
+    return String(v ?? '')
+        .trim()
+        .toLowerCase()
+        .normalize('NFD')                 // remove accents
+        .replace(/[\u0300-\u036f]/g, '');
+}
+
+/**
+ * Recebe "YYYY-MM-DD" e retorna o weekday em pt-BR (ex.: "segunda-feira")
+ */
+function weekdayPtBRFromISODate(isoDateStr) {
+    if (!isoDateStr) return '';
+    // HTML date input gives YYYY-MM-DD
+    const d = new Date(`${isoDateStr}T00:00:00`);
+    if (Number.isNaN(d.getTime())) return '';
+    return new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(d);
+}
+
+/**
+ * Tenta mapear o weekday ("segunda-feira") para um item do seu array diadaSemana
+ * Aceita variações de nome de campo: descricao, dia, nome, etc.
+ */
+function findDiaSemanaByLabel(diadasemanaList, weekdayLabelPtBR) {
+    const target = normalizeText(weekdayLabelPtBR);
+    if (!target) return null;
+
+    return (diadasemanaList || []).find((item) => {
+        const label =
+            item?.descricao ??
+            item?.dia ??
+            item?.nome ??
+            item?.diadasemana ??
+            item?.label;
+
+        return normalizeText(label) === target;
+    }) || null;
+}
+
+function getDiaSemanaLabelFromCodigo(diadasemanaList, codigo) {
+    if (!codigo) return '';
+    const found = (diadasemanaList || []).find((x) => String(x?.codigo) === String(codigo));
+    return found?.descricao ?? found?.dia ?? found?.nome ?? '';
+}
+
 const CadernoDeNecessidadesForm = () => {
 
     const classes = useStyles();
@@ -89,6 +144,10 @@ const CadernoDeNecessidadesForm = () => {
     const { register, handleSubmit, formState: { errors, isDirty }, reset, control, setValue, getValues, watch } = metodo;
 
     const data = watch();
+    const watchedUF = normalizeUF(watch('estado_demanda')); // <-- UF from RHF
+    const watchedDataOcorrencia = watch('data_ocorrencia');
+    const watchedDiaSemanaCodigo = watch('dia_da_semana');
+
     const { id, id_demanda } = useParams();//se for para editar, pega id na url
     const pagina = id || data?._id ? 'Editar' : 'Criar';
     const colecao = 'cadernodenecessidades'
@@ -98,7 +157,9 @@ const CadernoDeNecessidadesForm = () => {
     const [demandas, setDemandas] = useState([]);
     const [fasesDoProjeto, setFasesDoProjeto] = useState([]);
     const [oms, setOms] = useState([]);
-    const [estados, setEstados] = useState([]);
+    const [estadosList, setEstadosList] = useState([]);
+    const [estadoSelecionado, setEstadoSelecionado] = useState('');
+
 
     // ================== //
     // useState do SISTRA //
@@ -203,17 +264,17 @@ const CadernoDeNecessidadesForm = () => {
             //     throw new Error("É necessário ter pelo menos um autor!");
             // } antes de 26/11/2025: GLA
             // Validações básicas
-            if (!data.disciplinasAutores || data.disciplinasAutores.length === 0) {
-                throw new Error("É necessário ter pelo menos um autor!");
-            }
+            // if (!data.disciplinasAutores || data.disciplinasAutores.length === 0) {
+            //     throw new Error("É necessário ter pelo menos um autor!");
+            // }
 
-            const autoresInvalidos = data.disciplinasAutores.filter(
-                autor => !autor.nome_militar || autor.nome_militar.trim().length === 0
-            );
+            // const autoresInvalidos = data.disciplinasAutores.filter(
+            //     autor => !autor.nome_militar || autor.nome_militar.trim().length === 0
+            // );
 
-            if (autoresInvalidos.length > 0) {
-                throw new Error("Todos os autores devem ter uma pessoa selecionada!");
-            }
+            // if (autoresInvalidos.length > 0) {
+            //     throw new Error("Todos os autores devem ter uma pessoa selecionada!");
+            // }
             // console.log("antes de listaChaves")
             let listaChaves = Object.keys(data);
             // console.log("Valor de listaChaves é", listaChaves)
@@ -400,17 +461,18 @@ const CadernoDeNecessidadesForm = () => {
 
         fetchHouveDispensa();
     }, []);
+    // // useEffect para mapear a lista de oms e ods do banco
     useEffect(() => {
         //console.log("Mapear lista oms")
         const fetchOms = async () => {
             try {
                 const listaOMs = await utilService.obterOMs();
-               
+                // const listaODS = await utilService.obterODS();
                 const listaEstados = await utilService.obterEstados();
                 setOms(listaOMs.data);
-                
-                setEstados(listaEstados.data);
-
+                // setOds(listaODS.data);
+                setEstadosList(listaEstados.data);
+                console.log("Valor de listaEstados.data é", listaEstados.data)
             } catch (error) {
                 toast.error("Erro ao carregar OMs, ODS ou Estados");
             }
@@ -418,6 +480,9 @@ const CadernoDeNecessidadesForm = () => {
 
         fetchOms();
     }, []);
+
+
+
     // ===================== //
     // ===== SISTRA ===== //
     // ===================== //
@@ -438,7 +503,7 @@ const CadernoDeNecessidadesForm = () => {
 
 
                 ] = await Promise.all([
-                    
+
                     utilService.obterAgenteCausadorAcidentes(),
                     utilService.obterHouveDispensas(),
                     utilService.obterNaturezaDaAtividades(),
@@ -452,7 +517,7 @@ const CadernoDeNecessidadesForm = () => {
                 ]);
 
                 // Set all state values
-                
+
                 setAgenteCausadorAcidente(listaAgenteCausador.data);
                 setHouveDispensa(listaHouveDispensa.data);
                 setNaturezaDaAtividade(listaNaturezaAtividade.data);
@@ -476,6 +541,84 @@ const CadernoDeNecessidadesForm = () => {
     // ===================== //
     // ===== Fim SISTRA ===== //
     // ===================== //
+
+    useEffect(() => {
+        if (!watchedUF || watchedUF.length !== 2) {
+            // clear if UF is empty
+            setValue('serinfra', '', { shouldDirty: true, shouldValidate: true });
+            return;
+        }
+
+        let cancel = false;
+
+        (async () => {
+            try {
+                const resp = await utilService.obterSerinfras(); // <-- returns ALL
+                if (cancel) return;
+
+                const lista = Array.isArray(resp?.data) ? resp.data : [];
+
+                const match = lista.find(item => {
+                    const area = item?.area_atuacao ?? item?.area_de_atuacao;
+                    const ufs = parseAreaToUFs(area);
+                    return ufs.includes(watchedUF);
+                });
+
+                const serinfraNome = match?.serinfra ?? '';
+
+                setValue('serinfra', serinfraNome, {
+                    shouldDirty: true,
+                    shouldValidate: true
+                });
+
+                if (!serinfraNome) {
+                    toast.warn(`Nenhuma SERINFRA encontrada para UF=${watchedUF}`);
+                }
+
+            } catch (err) {
+                if (cancel) return;
+                setValue('serinfra', '', { shouldDirty: true, shouldValidate: true });
+
+                const msg =
+                    err?.response?.data?.message ||
+                    err?.message ||
+                    'Erro ao obter SERINFRA para o estado selecionado.';
+                toast.error(msg);
+            }
+        })();
+
+        return () => { cancel = true; };
+    }, [watchedUF, setValue]);
+
+    useEffect(() => {
+        // precisa de data_ocorrencia + lista diadaSemana carregada
+        if (!watchedDataOcorrencia) {
+            // se apagar a data, apaga o dia também
+            setValue('dia_da_semana', '', { shouldDirty: true, shouldValidate: true });
+            return;
+        }
+
+        const weekdayLabel = weekdayPtBRFromISODate(watchedDataOcorrencia);
+        if (!weekdayLabel) return;
+
+        // tenta achar o item da lista (por descricao)
+        const match = findDiaSemanaByLabel(diadaSemana, weekdayLabel);
+
+        if (match?.codigo != null) {
+            // salva o CÓDIGO (recomendado, porque é o que seu backend normalmente quer)
+            setValue('dia_da_semana', String(match.codigo), {
+                shouldDirty: true,
+                shouldValidate: true
+            });
+        } else {
+            // fallback: salva texto (se sua model aceitar string)
+            // se não aceitar, você pode remover este else
+            setValue('dia_da_semana', weekdayLabel, {
+                shouldDirty: true,
+                shouldValidate: true
+            });
+        }
+    }, [watchedDataOcorrencia, diadaSemana, setValue]);
 
     return (
         <>
@@ -508,12 +651,29 @@ const CadernoDeNecessidadesForm = () => {
                             name='estado_demanda'
                             registro={register}
                             required={true}
-                            options={estados.map(estado => ({ value: estado, label: estado }))}
+                            options={(estadosList || []).map(estado => ({ value: estado, label: estado }))}
                             erros={errors}
                             watch={watch}
                             placeholder='Sigla do Estado da Ocorrência'
-                            onChange={(e) => setEstados(e.target.value)} // Atualiza o estado selecionado
-                           
+                            value={watch('estado_demanda') ?? estadoSelecionado ?? ''}
+                            onChange={(e) => {
+                                const uf = normalizeUF(e.target.value);
+                                setEstadoSelecionado(uf);
+                                // If your DirinfraSelect doesn't propagate to RHF, keep this:
+                                setValue('estado_demanda', uf, { shouldDirty: true, shouldValidate: true });
+                            }}
+                        />
+                    </div>
+                    <div className='linha'>
+                        <DirinfraInput
+                            name='serinfra'
+                            erros={errors}
+                            label='SERINFRA'
+                            placeholder='Preenchido automaticamente pelo Estado'
+                            registro={register}
+                            required={true}
+                            readOnly={true}
+                            value={watch('serinfra') ?? ''}
                         />
                     </div>
 
@@ -576,7 +736,7 @@ const CadernoDeNecessidadesForm = () => {
                         registro={register}
                         required={false}
                         options={naturezaDaAtividade.map(na => ({
-                            value: String(na.codigo),
+                            value: String(na.descricao),
                             label: na.descricao,
                         }))}
                         erros={errors}
@@ -593,7 +753,7 @@ const CadernoDeNecessidadesForm = () => {
                         registro={register}
                         required={false}
                         options={houveDispensa.map(da => ({
-                            value: String(da.codigo),
+                            value: String(da.descricao),
                             label: da.descricao,
                         }))}
                         erros={errors}
@@ -609,7 +769,7 @@ const CadernoDeNecessidadesForm = () => {
                         registro={register}
                         required={true}
                         options={statusFinal.map(sf => ({
-                            value: String(sf.codigo),
+                            value: String(sf.descricao),
                             label: sf.descricao,
                         }))}
                         erros={errors}
@@ -625,7 +785,7 @@ const CadernoDeNecessidadesForm = () => {
                         registro={register}
                         required={true}
                         options={tipoDeAcidente.map(ta => ({
-                            value: String(ta.codigo),
+                            value: String(ta.descricao),
                             label: ta.descricao,
                         }))}
                         erros={errors}
@@ -635,7 +795,7 @@ const CadernoDeNecessidadesForm = () => {
                         value={watch('tipo_de_acidente') ?? ''}
                     />
 
-                    <div className='linha'>
+                    {/* <div className='linha'>
                         <em className="obrigatorios">*</em>
                         <DirinfraInput
                             name='data_doc'
@@ -667,9 +827,9 @@ const CadernoDeNecessidadesForm = () => {
                                 />
                             }
                         />
-                    </div>
+                    </div> */}
 
-                    <div className='linha'>
+                    {/* <div className='linha'>
                         <DirinfraInput
                             name='doc_sigadaer'
                             erros={errors}
@@ -678,26 +838,16 @@ const CadernoDeNecessidadesForm = () => {
                             registro={register}
                             required={false}
                         />
-                    </div>
+                    </div> */}
 
-                    <div className='linha'>
-                        <DirinfraInput
-                            name='data_ocorrencia'
-                            erros={errors}
-                            label={Dicionario('data_ocorrencia')}
-                            placeholder='DD/MM/AAAA'
-                            registro={register}
-                            required={false}
-                            type='date'
-                        />
-                    </div>
 
-                    <DisciplinasForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} />
 
-                    <PalavrasChaveForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} />
+                    {/* <DisciplinasForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} /> */}
+
+                    {/* <PalavrasChaveForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} /> */}
 
                     {/* <AutorForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} /> */}
-                    <div className='linha'>
+                    {/* <div className='linha'>
                         <DirinfraInput
                             name='data_inicio_confecc_doc'
                             erros={errors}
@@ -727,7 +877,7 @@ const CadernoDeNecessidadesForm = () => {
                                 }
                             }}
                         />
-                    </div>
+                    </div> */}
                     <div className='linha'>
                         <DirinfraInput
                             name='data_ocorrencia'
@@ -739,6 +889,26 @@ const CadernoDeNecessidadesForm = () => {
                             type='date'
                         />
                     </div>
+                    <div className='linha'>
+                        <DirinfraInput
+                            name='dia_da_semana'
+                            erros={errors}
+                            label='Dia da Semana'
+                            placeholder='Preenchido automaticamente pela Data da Ocorrência'
+                            registro={register}
+                            required={true}
+                            readOnly={true}
+                            value={
+                                // se dia_da_semana for codigo, mostra descricao; se for texto, mostra o próprio valor
+                                getDiaSemanaLabelFromCodigo(diadaSemana, watchedDiaSemanaCodigo) ||
+                                String(watchedDiaSemanaCodigo ?? '')
+                            }
+                        />
+                    </div>
+
+                    {/* Campo REAL que vai para o backend */}
+                    <input type="hidden" {...register('dia_da_semana')} />
+
                     <div className='linha'>
                         <DirinfraInput
                             name='data_envio_form'

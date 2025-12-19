@@ -55,6 +55,7 @@ const SituacaoGeradora = require('../modelos/situacaoGeradoraModel');
 const ParteDoCorpoAtingida = require('../modelos/parteDoCorpoAtingidaModel');
 const Serinfra = require('../modelos/serinfraModel');
 const DiaDaSemana = require('../modelos/diaDaSemanaModel');
+const SerinfraPorUf = require('../modelos/serinfraModel');
 
 // =================== //
 // ===== SISTRA =====  //
@@ -62,7 +63,7 @@ const DiaDaSemana = require('../modelos/diaDaSemanaModel');
 const obterSerinfras = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
-		const serinfra = await Serinfra.find({}, { serinfra: 1, area_de_atuacao: 1, _id: 0 });
+		const serinfra = await Serinfra.find({}, { serinfra: 1, area_atuacao: 1, _id: 0 });
 		console.log("Valor de serinfra é ", serinfra)
 		// Retornar a lista de valores 'serinfras'
 		return res.status(200).json(serinfra);
@@ -71,10 +72,24 @@ const obterSerinfras = asyncHandler(async (req, res) => {
 		throw new Error('Erro ao obter os valores de Serinfra');
 	}
 });
+
+const obterSerinfraPorUFs = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'agentescausadores'
+		const serinfraPorUf = await SerinfraPorUf.find({}, { serinfra: 1, area_atuacao: 1, _id: 0 });
+		console.log("Valor de serinfra em utilController é ", serinfraPorUf)
+		// Retornar a lista de valores 'serinfras'
+		return res.status(200).json(serinfraPorUf);
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de Serinfra');
+	}
+});
+
 const obterDiaDaSemanas = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
-		const diaDaSemana = await DiaDaSemana .find({}, { dia_da_semana: 1, _id: 0 });
+		const diaDaSemana = await DiaDaSemana.find({}, { dia_da_semana: 1, _id: 0 });
 		console.log("Valor de diaDaSemana  é ", diaDaSemana )
 		// Retornar a lista de valores 'agentescausadores'
 		return res.status(200).json(diaDaSemana );
@@ -87,7 +102,7 @@ const obterAgenteCausadorAcidentes = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
 		const agenteCausadorAcidente = await AgenteCausadorAcidente.find({}, { codigo: 1, descricao: 1, _id: 0 });
-		console.log("Valor de agenteCausadorAcidente é ", agenteCausadorAcidente)
+		// console.log("Valor de agenteCausadorAcidente é ", agenteCausadorAcidente)
 		// Retornar a lista de valores 'agentescausadores'
 		return res.status(200).json(agenteCausadorAcidente);
 	} catch (error) {
@@ -100,7 +115,7 @@ const obterSituacaoGeradoras = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
 		const situacaoGeradora = await SituacaoGeradora.find({}, { codigo: 1, situacaogeradora: 1, _id: 0 });
-		console.log("Valor de situacaoGeradora é ", situacaoGeradora)
+		// console.log("Valor de situacaoGeradora é ", situacaoGeradora)
 		// Retornar a lista de valores 'agentescausadores'
 		return res.status(200).json(situacaoGeradora);
 	} catch (error) {
@@ -113,7 +128,7 @@ const obterParteDoCorpoAtingidas = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
 		const parteDoCorpoAtingida = await ParteDoCorpoAtingida.find({}, { codigo: 1, descricao: 1, _id: 0 });
-		console.log("Valor de parteDoCorpoAtingida é ", parteDoCorpoAtingida)
+		// console.log("Valor de parteDoCorpoAtingida é ", parteDoCorpoAtingida)
 		// Retornar a lista de valores 'agentescausadores'
 		return res.status(200).json(parteDoCorpoAtingida);
 	} catch (error) {
@@ -126,7 +141,7 @@ const obterHouveDispensas = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'houvedispensa'
 		const houveDispensa = await HouveDispensa.find({}, { descricao: 1, _id: 0 });
-		console.log("Valor de houveDispensa é ", houveDispensa)
+		// console.log("Valor de houveDispensa é ", houveDispensa)
 		// Retornar a lista de valores 'houvedispensa'
 		return res.status(200).json(houveDispensa);
 	} catch (error) {
@@ -139,7 +154,7 @@ const obterNaturezaDaAtividades = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'naturezadaatividades'
 		const naturezaDaAtividade = await NaturezaDaAtividade.find({}, {descricao: 1, _id: 0 });
-		console.log("Valor de naturezaDaAtividade é ", naturezaDaAtividade)
+		// console.log("Valor de naturezaDaAtividade é ", naturezaDaAtividade)
 		// Retornar a lista de valores 'naturezadaatividades'
 		return res.status(200).json(naturezaDaAtividade);
 	} catch (error) {
@@ -152,7 +167,7 @@ const obterTipoDeAcidentes = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'tipodeacidentes'
 		const tipoDeAcidente = await TipoDeAcidente.find({}, { descricao: 1, _id: 0 });
-		console.log("Valor de tipoDeAcidente é ", tipoDeAcidente)
+		// console.log("Valor de tipoDeAcidente é ", tipoDeAcidente)
 		// Retornar a lista de valores 'tipodeacidentes'
 		return res.status(200).json(tipoDeAcidente);
 	} catch (error) {
@@ -165,7 +180,7 @@ const obterStatusFinals = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'statusfinals'
 		const statusFinal = await StatusFinal.find({}, {descricao: 1, _id: 0 });
-		console.log("Valor de statusFinal é ", statusFinal)
+		// console.log("Valor de statusFinal é ", statusFinal)
 		// Retornar a lista de valores 'statusfinals'
 		return res.status(200).json(statusFinal);
 	} catch (error) {
@@ -681,6 +696,7 @@ const obterTrs = asyncHandler(async (req, res) => {
 module.exports = {
 	obterOMs,
 	obterSerinfras,
+	obterSerinfraPorUFs,
 	obterDiaDaSemanas,
 	obterAgenteCausadorAcidentes,
 	obterSituacaoGeradoras,

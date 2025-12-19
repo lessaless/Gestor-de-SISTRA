@@ -4,54 +4,54 @@ const Gerais = require("../geraisModel");
 
 const cadernoDeNecessidadesSchema = new mongoose.Schema({
 
-    localidade_demanda: {
-        type: String,
-        trim: true,
-        required: false,
-    },
-    benfeitoria: {
-        type: String,
-        trim: true,
-        required: false,
-    },
-    fase_do_projeto: {
-        type: String,
-        trim: true,
-        required: false,
-    },
+    // localidade_demanda: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    // },
+    // benfeitoria: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    // },
+    // fase_do_projeto: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    // },
     agente_causador_acidente: {
         type: String,
         trim: true,
         required: false,
     },
-    sequencia_numerica: {
-        type: String,
-        trim: true,
-        required: false,
-    },
-    LL: {
-        type: String,
-        trim: true,
-        required: false,
-    },
-    sequencia_numerica_nnn: {
-        type: String,
-        trim: true,
-        required: false,
-    },
-    codigo_projeto_bim: {
-        type: String,
-        trim: true,
-        required: false,
-        unique: false
-    },
-    codigo_documento_bim: {
-        type: String,
-        trim: true,
-        required: false,
-        unique: true,
-        sparse: true
-    },
+    // sequencia_numerica: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    // },
+    // LL: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    // },
+    // sequencia_numerica_nnn: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    // },
+    // codigo_projeto_bim: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    //     unique: false
+    // },
+    // codigo_documento_bim: {
+    //     type: String,
+    //     trim: true,
+    //     required: false,
+    //     unique: true,
+    //     sparse: true
+    // },
     // =============== //
     // Início SISTRA //
     // =============== //
@@ -75,15 +75,20 @@ const cadernoDeNecessidadesSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-
+    parte_do_corpo_atingida: {
+        type: String,
+        trim: true
+    },
     status_final: {
         type: String,
-        trim: true,
         required: true
     },
     tipo_de_acidente: {
         type: String,
-        trim: true,
+        required: true
+    },
+    dia_da_semana: {
+        type: String,
         required: true
     },
     data_ocorrencia: {

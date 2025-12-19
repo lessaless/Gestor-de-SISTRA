@@ -9,6 +9,18 @@ const utilService = {
 	// ============================= //
 	// início documentos SISTRA
 	// ============================= //
+	async obterSerinfraPorUFs(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obterserinfraporufs`, { params: data });
+			console.log("valor de response de obterSerinfraPorUfs é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
+	
 	async obterDiaDaSemanas(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obterdiadasemanas`, { params: data });

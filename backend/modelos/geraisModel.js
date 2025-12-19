@@ -7,16 +7,16 @@ const { getModel } = require("../db/multiDB");
 const autorSchema = new mongoose.Schema({
 	SARAM: {
 		type: String,
-		required: true
+		required: false
 	},
 	disciplina: {
 		type: String,
 		trim: true,
-		required: true
+		required: false
 	},
 	nome_militar: {
         type: String,
-        required: true,
+        required: false,
         trim: true
     },
 	// especialidade: {
@@ -72,15 +72,15 @@ const geraisSchema = mongoose.Schema({
 		type: Date
 	},
 
-	palavras_chave: {
-		type: Array,
-		validate: {
-			validator: function (v) {
-				return v.length > 2;
-			},
-			message: 'É necessário ter pelo menos 3 palavras-chaves!'
-		}
-	},
+	// palavras_chave: {
+	// 	type: Array,
+	// 	validate: {
+	// 		validator: function (v) {
+	// 			return v.length > 2;
+	// 		},
+	// 		message: 'É necessário ter pelo menos 3 palavras-chaves!'
+	// 	}
+	// },
 	obs_gerais: {
 		type: String,
 		trim: true,
@@ -88,25 +88,25 @@ const geraisSchema = mongoose.Schema({
 	},
 	data_inicio_confecc_doc: {
 		type: Date,
-		required: true,
+		required: false,
 	},
 	data_entrega_doc: {
 		type: Date,
-		required: true,
+		required: false,
 	},
 	periodo_elaboracao: {
 		type: Number,
 		required: false
 	},
-	disciplinasAutores: {
-		type: [autorSchema],
-		validate: {
-			validator: function (v) {
-				return v.length > 0;
-			},
-			message: 'É necessário ter pelo menos uma disciplina com responsável!'
-		}
-	},
+	// disciplinasAutores: {
+	// 	type: [autorSchema],
+	// 	validate: {
+	// 		validator: function (v) {
+	// 			return v.length > 0;
+	// 		},
+	// 		message: 'É necessário ter pelo menos uma disciplina com responsável!'
+	// 	}
+	// },
 	// disciplinas: {
 	// 	type: [String],
 	// 	validate: {
