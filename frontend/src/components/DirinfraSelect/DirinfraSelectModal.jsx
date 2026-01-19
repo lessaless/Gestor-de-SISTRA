@@ -12,7 +12,9 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         paddingLeft:'12px',
         gap: '5px',
-        width: '750px',
+        width: '100%',
+        maxWidth: '750px',
+        position: 'relative',
         
     },
     labelDirinfra: { //Título, à esquerda

@@ -140,7 +140,7 @@ const criarDados = asyncHandler(async (req, res) => {
 	// Determinar se este tipo de documento precisa de códigos BIM
 	// ======================================================== //
 	const tipoDocumento = determinarTipoDocumento(Modelo);
-
+	console.log("Valor de tipoDocumento é", tipoDocumento)
 	if (tipoDocumento && obj.id_demanda) {
 		try {
 			// Gerar códigos BIM automaticamente (não precisa passar Modelo)

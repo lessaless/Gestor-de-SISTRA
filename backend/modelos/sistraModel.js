@@ -53,6 +53,10 @@ const sistraGeraisSchema = mongoose.Schema({
 		type: Date,
 		required: true,
 	},
+	dia_da_semana: {
+		type: String,
+		required: true,
+	},
 	data_envio_form: {
 		type: Date,
 		required: true,
