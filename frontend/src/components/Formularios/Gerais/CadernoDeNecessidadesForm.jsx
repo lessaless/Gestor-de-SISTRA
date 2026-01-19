@@ -20,6 +20,8 @@ import DisciplinasForm from '../DisciplinasForm';
 import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 import PalavrasChaveForm from '../PalavrasChaveForm';
 
+import DirinfraInputNumerico from '../ContagemForm';
+
 // ========================================================= //
 import PeriodoDeElaboracaoForm from '../PeriodoDeElaboracaoForm';
 // Calcula o tempo total de produção do documento: GLA
@@ -762,7 +764,29 @@ const CadernoDeNecessidadesForm = () => {
                         setValue={setValue}
                         value={watch('dispensa_afastamento') ?? ''}
                     />
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='descricao_dispensa'
+                            erros={errors}
+                            label='Descrição da Dispensa'
+                            placeholder='Descreva os detalhes da dispensa ou afastamento.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
 
+                    <div className='linha'>
+                        <DirinfraInputNumerico
+                            name='valor_solucao'
+                            label='Duração Dispensa (dias)'
+                            // placeholder='Insira o período de Dispensa'
+                            register={register}
+                            errors={errors}
+                            setValue={setValue}
+                            watch={watch}
+                            required={true}
+                        />
+                    </div>
                     <DirinfraSelect
                         label='Status Final'
                         name='status_final'
@@ -973,16 +997,7 @@ const CadernoDeNecessidadesForm = () => {
                         />
                     </div>
 
-                    <div className='linha'>
-                        <DirinfraTextarea
-                            name='descricao_dispensa'
-                            erros={errors}
-                            label='Descrição da Dispensa'
-                            placeholder='Descreva os detalhes da dispensa ou afastamento.'
-                            registro={register}
-                            required={true}
-                        />
-                    </div>
+
 
                     <div className='linha'>
                         <DirinfraTextarea

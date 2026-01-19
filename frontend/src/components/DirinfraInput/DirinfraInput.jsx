@@ -81,7 +81,8 @@ const buscarErro = (objErros, propsName) => {
         .reduce((acc, part) => acc && acc[part], objErros);
 };
 
-const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps, validar, inverterValores, addon = null, ...props }) => {
+const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps,
+    validar, inverterValores, addon = null, hideLabel = false, ...props }) => {
     const classes = useStyles({ orientacao });
     const temErro = erros && buscarErro(erros, props.name);
 
@@ -121,8 +122,9 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
     );
 
     // widths: label 30% / input+addon container 65% (keeps previous behaviour)
-    const labelWidth = props.labelWidth || '30%';
-    const inputContainerWidth = props.l ? `${props.l}px` : '65%';
+    const labelWidth = hideLabel ? '0px' : (props.labelWidth || '30%');
+    const inputContainerWidth = hideLabel ? '100%' : (props.l ? `${props.l}px` : '65%');
+
 
     return (
         <div className={classes.main} onDoubleClick={(e) => {
@@ -130,13 +132,16 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
             e.currentTarget.lastElementChild.disabled = false;
             e.currentTarget.lastElementChild.style.pointerEvents = 'auto';
         }}>
-            <label
-                className={classes.labelDirinfra}
-                style={{ width: labelWidth }}
-                {...labelProps}
-            >
-                {props.label || props.name}
-            </label>
+            {!hideLabel && (
+                <label
+                    className={classes.labelDirinfra}
+                    style={{ width: labelWidth }}
+                    {...labelProps}
+                >
+                    {props.label || props.name}
+                </label>
+            )}
+
 
             {opcoesDataList && (
                 <datalist id={props.name}>
