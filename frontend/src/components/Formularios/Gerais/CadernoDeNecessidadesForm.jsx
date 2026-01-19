@@ -149,7 +149,14 @@ const CadernoDeNecessidadesForm = () => {
     const watchedUF = normalizeUF(watch('estado_demanda')); // <-- UF from RHF
     const watchedDataOcorrencia = watch('data_ocorrencia');
     const watchedDiaSemanaCodigo = watch('dia_da_semana');
-
+    const watchedDispensaAfastamento = watch('dispensa_afastamento');
+    const isDispensaDisabled = !watchedDispensaAfastamento?.includes('SIM');
+    useEffect(() => {
+        if (isDispensaDisabled) {
+            setValue('descricao_dispensa', '', { shouldDirty: true });
+            setValue('duracao_dispensa', '', { shouldDirty: true });
+        }
+    }, [isDispensaDisabled, setValue]);
     const { id, id_demanda } = useParams();//se for para editar, pega id na url
     const pagina = id || data?._id ? 'Editar' : 'Criar';
     const colecao = 'cadernodenecessidades'
@@ -764,6 +771,7 @@ const CadernoDeNecessidadesForm = () => {
                         setValue={setValue}
                         value={watch('dispensa_afastamento') ?? ''}
                     />
+
                     <div className='linha'>
                         <DirinfraTextarea
                             name='descricao_dispensa'
@@ -771,20 +779,21 @@ const CadernoDeNecessidadesForm = () => {
                             label='Descrição da Dispensa'
                             placeholder='Descreva os detalhes da dispensa ou afastamento.'
                             registro={register}
-                            required={true}
+                            required={!isDispensaDisabled}
+                            disabled={isDispensaDisabled}
                         />
                     </div>
 
                     <div className='linha'>
                         <DirinfraInputNumerico
-                            name='valor_solucao'
+                            name='duracao_dispensa'
                             label='Duração Dispensa (dias)'
-                            // placeholder='Insira o período de Dispensa'
                             register={register}
                             errors={errors}
                             setValue={setValue}
                             watch={watch}
-                            required={true}
+                            required={!isDispensaDisabled}
+                            disabled={isDispensaDisabled}
                         />
                     </div>
                     <DirinfraSelect

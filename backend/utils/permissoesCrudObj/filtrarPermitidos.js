@@ -82,6 +82,7 @@ const camposPermitidos = [
   'foi_feito_aso',
   'descricao_gerais',
   'causa_gerais',
+  'duracao_dispensa',
   'descricao_dispensa',
   'local_ocorrencia',
   'recomendacoes_csmt',

@@ -26,10 +26,10 @@ const crudService = {
   },
 
   async criarDados(data) {
+    console.log("Valor de data é", data)
 
     const toastId = toast.loading("Salvando...");
     try {
-
       const response = await axios.post(`${apiUrl}/api/crud/criar`, { ...data });
       console.log("Valor de response é", response)
       toast.dismiss(toastId);

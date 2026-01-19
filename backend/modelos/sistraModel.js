@@ -67,11 +67,25 @@ const sistraGeraisSchema = mongoose.Schema({
 		trim: true
 	},
 
+	// ======================================= //
+	// ======== Campos Dispensa ========= //
+	// ===================================== //
+	descricao_dispensa: {
+		type: String,
+		trim: true,
+		required: true
+	},
 	dispensa_afastamento: {
 		type: String,
 		trim: true
 	},
-
+	duracao_dispensa: {
+		type: String,
+		trim: true
+	},
+	// ======================================= //
+	// ======== Fim campos Dispensa ========= //
+	// ===================================== //
 	agente_causador: {
 		type: String,
 		trim: true
@@ -118,11 +132,7 @@ const sistraGeraisSchema = mongoose.Schema({
 		trim: true,
 		required: true
 	},
-	descricao_dispensa: {
-		type: String,
-		trim: true,
-		required: true
-	},
+
 	local_ocorrencia: {
 		type: String,
 		trim: true,
@@ -156,7 +166,7 @@ const sistraGeraisSchema = mongoose.Schema({
 			message: 'É necessário ter pelo menos 3 palavras-chaves!'
 		}
 	},
-	
+
 	periodo_elaboracao: {
 		type: Number,
 		required: false

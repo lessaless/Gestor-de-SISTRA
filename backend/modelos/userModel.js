@@ -58,7 +58,8 @@ const userSchema = mongoose.Schema({
         type: String,
         trim: true,
     },
-    role: { type: String, ref: Role },//Referência para a Role e usar método populate
+    role: { type: String, ref: 'Role' },//Referência para a Role e usar método populate
+    
 
 }, {
     timestamps: true,

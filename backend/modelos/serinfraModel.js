@@ -14,4 +14,4 @@ const serinfraSchema = mongoose.Schema({
 	timestamps: true
 })
 
-module.exports = getModel('dadosauxiliares', 'Serinfra', serinfraSchema, 'serinfra');
+module.exports = getModel('dadosauxiliares', 'Serinfra', serinfraSchema, 'serinfras');
