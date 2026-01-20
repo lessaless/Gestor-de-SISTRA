@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 
 import DirinfraSelect from '../DirinfraSelect/DirinfraSelect';
 import { formulariosGerais } from "../../utils/ColecaoModelo";
+import { sistraGerais } from "../../utils/ColecaoModelo";
 import TextoEmIcone from '../TextoEmIcone/TextoEmIcone';
 import verificarPadraoId from '../../utils/verificarPadraoId';
 
@@ -113,6 +114,11 @@ const conerterParaModelo = (tipo) => {
     const entry = Object.entries(formulariosGerais).find(([key, value]) => value.nome === tipo);
     return entry ? entry[1].modelo : tipo;
 };
+
+// const conerterParaModeloSistra = (tipo) => {
+//     const entry = Object.entries(formulariosSistra).find(([key, value]) => value.nome === tipo);
+//     return entry ? entry[1].modelo : tipo;
+// };
 
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&');
 

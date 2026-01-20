@@ -678,7 +678,7 @@ const CadernoDeNecessidadesForm = () => {
                             name='serinfra'
                             erros={errors}
                             label='SERINFRA'
-                            placeholder='Preenchido automaticamente pelo Estado'
+                            placeholder='Preenchido ao selecionar o Estado'
                             registro={register}
                             required={true}
                             readOnly={true}
@@ -973,15 +973,7 @@ const CadernoDeNecessidadesForm = () => {
                     // label uses default from Dicionario
                     />
 
-                    <div className='linha'>
-                        <DirinfraTextarea
-                            name='obs_gerais'
-                            erros={errors}
-                            label='Observações'
-                            placeholder='Digite aqui as informações relevantes que não foram destacadas nos campos anteriores.'
-                            registro={register}
-                        />
-                    </div>
+
 
                     {/* ====== Campos dissertativos ====== */}
                     <div className='linha'>
@@ -1018,8 +1010,12 @@ const CadernoDeNecessidadesForm = () => {
                             required={true}
                         />
                     </div>
+                    {/* ====================================== */}
+                    {/* Estes campos apenas serão usados em 
+                    em Forms de avaliação */}
+                    {/* ====================================== */}
 
-                    <div className='linha'>
+                    {/* <div className='linha'>
                         <DirinfraTextarea
                             name='recomendacoes_csmt'
                             erros={errors}
@@ -1039,7 +1035,10 @@ const CadernoDeNecessidadesForm = () => {
                             registro={register}
                             required={true}
                         />
-                    </div>
+                    </div> */}
+                    {/* ====================================== */}
+                    {/* Fim de campos em Forms de avaliação */}
+                    {/* ====================================== */}
 
                     <div className='linha'>
                         <DirinfraTextarea
@@ -1051,7 +1050,15 @@ const CadernoDeNecessidadesForm = () => {
                             required={true}
                         />
                     </div>
-
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='obs_gerais'
+                            erros={errors}
+                            label='Observações'
+                            placeholder='Digite aqui as informações relevantes que não foram destacadas nos campos anteriores.'
+                            registro={register}
+                        />
+                    </div>
                     {/* <div className='linha'>
                         <DirinfraTextarea
                             name='obs_gerais'

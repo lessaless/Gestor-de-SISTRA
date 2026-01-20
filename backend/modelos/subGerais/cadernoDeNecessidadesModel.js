@@ -127,16 +127,16 @@ const cadernoDeNecessidadesSchema = new mongoose.Schema({
         required: true
     },
 
-    recomendacoes_csmt: {
-        type: String,
-        trim: true,
-        required: true
-    },
-    recomendacoes_cipa: {
-        type: String,
-        trim: true,
-        required: true
-    },
+    // recomendacoes_csmt: {
+    //     type: String,
+    //     trim: true,
+    //     required: true
+    // },
+    // recomendacoes_cipa: {
+    //     type: String,
+    //     trim: true,
+    //     required: true
+    // },
     acoes_treinamentos: {
         type: String,
         trim: true,

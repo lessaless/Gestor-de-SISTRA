@@ -51,14 +51,45 @@ import OrdemTecnicaForm from '../components/Formularios/Gerais/OrdemTecnicaForm'
 import ParecerTecnicoForm from '../components/Formularios/Gerais/ParecerTecnicoForm';
 import RelatorioTecnicoForm from '../components/Formularios/Gerais/RelatorioTecnicoForm';
 
+//subModelos SISTRA
+import AcidenteForm from '../components/Formularios/Sistra/AcidenteForm';
+
 /*
   Utilizados nos componentes:
   - AbasFluxo.jsx
   - GCEditarCriar.jsx //planinfra e doc
   - GCListar.jsx //planinfra e doc
 */
+export const formulariosSistra = {
 
+  // ========================== //
+  // subModelos SISTRA
+  // ========================== //
+
+  "acidentes": {
+    "nome": "Acidentes",
+    "componente": <AcidenteForm />,
+    "modelo": "Acidentes"
+  },
+  // ========================== //
+  // Fim subModelos SISTRA
+  // ========================== //
+
+};
 export const formulariosGerais = {
+
+  // ========================== //
+  //subModelos SISTRA
+  // ========================== //
+
+  "acidentes": {
+    "nome": "Acidentes",
+    "componente": <AcidenteForm />,
+    "modelo": "Acidentes"
+  },
+  // ========================== //
+  // Fim subModelos SISTRA
+  // ========================== //
   "cadernodenecessidades": {
     "nome": "Caderno de Necessidades",
     "componente": <CadernoDeNecessidadesForm />,

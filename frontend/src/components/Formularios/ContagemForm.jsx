@@ -98,6 +98,8 @@ const DirinfraInputNumerico = ({
 	min = 0,
 	max = 9999,
 	step = 1,
+	disabled,
+	disableButtons = false,
 	...props
 }) => {
 	const classes = useStyles();
@@ -175,6 +177,7 @@ const DirinfraInputNumerico = ({
 						onChange={handleChange}
 						onBlur={handleBlur}
 						inputMode="numeric"
+						disabled={disabled}
 						{...props}
 					/>
 
@@ -185,7 +188,7 @@ const DirinfraInputNumerico = ({
 						type="button"
 						className={classes.sideButton}
 						onClick={handleDecrement}
-						disabled={isAtMin}
+						disabled={disabled || disableButtons || isAtMin}
 						title="Diminuir"
 					>
 						−
@@ -195,7 +198,7 @@ const DirinfraInputNumerico = ({
 						type="button"
 						className={classes.sideButton}
 						onClick={handleIncrement}
-						disabled={isAtMax}
+						disabled={disabled || disableButtons || isAtMax}
 						title="Aumentar"
 					>
 						+

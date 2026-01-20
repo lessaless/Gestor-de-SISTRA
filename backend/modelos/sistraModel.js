@@ -3,94 +3,105 @@
 const mongoose = require("../db/connect");
 const { getModel } = require("../db/multiDB");
 
-// Definindo o subdocumento para os autores
-const autorSchema = new mongoose.Schema({
-	SARAM: {
-		type: String,
-		required: true
-	},
-	disciplina: {
-		type: String,
-		trim: true,
-		required: true
-	},
-	nome_militar: {
-		type: String,
-		required: true,
-		trim: true
-	},
-	om_autora: {
-		type: String,
-		required: true,
-		trim: true
-	},
-	// especialidade: {
-	// 	type: String,
-	// 	trim: true,
-	// 	required: false
-	// },
-});
+// // Definindo o subdocumento para os autores
+// const autorSchema = new mongoose.Schema({
+// 	SARAM: {
+// 		type: String,
+// 		required: true
+// 	},
+// 	disciplina: {
+// 		type: String,
+// 		trim: true,
+// 		required: true
+// 	},
+// 	nome_militar: {
+// 		type: String,
+// 		required: true,
+// 		trim: true
+// 	},
+// 	om_autora: {
+// 		type: String,
+// 		required: true,
+// 		trim: true
+// 	},
+// 	// especialidade: {
+// 	// 	type: String,
+// 	// 	trim: true,
+// 	// 	required: false
+// 	// },
+// });
 
 
 const sistraGeraisSchema = mongoose.Schema({
-	// id_demanda: {
-	// 	type: String,
-	// 	trim: true,
-	// 	required: false,
-	// },
 
-	id_sistra_gerais: {
+	// localidade_demanda: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	// },
+	// benfeitoria: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	// },
+	// fase_do_projeto: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	// },
+	agente_causador_acidente: {
 		type: String,
 		trim: true,
-		required: true
+		required: false,
 	},
+	// sequencia_numerica: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	// },
+	// LL: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	// },
+	// sequencia_numerica_nnn: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	// },
+	// codigo_projeto_bim: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	//     unique: false
+	// },
+	// codigo_documento_bim: {
+	//     type: String,
+	//     trim: true,
+	//     required: false,
+	//     unique: true,
+	//     sparse: true
+	// },
+	// =============== //
+	// Início SISTRA //
+	// =============== //
 
-	arquivo_id: {
-		type: mongoose.Schema.Types.ObjectId,
-	},
-
-	data_ocorrencia: {
-		type: Date,
-		required: true,
-	},
-	dia_da_semana: {
+	om_responsavel: {
 		type: String,
-		required: true,
+		trim: true,
+		required: false,
 	},
-	data_envio_form: {
-		type: Date,
-		required: true,
+	estado_demanda: {
+		type: String,
+		trim: true,
+		required: false,
 	},
-
 	natureza_atividade: {
 		type: String,
 		trim: true
 	},
 
-	// ======================================= //
-	// ======== Campos Dispensa ========= //
-	// ===================================== //
-	descricao_dispensa: {
-		type: String,
-		trim: true,
-		required: true
-	},
 	dispensa_afastamento: {
-		type: String,
-		trim: true
-	},
-	duracao_dispensa: {
-		type: String,
-		trim: true
-	},
-	// ======================================= //
-	// ======== Fim campos Dispensa ========= //
-	// ===================================== //
-	agente_causador: {
-		type: String,
-		trim: true
-	},
-	situacao_geradora: {
 		type: String,
 		trim: true
 	},
@@ -98,26 +109,29 @@ const sistraGeraisSchema = mongoose.Schema({
 		type: String,
 		trim: true
 	},
-	foi_aberto_sindicancia: {
-		type: String,
-		trim: true,
-		required: true
-	},
-	foi_feito_aso: {
-		type: String,
-		trim: true,
-		required: true
-	},
 	status_final: {
 		type: String,
-		trim: true,
 		required: true
 	},
 	tipo_de_acidente: {
 		type: String,
-		trim: true,
 		required: true
 	},
+	dia_da_semana: {
+		type: String,
+		required: true
+	},
+	data_ocorrencia: {
+		type: Date,
+		required: true,
+	},
+	data_envio_form: {
+		type: Date,
+		required: true,
+	},
+	// =============== //
+	// Fim SISTRA //
+	// =============== //
 
 	// ================= //
 	// Campos para texto
@@ -132,23 +146,27 @@ const sistraGeraisSchema = mongoose.Schema({
 		trim: true,
 		required: true
 	},
-
+	descricao_dispensa: {
+		type: String,
+		trim: true,
+		required: true
+	},
 	local_ocorrencia: {
 		type: String,
 		trim: true,
 		required: true
 	},
 
-	recomendacoes_csmt: {
-		type: String,
-		trim: true,
-		required: true
-	},
-	recomendacoes_cipa: {
-		type: String,
-		trim: true,
-		required: true
-	},
+	// recomendacoes_csmt: {
+	//     type: String,
+	//     trim: true,
+	//     required: true
+	// },
+	// recomendacoes_cipa: {
+	//     type: String,
+	//     trim: true,
+	//     required: true
+	// },
 	acoes_treinamentos: {
 		type: String,
 		trim: true,
@@ -157,54 +175,47 @@ const sistraGeraisSchema = mongoose.Schema({
 	// ================= //
 	// Fim para Campos texto
 	// ================= //
-	palavras_chave: {
-		type: Array,
-		validate: {
-			validator: function (v) {
-				return v.length > 2;
-			},
-			message: 'É necessário ter pelo menos 3 palavras-chaves!'
-		}
-	},
+	/* id_demanda: {
+		type: String,
+		trim: true,
+		required: true,
+	}, */ // passou para o modelo Gerais como opcional (se for exigir required, tratar no front)
+	/* 
+		data_doc_cn: {
+			type: Date,
+			required: true,
+		}, */ // passou para o modelo Gerais como data_doc
 
-	periodo_elaboracao: {
-		type: Number,
-		required: false
-	},
-	disciplinasAutores: {
-		type: [autorSchema],
-		validate: {
-			validator: function (v) {
-				return v.length > 0;
-			},
-			message: 'É necessário ter pelo menos uma disciplina com responsável!'
-		}
-	},
-	// disciplinas: {
-	// 	type: [String],
+	/* elo_cadastro: { // virou om_autora que é gerado automaticamente com base no user
+		type: String,
+		trim: true,
+		required: true,
+	}, */
+
+
+	// disciplinasAutores: {
+	// 	type: [autorSchema],
 	// 	validate: {
 	// 		validator: function (v) {
 	// 			return v.length > 0;
 	// 		},
-	// 		message: 'É necessário ter pelo menos uma disciplina!'
+	// 		message: 'É necessário ter pelo menos uma disciplina com responsável!'
 	// 	}
 	// },
-
-
-	//automáticos
-	criado_por: {
-		type: String,
-		ref: 'User',
-		required: true,
-	},
-	modificado_por: {
-		type: String,
-		ref: 'User',
-		required: true,
-		default: function () {
-			return this.criado_por;
-		}
-	},
+	// //automáticos
+	// criado_por: {
+	// 	type: String,
+	// 	ref: 'User',
+	// 	required: true,
+	// },
+	// modificado_por: {
+	// 	type: String,
+	// 	ref: 'User',
+	// 	required: true,
+	// 	default: function () {
+	// 		return this.criado_por;
+	// 	}
+	// },
 	/* expireAt: {
 		type: Date
 	} */

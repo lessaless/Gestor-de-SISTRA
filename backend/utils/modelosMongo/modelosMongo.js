@@ -61,6 +61,7 @@ const Acidente = require("../../modelos/subSistra/acidenteModel");
 const todas = [
 
     //subSistra
+    
     'acidentes',
     
     'demandas', 'grupos', 'links', 'cns', 'etpes', 'propostas', 'planinfra',
