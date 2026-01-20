@@ -175,7 +175,7 @@ const GCEditar = () => {
     useEffect(() => {
         // Clona a coleção original para preservar os dados
         if (!usuarioOM) return;
-        const colecoes = Object.keys(formulariosSistra); // Assumindo que formulariosGerais contém as coleções
+        const colecoes = Object.keys(formulariosGerais); // Assumindo que formulariosGerais contém as coleções
 
         if (usuarioOM !== 'DIRINFRA') {
             const colecoesFiltradas = colecoes.filter(colecao => colecao !== 'ordemtecnica');
@@ -403,7 +403,7 @@ const GCEditar = () => {
                             className={classes.colecaoEscolhaBoxes}
                             onClick={() => setColecao(colecaoItem)}
                         >
-                            <label>{formulariosSistra[colecaoItem]?.nome || '<Sem Nome>'}</label>
+                            <label>{formulariosGerais[colecaoItem]?.nome || '<Sem Nome>'}</label>
                         </div>
                     ))}
                 </div>
@@ -416,7 +416,7 @@ const GCEditar = () => {
                             className={classes.colecaoEscolhaBoxes}
                             onClick={() => setColecao(colecaoItem)}
                         >
-                            <label>{formulariosSistra[colecaoItem]?.nome || '<Sem Nome>'}</label>
+                            <label>{formulariosGerais[colecaoItem]?.nome || '<Sem Nome>'}</label>
                         </div>
                     ))}
                 </div>
@@ -424,7 +424,7 @@ const GCEditar = () => {
         );
     }
     // ===== Fim uso de boxes ===== //
-    if (formulariosSistra[colecao] /* && (pagina !== 'Editar') */) return (//Se existir formulário específico, renderiza
+    if (formulariosGerais[colecao] /* && (pagina !== 'Editar') */) return (//Se existir formulário específico, renderiza
         <div className={classes.content}>
             {pagina !== 'Editar' && (
                 <button onClick={voltar} className="btn-voltar">Voltar</button>
@@ -447,7 +447,7 @@ const GCEditar = () => {
                     </span>
                 </div>
             )}
-            {formulariosSistra[colecao].componente}
+            {formulariosGerais[colecao].componente}
         </div>
     );
 
