@@ -88,6 +88,9 @@ const camposPermitidos = [
   'recomendacoes_csmt',
   'recomendacoes_cipa',
   'acoes_treinamentos',
+  'militar_acidentado',
+  'gravidade_acidente',
+
   
 
   

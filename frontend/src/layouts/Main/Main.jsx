@@ -42,7 +42,9 @@ const Main = () => {
   useEffect(() => {
     async function estaLogado() {
       try {
+        console.log("Entrou em estaLogado")
         const resp = await userService.verificaLogin();
+        console.log("valor de resp de estaLogado é", resp)
 
         if (resp.status === 200) {
           setIsLoading(false);

@@ -10,7 +10,7 @@ const userService = {
 
     //PRÉ-REGISTRAR USUÁRIO
     async preRegister(data) {
-        
+
         let endpoint = `${apiUrl}/api/preusers/preregister`;
         try {
             const response = await axios.post(endpoint, { ...data });
@@ -104,8 +104,11 @@ const userService = {
 
     //Verifica se o usuário está logado
     async verificaLogin() {
+        console.log("Está em verificaLogin")
         let endpoint = `${apiUrl}/api/users/loggedin`;
+        console.log("valor de endpoint é", endpoint)
         const response = await axios.get(endpoint);
+        console.log("valor de response é", response)
         return response;
     },
 }

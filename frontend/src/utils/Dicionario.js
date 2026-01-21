@@ -112,9 +112,9 @@ const traducoes = {
     "natureza_atividade":"Natureza da Atividade",
     "dispensa_afastamento":"Dispensa Afastamento",
     "agente_causador":"Agente Causador",
-    "situacao_geradora":"Situação Geradora",
-    "parte_do_corpo_atingida":"Parte do Corpo Atingida",
-    "periodo_elaboracao":"Período de Elaboração",
+    "militar_acidentado":"Nome do Militar Acidentado",
+    "gravidade_acidente":"Gravidade do Acidente",
+    // "periodo_elaboracao":"Período de Elaboração",
     // campos textuais - sistra
     "descricao_gerais":"Descrição Gerais",
     "causa_gerais":"Causa da Ocorrência",

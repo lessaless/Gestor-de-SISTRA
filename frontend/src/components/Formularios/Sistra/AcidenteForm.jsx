@@ -639,7 +639,28 @@ const AcidenteForm = () => {
 
                 <div className='formulario-content'>
 
+                    <DirinfraInput
+                        name='militar_acidentado'
+                        erros={errors}
+                        label={Dicionario('militar_acidentado')}
+                        placeholder='Ex.: 2T QOCON Leonnyo'
+                        registro={register}
+                        required={true}
+                    />
+                    <div className='linha'>
+                        <DirinfraListSelect
+                            label='Gravidade do Acidente'
+                            name='gravidade_acidente'
+                            registro={register}
+                            required={true}
+                            options={oms.map(gravidadeAcidente => ({ value: gravidadeAcidente , label: gravidadeAcidente  }))}
+                            erros={errors}
+                            placeholder='Selecione o nome a gravidade'
+                            setValue={setValue} //Obrigatório para o componente DirinfraListSelect
+                            watch={watch}
 
+                        />
+                    </div>
                     <div className='linha'>
                         <DirinfraListSelect
                             label='OM'
