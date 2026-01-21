@@ -638,8 +638,6 @@ const AcidenteForm = () => {
             <div className='formulario-main'>
 
                 <div className='formulario-content'>
-
-
                     <div className='linha'>
                         <DirinfraListSelect
                             label='OM'
@@ -654,6 +652,39 @@ const AcidenteForm = () => {
 
                         />
                     </div>
+                    <DirinfraInput
+                        name='militar_acidentado'
+                        erros={errors}
+                        label={Dicionario('militar_acidentado')}
+                        placeholder='Ex.: 2T QOCON Leonnyo'
+                        registro={register}
+                        required={true}
+                    />
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='local_ocorrencia'
+                            erros={errors}
+                            label='Local da Ocorrência'
+                            placeholder='Descreva o local onde ocorreu o acidente.'
+                            registro={register}
+                            required={true}
+                        />
+                    </div>
+                    <div className='linha'>
+                        <DirinfraListSelect
+                            label='Gravidade do Acidente'
+                            name='gravidade_acidente'
+                            registro={register}
+                            required={true}
+                            options={oms.map(gravidadeAcidente => ({ value: gravidadeAcidente, label: gravidadeAcidente }))}
+                            erros={errors}
+                            placeholder='Selecione o nome a gravidade'
+                            setValue={setValue} //Obrigatório para o componente DirinfraListSelect
+                            watch={watch}
+
+                        />
+                    </div>
+
                     <div className='linha'>
                         <DirinfraSelect
                             label='Estado'
@@ -818,8 +849,8 @@ const AcidenteForm = () => {
                         registro={register}
                         required={true}
                         options={tipoDeAcidente.map(ta => ({
-                            value: String(ta.descricao),
-                            label: ta.descricao,
+                            value: String(ta.tipo_de_acidente),
+                            label: ta.tipo_de_acidente,
                         }))}
                         erros={errors}
                         placeholder='Selecione o Tipo de Acidente'
@@ -1000,16 +1031,7 @@ const AcidenteForm = () => {
 
 
 
-                    <div className='linha'>
-                        <DirinfraTextarea
-                            name='local_ocorrencia'
-                            erros={errors}
-                            label='Local da Ocorrência'
-                            placeholder='Descreva o local onde ocorreu o acidente.'
-                            registro={register}
-                            required={true}
-                        />
-                    </div>
+
                     {/* ====================================== */}
                     {/* Estes campos apenas serão usados em 
                     em Forms de avaliação */}
@@ -1074,11 +1096,11 @@ const AcidenteForm = () => {
                 </div>
 
                 <div className='formulario-content'>
-                    {data?.id_gerais ? (
+                    {data?.id_sistra ? (
                         <>
-                            <p>Documento numerado como {Modelo} nº <em className='identificador'>{data.id_gerais}</em>
+                            <p>Documento numerado como {Modelo} nº <em className='identificador'>{data.id_sistra}</em>
                                 <ContentCopyIcon className={classes.iconeCopiar}
-                                    onClick={() => copiarID(data.id_gerais)}
+                                    onClick={() => copiarID(data.id_sistra)}
                                     title={"Clique para copiar o Identificador"}
                                 />
                             </p>

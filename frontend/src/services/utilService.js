@@ -71,7 +71,7 @@ const utilService = {
 	async obterNaturezaDaAtividades(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obternaturezadaatividades`, { params: data });
-			console.log("valor de response é", response)
+			// console.log("valor de response é", response)
 			return response;
 
 		} catch (error) {
@@ -82,7 +82,7 @@ const utilService = {
 	async obterTipoDeAcidentes(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obtertipodeacidentes`, { params: data });
-			console.log("valor de response é", response)
+			console.log("valor de response de obterTipoDeAcidentes é", response)
 			return response;
 
 		} catch (error) {
@@ -93,7 +93,7 @@ const utilService = {
 	async obterStatusFinals(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obterstatusfinals`, { params: data });
-			console.log("valor de response é", response)
+			// console.log("valor de response é", response)
 			return response;
 
 		} catch (error) {
@@ -104,7 +104,7 @@ const utilService = {
 	async obterSituacaoGeradoras(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obtersituacaogeradoras`, { params: data });
-			console.log("valor de response é", response)
+			// console.log("valor de response é", response)
 			return response;
 
 		} catch (error) {

@@ -69,7 +69,7 @@ const DirinfraPesquisa = ({ onFiltro, onResultadoDireto, dados }) => {
         let consulta = {};
         if (t) {
             consulta = verificarPadraoId(t)
-                ? { id_gerais: t }
+                ? { id_sistra: t }
                 : { $text: { $search: t, $language: 'portuguese' } };
         }
         onFiltro(consulta);

@@ -166,7 +166,7 @@ const obterNaturezaDaAtividades = asyncHandler(async (req, res) => {
 const obterTipoDeAcidentes = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'tipodeacidentes'
-		const tipoDeAcidente = await TipoDeAcidente.find({}, { descricao: 1, _id: 0 });
+		const tipoDeAcidente = await TipoDeAcidente.find({}, { tipo_de_acidente: 1, _id: 0 });
 		// console.log("Valor de tipoDeAcidente é ", tipoDeAcidente)
 		// Retornar a lista de valores 'tipodeacidentes'
 		return res.status(200).json(tipoDeAcidente);

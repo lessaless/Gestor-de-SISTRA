@@ -3,7 +3,7 @@ const { getModel } = require("../db/multiDB");
 
 const tipoDeAcidenteSchema = mongoose.Schema({
 	
-	descricao: {
+	tipo_de_acidente: {
 		type: String,
 		required: true
 	}

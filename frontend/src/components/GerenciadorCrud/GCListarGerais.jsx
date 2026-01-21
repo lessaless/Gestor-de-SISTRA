@@ -432,12 +432,21 @@ const GCListar = () => {
         //Ordem de exibição by TCel Cordovil
         const prioridade = [
             '__t',
-            'id_gerais',
-            'titulo_doc',
-            'disciplinas',
-            'data_doc',
+            'id_sistra',
+            
+            // ====================================== //
+            // Variáveis utilizadas no Acervo Técnico
+            // ====================================== //
+            
+            // 'titulo_doc',
+
+            // 'disciplinas',
+            // 'data_doc',
             // 'createdAt',
             // 'updatedAt'
+            // ====================================== //
+            // Fim Variáveis utilizadas no Acervo Técnico
+            // ====================================== //
         ];
 
         return lista.sort((a, b) => {

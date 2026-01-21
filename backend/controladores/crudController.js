@@ -6,6 +6,7 @@ const gerarIdCN = require("../utils/gerarIds/gerarIdCN");
 const gerarIdETPE = require("../utils/gerarIds/gerarIdETPE");
 const gerarIdProposta = require("../utils/gerarIds/gerarIdProposta");
 const gerarIdGerais = require("../utils/gerarIds/gerarIdGerais");
+const gerarIdSistras = require("../utils/gerarIds/gerarIdSistras");
 const logger = require("../utils/logs/logger");
 const sanitizeMongoFilter = require("../utils/sanitizarQuery/sanitizarQuery");
 const { objModelos, colecoesLiberadas } = require("../utils/modelosMongo/modelosMongo");
@@ -164,6 +165,17 @@ const criarDados = asyncHandler(async (req, res) => {
 		obj.id_gerais = await gerarIdGerais(Modelo, obj);
 	}
 
+	// ========================================== //
+	// ================= SISTRA ================= //
+	// ========================================== //
+	
+	if (Modelo.collection.name === 'sistra') {
+		console.log("Valor de obj é", obj)
+		obj.id_sistra = await gerarIdSistras(Modelo, obj);
+	}
+	// ========================================== //
+	// ================= Fim  SISTRA ============== //
+	// ========================================== //
 	const objetoBson = await Modelo.create(obj);
 	if (!objetoBson) {
 		res.status(500);
@@ -223,6 +235,27 @@ const criarDados = asyncHandler(async (req, res) => {
 		});
 	}
 
+
+	// ========================================== //
+	// ================= SISTRA ================= //
+	// ========================================== //
+
+	if (Modelo.collection.name === 'sistragerais') {
+		return res.status(201).json({
+			message: 'Criado com sucesso',
+			id_sistra: obj.id_sistra,
+			_id: objetoBson._id,
+			id_demanda: obj.id_demanda,
+			// Incluir códigos BIM na resposta se existirem
+			...(obj.codigo_documento_bim && { codigo_documento_bim: obj.codigo_documento_bim }),
+			...(obj.codigo_projeto_bim && { codigo_projeto_bim: obj.codigo_projeto_bim })
+		});
+	}
+
+
+	// ========================================== //
+	// ================= Fim SISTRA ================= //
+	// ========================================== //
 	switch (Modelo.modelName) {
 		case 'Demanda': {
 			return res.status(201).json({ message: 'Criado com sucesso', id_demanda: obj.id_demanda });
