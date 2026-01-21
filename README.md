@@ -61,7 +61,7 @@ No diretório raiz do projeto, navegue até cada pasta e execute um dos comandos
 
 ```bash
 cd frontend
-npm install --force -- http://user:password@proxyserver:port
+npm install --proxy http://user:password@proxyserver:port
 # ou, se houver conflitos de versões de pacotes:
 npm install --legacy-peer-deps --force --proxy=http://user:password@proxyserver:port
 ```
