@@ -9,6 +9,18 @@ const utilService = {
 	// ============================= //
 	// início documentos SISTRA
 	// ============================= //
+	async obterGravidadeAcidentes(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obtergravidadeacidentes`,
+				 { params: data });
+			console.log("valor de response de obterGravidadeAcidentes é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
 	async obterSerinfraPorUFs(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obterserinfraporufs`, { params: data });
@@ -20,7 +32,7 @@ const utilService = {
 			throw new Error(error.response.data.message);
 		}
 	},
-	
+
 	async obterDiaDaSemanas(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obterdiadasemanas`, { params: data });
@@ -44,7 +56,7 @@ const utilService = {
 			throw new Error(error.response.data.message);
 		}
 	},
-	
+
 	async obterAgenteCausadorAcidentes(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obteragentecausadoracidentes`, { params: data });

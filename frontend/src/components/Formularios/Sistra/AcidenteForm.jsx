@@ -166,6 +166,7 @@ const AcidenteForm = () => {
     const [demandas, setDemandas] = useState([]);
     const [fasesDoProjeto, setFasesDoProjeto] = useState([]);
     const [oms, setOms] = useState([]);
+
     const [estadosList, setEstadosList] = useState([]);
     const [estadoSelecionado, setEstadoSelecionado] = useState('');
 
@@ -181,6 +182,7 @@ const AcidenteForm = () => {
     const [tipoDeAcidente, setTipoDeAcidente] = useState([]);
     const [statusFinal, setStatusFinal] = useState([]);
     const [diadaSemana, setDiaDaSemana] = useState([]);
+    const [gravidadeAcidentes, setGravidadeAcidentes] = useState([]);
 
 
     // ================== //
@@ -490,7 +492,22 @@ const AcidenteForm = () => {
         fetchOms();
     }, []);
 
+    // // useEffect para mapear a lista de gravidadeAcidentes do banco
+    useEffect(() => {
+        //console.log("Mapear lista gravidadeAcidentes")
+        const fetchGravidadeAcidentes = async () => {
+            try {
+                const listaGravidadeAcidentes = await utilService.obterGravidadeAcidentes();
+                // const listaODS = await utilService.obterODS();
+                setGravidadeAcidentes(listaGravidadeAcidentes.data);
+                console.log("Valor de listaGravidadeAcidentes.data é", listaGravidadeAcidentes.data)
+            } catch (error) {
+                toast.error("Erro ao carregar Lista Gravidade Acidentes.");
+            }
+        };
 
+        fetchGravidadeAcidentes();
+    }, []);
 
     // ===================== //
     // ===== SISTRA ===== //
@@ -638,7 +655,7 @@ const AcidenteForm = () => {
             <div className='formulario-main'>
 
                 <div className='formulario-content'>
-                    <div className='linha'>
+                    {/* <div className='linha'>
                         <DirinfraListSelect
                             label='OM'
                             name='om_responsavel'
@@ -651,7 +668,7 @@ const AcidenteForm = () => {
                             watch={watch}
 
                         />
-                    </div>
+                    </div> */}
                     <DirinfraInput
                         name='militar_acidentado'
                         erros={errors}
@@ -676,9 +693,10 @@ const AcidenteForm = () => {
                             name='gravidade_acidente'
                             registro={register}
                             required={true}
-                            options={oms.map(gravidadeAcidente => ({ value: gravidadeAcidente, label: gravidadeAcidente }))}
+                            options={gravidadeAcidentes.map(ga =>
+                                ({ value: String(ga.gravidade_acidente), label: ga.gravidade_acidente }))}
                             erros={errors}
-                            placeholder='Selecione o nome a gravidade'
+                            placeholder='Selecione a gravidade do acidente'
                             setValue={setValue} //Obrigatório para o componente DirinfraListSelect
                             watch={watch}
 

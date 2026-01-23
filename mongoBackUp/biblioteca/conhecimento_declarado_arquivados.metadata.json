@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"94f1a348c7d74e9b87920a6ea746679b","collectionName":"conhecimento_declarado_arquivados","type":"collection"}
