@@ -126,7 +126,7 @@ const criarDados = asyncHandler(async (req, res) => {
 		case 'Demanda': {
 			obj.id_demanda = await gerarIdDemanda(obj.ods_objeto);
 		}
-			console.log("Passou por crudController", obj.id_demanda)
+			// console.log("Passou por crudController", obj.id_demanda)
 		// case 'Acidente': {
 		// 	obj.id_demanda = await gerarIdSistras(obj.ods_objeto);
 		// }
@@ -176,7 +176,9 @@ const criarDados = asyncHandler(async (req, res) => {
 
 	if (Modelo.collection.name === 'sistragerais') {
 		console.log("Valor de obj, linha 178 é", obj)
+		console.log("Valor de Modelo.collection.name, linha 179 é", Modelo.collection.name)
 		obj.id_sistra = await gerarIdSistras(Modelo, obj);
+		console.log("Valor de obj.id_sistra em crudController é", obj.id_sistra)
 	}
 	// ========================================== //
 	// ================= Fim  SISTRA ============== //

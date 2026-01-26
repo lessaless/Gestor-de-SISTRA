@@ -150,7 +150,12 @@ const AcidenteForm = () => {
     const watchedDataOcorrencia = watch('data_ocorrencia');
     const watchedDiaSemanaCodigo = watch('dia_da_semana');
     const watchedDispensaAfastamento = watch('dispensa_afastamento');
-    const isDispensaDisabled = !watchedDispensaAfastamento?.includes('Sim');
+    // const isDispensaDisabled = !watchedDispensaAfastamento?.includes('Sim');
+    const isDispensaDisabled =
+        !(
+            watchedDispensaAfastamento?.includes('Sim') ||
+            watchedDispensaAfastamento?.includes('SIM')
+        );
     useEffect(() => {
         if (isDispensaDisabled) {
             setValue('descricao_dispensa', '', { shouldDirty: true });

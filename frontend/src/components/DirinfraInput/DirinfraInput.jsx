@@ -1,4 +1,4 @@
-// DirinfraInput.jsx (updated: supports `addon` prop)
+// DirinfraInput.jsx (updated: supports `addon` prop + errorName/registerName)
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -57,7 +57,7 @@ const useStyles = makeStyles({
     },
     inputDirinfraErro: {
         borderColor: 'var(--color-borderError)',
-        '&:focus, &:focus-visible': {
+        '&:focus, &: focus- visible': {
             borderColor: 'var(--color-borderError)'
         }
     },
@@ -72,7 +72,7 @@ const useStyles = makeStyles({
         minHeight: '15px',
         minWidth: 'min-content',
         padding: '5px',
-    }
+    },
 });
 
 const buscarErro = (objErros, propsName) => {
@@ -81,14 +81,34 @@ const buscarErro = (objErros, propsName) => {
         .reduce((acc, part) => acc && acc[part], objErros);
 };
 
-const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps,
-    validar, inverterValores, addon = null, hideLabel = false, ...props }) => {
+const DirinfraInput = ({
+    registro,
+    erros,
+    orientacao,
+    opcoesDataList,
+    labelProps,
+    validar,
+    inverterValores,
+    addon = null,
+    hideLabel = false,
+
+    // ✅ NEW:
+    errorName,     // use this key to find errors (instead of props.name)
+    registerName,  // use this key to register the field (instead of props.name)
+
+    ...props
+}) => {
     const classes = useStyles({ orientacao });
-    const temErro = erros && buscarErro(erros, props.name);
 
     const persistirDisabled = true; // disables double-click re-enable
 
-    const registroProps = registro && registro(props.name,
+    // ✅ choose which name to use for validation & error lookup
+    const nomeParaRegistrar = registerName || props.name;
+    const nomeParaErro = errorName || props.name;
+
+    const temErro = erros && buscarErro(erros, nomeParaErro);
+
+    const registroProps = registro && registro(nomeParaRegistrar,
         {
             required: props.required,
             pattern: props.pattern,
@@ -121,10 +141,8 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
             : opcao
     );
 
-    // widths: label 30% / input+addon container 65% (keeps previous behaviour)
     const labelWidth = hideLabel ? '0px' : (props.labelWidth || '30%');
     const inputContainerWidth = hideLabel ? '100%' : (props.l ? `${props.l}px` : '65%');
-
 
     return (
         <div className={classes.main} onDoubleClick={(e) => {
@@ -142,7 +160,6 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
                 </label>
             )}
 
-
             {opcoesDataList && (
                 <datalist id={props.name}>
                     {opcoesFormatadas.map((opcao, index) => (
@@ -153,7 +170,6 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
                 </datalist>
             )}
 
-            {/* wrap the input and addon into a flex container so they share the same row */}
             <div style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -166,7 +182,7 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
                     style={{
                         pointerEvents: `${props.disabled ? 'none' : 'auto'}`,
                         userSelect: `${props.disabled ? 'none' : 'auto'}`,
-                        width: addon ? '100%' : '100%', // input takes full available space, addon sits to its right
+                        width: '100%',
                         height: props.a ? `${props.a}px` : '30px',
                     }}
                     list={props.name}
@@ -174,7 +190,7 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
                     {...props}
                     onWheel={(e) => {
                         if (props.type === "number") {
-                            e.target.blur();   // avoids wheel changing value
+                            e.target.blur();
                         }
                         if (props.onWheel) props.onWheel(e);
                     }}
@@ -182,7 +198,6 @@ const DirinfraInput = ({ registro, erros, orientacao, opcoesDataList, labelProps
                     onInput={handleInput}
                 />
 
-                {/* optional addon - keep it inside the same div so layout matches prior look */}
                 {addon && (
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         {addon}

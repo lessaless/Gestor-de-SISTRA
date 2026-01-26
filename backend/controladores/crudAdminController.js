@@ -125,6 +125,7 @@ const criarDados = asyncHandler(async (req, res) => {
 	console.log("Valor de Modelo.collection.name  é", Modelo.collection.name)
 	if (Modelo.collection.name === 'sistragerais') {
 		objSemVazios.id_sistra = await gerarIdSistras(Modelo, objSemVazios);
+		console.log("Valor de objSemVazios.id_sistra é", objSemVazios.id_sistra)
 
 	}
 

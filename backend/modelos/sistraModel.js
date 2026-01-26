@@ -49,7 +49,7 @@ const sistraGeraisSchema = mongoose.Schema({
 		trim: true,
 		required: false,
 	},
-	om_responsavel: {
+	om_autora: {
 		type: String,
 		trim: true,
 		required: false,
@@ -171,19 +171,19 @@ const sistraGeraisSchema = mongoose.Schema({
 	// 	}
 	// },
 	// //automáticos
-	// criado_por: {
-	// 	type: String,
-	// 	ref: 'User',
-	// 	required: true,
-	// },
-	// modificado_por: {
-	// 	type: String,
-	// 	ref: 'User',
-	// 	required: true,
-	// 	default: function () {
-	// 		return this.criado_por;
-	// 	}
-	// },
+	criado_por: {
+		type: String,
+		ref: 'User',
+		required: true,
+	},
+	modificado_por: {
+		type: String,
+		ref: 'User',
+		required: true,
+		default: function () {
+			return this.criado_por;
+		}
+	},
 	/* expireAt: {
 		type: Date
 	} */

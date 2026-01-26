@@ -13,41 +13,47 @@ const prefixo = (modelo) => {
 };
 
 
-let partes;
+// let partes;
 const gerarIdSistras = async (subModelo, obj) => {
 	try {
+		console.log("subModelo:", subModelo);
+		console.log("subModelo.modelName:", subModelo?.modelName);
+		console.log("Is Model?", typeof subModelo?.aggregate === 'function');
 
-		const ultimo = await subModelo.aggregate([ // sequência para cada subModelo
-			//const ultimo = await Gerais.aggregate([ // sequência unificada Gerais
+		const pipeline = [
 			{
-				$match: { om_autora: obj.om_autora }, // Filtra pela OM
+				$match: {
+					om_autora: obj.om_autora,
+					__t: subModelo.modelName
+				}
 			},
 			{
 				$addFields: {
-					// partes: { $split: ["$id_gerais", "-"] }, // Divide o ID em partes
-					partes: { $split: ["$id_sistra", "/"] }, // Divide o ID em partes
-					
-				},
+					partes: { $split: ["$id_sistra", "/"] }
+				}
 			},
 			{
 				$addFields: {
-					// ano: { $toInt: { $arrayElemAt: ["$partes", 3] } }, // Extrai o ano (4ª parte)
-					// sequencia: { $toInt: { $arrayElemAt: ["$partes", 1] } }, // Extrai a sequência numérica (2ª parte)
-					ano: { $toInt: { $arrayElemAt: ["$partes", 2] } }, // Extrai o ano (3ª parte)
-					sequencia: { $toInt: { $arrayElemAt: ["$partes", 0] } }, // Extrai a sequência numérica (1ª parte)
-				},
+					ano: { $toInt: { $arrayElemAt: ["$partes", 2] } },
+					sequencia: { $toInt: { $arrayElemAt: ["$partes", 0] } }
+				}
 			},
 			{
 				$sort: {
-					ano: -1, // Ordena primeiro pelo ano (descendente)
-					sequencia: -1, // Depois pela sequência (descendente)
-				},
+					ano: -1,
+					sequencia: -1
+				}
 			},
 			{
-				$limit: 1, // Retorna apenas o último registro encontrado
-			},
-		]);
-		console.log("Valor de partes em gerarIdSistras é", partes)
+				$limit: 1
+			}
+		];
+
+		console.log("Pipeline:", JSON.stringify(pipeline, null, 2));
+
+		const ultimo = await subModelo.aggregate(pipeline);
+
+		console.log("Valor de ultimo é", ultimo);
 
 		// Extrai o último ID, se encontrado
 		const ultimoId = ultimo.length > 0 ? ultimo[0].id_sistra : null;
@@ -57,47 +63,31 @@ const gerarIdSistras = async (subModelo, obj) => {
 
 		// Se encontrou o último ID, processa o número
 		if (ultimoId) {
-			// Remove as partes textuais e extrai o número
-			// const match = ultimoId.match(/(\d+)-/);//com prefixo
-			const match = ultimoId.match(/^(\d+)\//);//sem prefixo
+			const match = ultimoId.match(/^(\d+)\//);
 			if (match && match[1]) {
 				novoNumeroSequencial = parseInt(match[1]) + 1;
 			}
+			console.log("Valor de match é", match);
 		}
 
 		// Formata om_autora para maiúsculo e remove caracteres como hífen
 		const OM = obj.om_autora.toUpperCase().replace(/[^A-Z0-9]/g, '');
+		console.log("Valor de OM é ", OM);
 
-
-		// --------------------------------------- Nova lógica para implementação de sequência inicial ----------------------------------------------------------------
 		const modelo = subModelo.modelName;
+		console.log("Valor de modelo é", modelo);
 
-		// ====================================== //
-		// ============ Uso Gerais ============== //
-		// ====================================== //
-		
-		// Busca valor inicial, se existir ==> usado apenas em Gerais;
-		// Neste sistema, valorInicial será 1!
-		// const valorInicial = sequenciasIniciais[OM]?.[modelo];
-
-		// ====================================== //
-		// ========= Fim Uso "Gerais" =========== //
-		// ====================================== //
-		const valorInicial = 1
+		const valorInicial = 1;
 		if (!ultimoId && valorInicial) {
-			novoNumeroSequencial = valorInicial;//se não tem no BD, usa da sequência inicial
+			novoNumeroSequencial = valorInicial;
 		} else if (valorInicial && novoNumeroSequencial <= valorInicial) {
 			novoNumeroSequencial = valorInicial;
 		}
-		// --------------------------------------- fim da Nova lógica para implementação de sequência inicial ---------------------------------------------------------
-
-
 
 		// Obtem o ano atual
 		const ANO = new Date().getFullYear();
 
 		// Monta o ID final
-		// return `${prefixo(subModelo.modelName)}-${novoNumeroSequencial}-${OM}-${ANO}`;
 		return `${novoNumeroSequencial}/${OM}/${ANO}`;
 
 	} catch (error) {

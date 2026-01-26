@@ -70,6 +70,7 @@ const checarPermissao = (operacao) => {
             // userBD.role = { _id: "admin_geral", permissions: [...permissoes] }
 
             const userBD = await User.findById(userReq._id).populate('role');
+            console.log("Valor de userBD é", userBD)
             req.user = userBD;
             // const userBD = userReq.populate('role');
 

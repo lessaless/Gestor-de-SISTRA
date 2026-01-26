@@ -36,12 +36,15 @@ import {
 } from '../../utils/gerCrud';
 
 import { formulariosGerais } from "../../utils/ColecaoModelo"
+import { formulariosSistra} from "../../utils/ColecaoModelo"
+
 import verificarPadraoId from '../../utils/verificarPadraoId';
 import exportarExcel from '../../utils/exportarExcel';
 import TextoEmIcone from '../TextoEmIcone/TextoEmIcone';
 
 
-const colecoes = ['gerais', ...Object.keys(formulariosGerais)];
+// const colecoes = ['gerais', ...Object.keys(formulariosGerais)];
+const colecoes = ['sistragerais', ...Object.keys(formulariosSistra)];
 
 
 const useStyles = makeStyles(theme => ({
@@ -307,10 +310,22 @@ const formatarMoeda = (valor) => {
     }).format(+valor);
 };
 
+// const identificarColecao = (obj) => {
+//     console.log("Valor de obj dentro de identificarColecao é", obj)
+//     const colecao = Object.keys(formulariosGerais).find(
+//         key => formulariosGerais[key].nome === obj.__t
+//     );
+
+//     if (!colecao) {
+//         console.error(`Coleção não encontrada para: ${obj.__t}`);
+//         return;
+//     }
+//     return colecao;
+// }
 const identificarColecao = (obj) => {
     console.log("Valor de obj dentro de identificarColecao é", obj)
-    const colecao = Object.keys(formulariosGerais).find(
-        key => formulariosGerais[key].nome === obj.__t
+    const colecao = Object.keys(formulariosSistra).find(
+        key => formulariosSistra[key].nome === obj.__t
     );
 
     if (!colecao) {
