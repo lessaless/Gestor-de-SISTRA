@@ -256,7 +256,7 @@ const onSubmit = async (data, pagina, listaChaves, confirmarID) => {
                 // console.log(`O valor de confirmarID é ${confirmarID}`)
                 // console.log(`O valor de resp é ${resp?.estado_demanda}`)
                 if (confirmarID) {
-                    const resposta = await Concordar('', `Deseja numerar o documento como ${confirmarID} nº ${resp.data.id_gerais}?`, 'Cancelar', 'Confirmar');
+                    const resposta = await Concordar('', `Deseja numerar o documento como ${confirmarID} nº ${resp.data.id_sistra}?`, 'Cancelar', 'Confirmar');
 
                     if (resposta) return ({ message: 'Dados criados com sucesso!', obj: resp?.data, reset: objReset });
                     else return await deletarDado(resp.data, data.colecao, true);//true = deletar via Confirmação

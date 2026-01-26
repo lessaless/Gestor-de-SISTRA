@@ -233,7 +233,7 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
             let consulta = {};
             if (valorAtual) {
                 if (verificarPadraoId(valorAtual)) {
-                    consulta = { id_gerais: valorAtual };
+                    consulta = { id_sistra: valorAtual };
                 } else {
                     consulta.$text = { $search: valorAtual, $language: "portuguese" };
                 }
@@ -266,8 +266,11 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
             let consulta = {};
             if (termoBusca) {
                 const camposBusca = [
-                    "titulo_doc", "id_gerais", "id_demanda", "palavras_chave",
-                    "disciplinas", "om_autora", "obs_gerais", "autores.SARAM"
+                    "id_sistra",
+                    "om_autora", "obs_gerais", "autores.SARAM"
+                    // "titulo_doc",
+                    // "id_demanda", "palavras_chave",
+                    // "disciplinas",
                 ];
                 consulta.$or = camposBusca.map(campo => ({
                     [campo]: { $regex: escapeRegex(termoBusca), $options: "i" }
@@ -307,7 +310,7 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
             if (omsValidas.length) exemplos.push(`Ex: ${aleatorio(omsValidas)}`);
 
             // ID aleatório
-            const idsValidos = dados.filter(d => d.id_gerais).map(d => String(d.id_gerais).toUpperCase());
+            const idsValidos = dados.filter(d => d.id_sistra).map(d => String(d.id_sistra).toUpperCase());
             if (idsValidos.length) exemplos.push(`Ex: ${aleatorio(idsValidos)}`);
 
             if (exemplos.length > 0) setPlaceholderPhrases(exemplos);

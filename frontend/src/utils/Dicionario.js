@@ -8,7 +8,7 @@ const traducoes = {
     "criado_por": "Autor do Cadastro",
     "modificado_por": "Autor da última modificação",
     "data_doc": "Data do Documento",
-    
+
     // Arquivo
     "caminho": "Endereço do Arquivo",
     "downloads": "Downloads",
@@ -36,7 +36,7 @@ const traducoes = {
     "cidade_demanda": "Cidade",
     "obs_demanda": "Observações",
     "status": "Status",
-    "progresso":"Progresso do Projeto",
+    "progresso": "Progresso do Projeto",
     "tipo_doc": "Tipo do Documento",
     "propriedadeFAB": "Propriedade da FAB",
     "data_doc_cn": "Data do CN",
@@ -55,7 +55,7 @@ const traducoes = {
     "data_fato_originador": "Data do Fato Originador",
     "ods_objeto": "ODS do Objeto",
     "obs_cn": "Observações",
-    
+
     //ETPE
     "id_etpe": "ID ETPE",
     "obs_etpe": "Observações",
@@ -69,7 +69,7 @@ const traducoes = {
     "tempo_obra_solucao": "Tempo de obra (meses)",
     //ETPE > autores
     "tempo_gasto": "Horas empregadas",
-    "nome_militar":"Autor",
+    "nome_militar": "Autor",
     //GERAIS
     "titulo_doc": "Título ou assunto do documento",
     "obs_gerais": "Observações",
@@ -95,7 +95,7 @@ const traducoes = {
     "atividade_fim_proposta": "Atende à Atividade-fim",
     "plano_diretor_proposta": "Plano Diretor",
     "solucao_etpe_escolhida": "Solução ETPE escolhida",
-    
+
     //subModelos Gerais
     "id_gerais": "Identificador",
     "__t": "Tipo de documento",
@@ -112,18 +112,18 @@ const traducoes = {
     "natureza_atividade":"Natureza da Atividade",
     "dispensa_afastamento":"Dispensa Afastamento",
     "agente_causador":"Agente Causador",
-    "militar_acidentado":"Nome do Militar Acidentado",
-    "gravidade_acidente":"Gravidade do Acidente",
-    // "periodo_elaboracao":"Período de Elaboração",
+    "situacao_geradora":"Situação Geradora",
+    "parte_do_corpo_atingida":"Parte do Corpo Atingida",
+    "periodo_elaboracao":"Período de Elaboração",
     // campos textuais - sistra
-    "descricao_gerais":"Descrição Gerais",
-    "causa_gerais":"Causa da Ocorrência",
-    "descricao_dispensa":"Descrição Dispensa",
-    "local_ocorrencia":"Local Ocorrência",
-    "recomendacoes_csmt":"Recomendações CSMT",
-    "recomendacoes_cipa":"Recomendações CIPA", 
-    "acoes_treinamentos":"Ações e treinamentos",
-    
+    "descricao_gerais": "Descrição Gerais",
+    "causa_gerais": "Causa da Ocorrência",
+    "descricao_dispensa": "Descrição Dispensa",
+    "local_ocorrencia": "Local Ocorrência",
+    "recomendacoes_csmt": "Recomendações CSMT",
+    "recomendacoes_cipa": "Recomendações CIPA",
+    "acoes_treinamentos": "Ações e treinamentos",
+
     //Nomes de subModelos de Documentos (__t)
     // DEVEM SER EXATAMENTE IGUAIS AOS NOMES DOS COMPONENTES DO ARQUIVO frontend/src/utils/ColecaoModelo.js
     "CadernoDeNecessidades": "Caderno de Necessidades",

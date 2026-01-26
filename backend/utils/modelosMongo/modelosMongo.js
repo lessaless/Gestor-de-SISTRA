@@ -57,13 +57,14 @@ const RelatorioTecnico = require("../../modelos/subGerais/relatorioTecnicoModel"
 /* subSistra */
 const Acidente = require("../../modelos/subSistra/acidenteModel");
 
+const SistraGerais = require("../../modelos/sistraModel");
 
 const todas = [
 
     //subSistra
-    
-    'acidentes',
-    
+
+    'acidentes', 'sistragerais',
+
     'demandas', 'grupos', 'links', 'cns', 'etpes', 'propostas', 'planinfra',
     'codigoprojetos', 'taps', 'gerenciamentoproj', 'tmps', 'teps',
 
@@ -129,6 +130,11 @@ module.exports = {
         "acidente": {
             "modelo": Acidente,
             "automaticos": ['_id', '__v']
+        },
+
+        "sistragerais": {
+            "modelo": SistraGerais,
+            "automaticos": ['_id', '__v', 'criado_por', 'modificado_por', 'createdAt', 'updatedAt']
         },
         // ============================= //
         // FIM Modelos SISTRA

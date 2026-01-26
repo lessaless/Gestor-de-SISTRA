@@ -34,58 +34,21 @@ const { getModel } = require("../db/multiDB");
 
 const sistraGeraisSchema = mongoose.Schema({
 
-	// localidade_demanda: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	// },
-	// benfeitoria: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	// },
-	// fase_do_projeto: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	// },
+
+	// =============== //
+	// Início SISTRA //
+	// =============== //
+	id_sistra: {
+		type: String,
+		trim: true,
+		required: true
+	},
+
 	agente_causador_acidente: {
 		type: String,
 		trim: true,
 		required: false,
 	},
-	// sequencia_numerica: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	// },
-	// LL: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	// },
-	// sequencia_numerica_nnn: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	// },
-	// codigo_projeto_bim: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	//     unique: false
-	// },
-	// codigo_documento_bim: {
-	//     type: String,
-	//     trim: true,
-	//     required: false,
-	//     unique: true,
-	//     sparse: true
-	// },
-	// =============== //
-	// Início SISTRA //
-	// =============== //
-
 	om_responsavel: {
 		type: String,
 		trim: true,
@@ -231,7 +194,7 @@ const sistraGeraisSchema = mongoose.Schema({
 // Criar índice de texto nos campos mais relevantes
 // sistraGeraisSchema.index({
 // 	// titulo_doc: "text",
-// 	id_gerais: "text",
+
 // 	id_demanda: "text",
 // 	palavras_chave: "text",
 // 	obs_gerais: "text",

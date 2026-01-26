@@ -906,7 +906,11 @@ const GCDemandas = () => {
                             setPecaSelecionada(doc);
                           }}
                         >
-                          {doc.id_gerais || doc.titulo_doc}
+                          {/* Antes: Acervo Técnico */}
+                          {/* {doc.id_gerais || doc.titulo_doc} */}
+                          {/* Após - Implementaão do SISTRA */}
+                          {doc.id_sistra}
+
                         </li>
                       ))}
                     </ul>

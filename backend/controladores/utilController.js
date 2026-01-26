@@ -56,6 +56,7 @@ const ParteDoCorpoAtingida = require('../modelos/parteDoCorpoAtingidaModel');
 const Serinfra = require('../modelos/serinfraModel');
 const DiaDaSemana = require('../modelos/diaDaSemanaModel');
 const SerinfraPorUf = require('../modelos/serinfraModel');
+const GravidadeAcidente = require('../modelos/gravidadeAcidenteModel');
 
 // =================== //
 // ===== SISTRA =====  //
@@ -86,13 +87,27 @@ const obterSerinfraPorUFs = asyncHandler(async (req, res) => {
 	}
 });
 
+const obterGravidadeAcidentes = asyncHandler(async (req, res) => {
+	try {
+		// Buscar todos os documentos na coleção 'agentescausadores'
+		const gravidadeAcidente = await GravidadeAcidente.find({}, { gravidade_acidente: 1, _id: 0 });
+		console.log("Valor de gravidadeAcidente em utilController é ", gravidadeAcidente)
+		// Retornar a lista de valores 'gravidadeAcidentes'
+		return res.status(200).json(gravidadeAcidente);
+	} catch (error) {
+		res.status(500);
+		throw new Error('Erro ao obter os valores de Gravidade Acidente');
+	}
+});
+
+
 const obterDiaDaSemanas = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
 		const diaDaSemana = await DiaDaSemana.find({}, { dia_da_semana: 1, _id: 0 });
-		console.log("Valor de diaDaSemana  é ", diaDaSemana )
+		console.log("Valor de diaDaSemana  é ", diaDaSemana)
 		// Retornar a lista de valores 'agentescausadores'
-		return res.status(200).json(diaDaSemana );
+		return res.status(200).json(diaDaSemana);
 	} catch (error) {
 		res.status(500);
 		throw new Error('Erro ao obter os valores de DiaDaSemana ');
@@ -153,7 +168,7 @@ const obterHouveDispensas = asyncHandler(async (req, res) => {
 const obterNaturezaDaAtividades = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'naturezadaatividades'
-		const naturezaDaAtividade = await NaturezaDaAtividade.find({}, {descricao: 1, _id: 0 });
+		const naturezaDaAtividade = await NaturezaDaAtividade.find({}, { descricao: 1, _id: 0 });
 		// console.log("Valor de naturezaDaAtividade é ", naturezaDaAtividade)
 		// Retornar a lista de valores 'naturezadaatividades'
 		return res.status(200).json(naturezaDaAtividade);
@@ -166,7 +181,7 @@ const obterNaturezaDaAtividades = asyncHandler(async (req, res) => {
 const obterTipoDeAcidentes = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'tipodeacidentes'
-		const tipoDeAcidente = await TipoDeAcidente.find({}, { descricao: 1, _id: 0 });
+		const tipoDeAcidente = await TipoDeAcidente.find({}, { tipo_de_acidente: 1, _id: 0 });
 		// console.log("Valor de tipoDeAcidente é ", tipoDeAcidente)
 		// Retornar a lista de valores 'tipodeacidentes'
 		return res.status(200).json(tipoDeAcidente);
@@ -179,7 +194,7 @@ const obterTipoDeAcidentes = asyncHandler(async (req, res) => {
 const obterStatusFinals = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'statusfinals'
-		const statusFinal = await StatusFinal.find({}, {descricao: 1, _id: 0 });
+		const statusFinal = await StatusFinal.find({}, { descricao: 1, _id: 0 });
 		// console.log("Valor de statusFinal é ", statusFinal)
 		// Retornar a lista de valores 'statusfinals'
 		return res.status(200).json(statusFinal);
@@ -697,6 +712,7 @@ module.exports = {
 	obterOMs,
 	obterSerinfras,
 	obterSerinfraPorUFs,
+	obterGravidadeAcidentes,
 	obterDiaDaSemanas,
 	obterAgenteCausadorAcidentes,
 	obterSituacaoGeradoras,

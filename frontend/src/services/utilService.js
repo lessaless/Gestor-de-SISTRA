@@ -9,6 +9,18 @@ const utilService = {
 	// ============================= //
 	// início documentos SISTRA
 	// ============================= //
+	async obterGravidadeAcidentes(data) {
+		try {
+			const response = await axios.get(`${apiUrl}/api/utils/obtergravidadeacidentes`,
+				 { params: data });
+			console.log("valor de response de obterGravidadeAcidentes é", response)
+			return response;
+
+		} catch (error) {
+			console.error(error);
+			throw new Error(error.response.data.message);
+		}
+	},
 	async obterSerinfraPorUFs(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obterserinfraporufs`, { params: data });
@@ -20,7 +32,7 @@ const utilService = {
 			throw new Error(error.response.data.message);
 		}
 	},
-	
+
 	async obterDiaDaSemanas(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obterdiadasemanas`, { params: data });
@@ -44,7 +56,7 @@ const utilService = {
 			throw new Error(error.response.data.message);
 		}
 	},
-	
+
 	async obterAgenteCausadorAcidentes(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obteragentecausadoracidentes`, { params: data });
@@ -71,7 +83,7 @@ const utilService = {
 	async obterNaturezaDaAtividades(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obternaturezadaatividades`, { params: data });
-			console.log("valor de response é", response)
+			// console.log("valor de response é", response)
 			return response;
 
 		} catch (error) {
@@ -82,7 +94,7 @@ const utilService = {
 	async obterTipoDeAcidentes(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obtertipodeacidentes`, { params: data });
-			console.log("valor de response é", response)
+			console.log("valor de response de obterTipoDeAcidentes é", response)
 			return response;
 
 		} catch (error) {
@@ -93,7 +105,7 @@ const utilService = {
 	async obterStatusFinals(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obterstatusfinals`, { params: data });
-			console.log("valor de response é", response)
+			// console.log("valor de response é", response)
 			return response;
 
 		} catch (error) {
@@ -104,7 +116,7 @@ const utilService = {
 	async obterSituacaoGeradoras(data) {
 		try {
 			const response = await axios.get(`${apiUrl}/api/utils/obtersituacaogeradoras`, { params: data });
-			console.log("valor de response é", response)
+			// console.log("valor de response é", response)
 			return response;
 
 		} catch (error) {

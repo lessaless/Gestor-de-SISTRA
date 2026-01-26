@@ -166,6 +166,7 @@ const AcidenteForm = () => {
     const [demandas, setDemandas] = useState([]);
     const [fasesDoProjeto, setFasesDoProjeto] = useState([]);
     const [oms, setOms] = useState([]);
+
     const [estadosList, setEstadosList] = useState([]);
     const [estadoSelecionado, setEstadoSelecionado] = useState('');
 
@@ -181,6 +182,7 @@ const AcidenteForm = () => {
     const [tipoDeAcidente, setTipoDeAcidente] = useState([]);
     const [statusFinal, setStatusFinal] = useState([]);
     const [diadaSemana, setDiaDaSemana] = useState([]);
+    const [gravidadeAcidentes, setGravidadeAcidentes] = useState([]);
 
 
     // ================== //
@@ -490,7 +492,22 @@ const AcidenteForm = () => {
         fetchOms();
     }, []);
 
+    // // useEffect para mapear a lista de gravidadeAcidentes do banco
+    useEffect(() => {
+        //console.log("Mapear lista gravidadeAcidentes")
+        const fetchGravidadeAcidentes = async () => {
+            try {
+                const listaGravidadeAcidentes = await utilService.obterGravidadeAcidentes();
+                // const listaODS = await utilService.obterODS();
+                setGravidadeAcidentes(listaGravidadeAcidentes.data);
+                console.log("Valor de listaGravidadeAcidentes.data é", listaGravidadeAcidentes.data)
+            } catch (error) {
+                toast.error("Erro ao carregar Lista Gravidade Acidentes.");
+            }
+        };
 
+        fetchGravidadeAcidentes();
+    }, []);
 
     // ===================== //
     // ===== SISTRA ===== //
@@ -638,30 +655,7 @@ const AcidenteForm = () => {
             <div className='formulario-main'>
 
                 <div className='formulario-content'>
-
-                    <DirinfraInput
-                        name='militar_acidentado'
-                        erros={errors}
-                        label={Dicionario('militar_acidentado')}
-                        placeholder='Ex.: 2T QOCON Leonnyo'
-                        registro={register}
-                        required={true}
-                    />
-                    <div className='linha'>
-                        <DirinfraListSelect
-                            label='Gravidade do Acidente'
-                            name='gravidade_acidente'
-                            registro={register}
-                            required={true}
-                            options={oms.map(gravidadeAcidente => ({ value: gravidadeAcidente , label: gravidadeAcidente  }))}
-                            erros={errors}
-                            placeholder='Selecione o nome a gravidade'
-                            setValue={setValue} //Obrigatório para o componente DirinfraListSelect
-                            watch={watch}
-
-                        />
-                    </div>
-                    <div className='linha'>
+                    {/* <div className='linha'>
                         <DirinfraListSelect
                             label='OM'
                             name='om_responsavel'
@@ -674,7 +668,41 @@ const AcidenteForm = () => {
                             watch={watch}
 
                         />
+                    </div> */}
+                    <DirinfraInput
+                        name='militar_acidentado'
+                        erros={errors}
+                        label={Dicionario('militar_acidentado')}
+                        placeholder='Ex.: 2T QOCON Leonnyo'
+                        registro={register}
+                        required={true}
+                    />
+                    <div className='linha'>
+                        <DirinfraTextarea
+                            name='local_ocorrencia'
+                            erros={errors}
+                            label='Local da Ocorrência'
+                            placeholder='Descreva o local onde ocorreu o acidente.'
+                            registro={register}
+                            required={true}
+                        />
                     </div>
+                    <div className='linha'>
+                        <DirinfraListSelect
+                            label='Gravidade do Acidente'
+                            name='gravidade_acidente'
+                            registro={register}
+                            required={true}
+                            options={gravidadeAcidentes.map(ga =>
+                                ({ value: String(ga.gravidade_acidente), label: ga.gravidade_acidente }))}
+                            erros={errors}
+                            placeholder='Selecione a gravidade do acidente'
+                            setValue={setValue} //Obrigatório para o componente DirinfraListSelect
+                            watch={watch}
+
+                        />
+                    </div>
+
                     <div className='linha'>
                         <DirinfraSelect
                             label='Estado'
@@ -839,8 +867,8 @@ const AcidenteForm = () => {
                         registro={register}
                         required={true}
                         options={tipoDeAcidente.map(ta => ({
-                            value: String(ta.descricao),
-                            label: ta.descricao,
+                            value: String(ta.tipo_de_acidente),
+                            label: ta.tipo_de_acidente,
                         }))}
                         erros={errors}
                         placeholder='Selecione o Tipo de Acidente'
@@ -1021,16 +1049,7 @@ const AcidenteForm = () => {
 
 
 
-                    <div className='linha'>
-                        <DirinfraTextarea
-                            name='local_ocorrencia'
-                            erros={errors}
-                            label='Local da Ocorrência'
-                            placeholder='Descreva o local onde ocorreu o acidente.'
-                            registro={register}
-                            required={true}
-                        />
-                    </div>
+
                     {/* ====================================== */}
                     {/* Estes campos apenas serão usados em 
                     em Forms de avaliação */}
@@ -1095,11 +1114,11 @@ const AcidenteForm = () => {
                 </div>
 
                 <div className='formulario-content'>
-                    {data?.id_gerais ? (
+                    {data?.id_sistra ? (
                         <>
-                            <p>Documento numerado como {Modelo} nº <em className='identificador'>{data.id_gerais}</em>
+                            <p>Documento numerado como {Modelo} nº <em className='identificador'>{data.id_sistra}</em>
                                 <ContentCopyIcon className={classes.iconeCopiar}
-                                    onClick={() => copiarID(data.id_gerais)}
+                                    onClick={() => copiarID(data.id_sistra)}
                                     title={"Clique para copiar o Identificador"}
                                 />
                             </p>

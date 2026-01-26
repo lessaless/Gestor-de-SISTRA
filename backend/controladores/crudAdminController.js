@@ -6,6 +6,7 @@ const gerarIdCN = require("../utils/gerarIds/gerarIdCN");
 const gerarIdETPE = require("../utils/gerarIds/gerarIdETPE");
 const gerarIdProposta = require("../utils/gerarIds/gerarIdProposta");
 const gerarIdGerais = require("../utils/gerarIds/gerarIdGerais");
+const gerarIdSistras = require("../utils/gerarIds/gerarIdSistras");
 const { objModelos } = require("../utils/modelosMongo/modelosMongo");
 const logger = require("../utils/logs/logger")
 const sanitizeMongoFilter = require("../utils/sanitizarQuery/sanitizarQuery");
@@ -23,7 +24,7 @@ const colecaoModelo = (req, res) => {
 		case 'GET':
 			buscarChaves = !!req.query.chaves;
 			let filtroOriginal = req.query.filtro;
-			
+
 			// obj = req.query.filtro ? JSON.parse(req.query.filtro) : {};
 			try {
 				obj = filtroOriginal ? sanitizeMongoFilter(JSON.parse(filtroOriginal)) : {};
@@ -118,6 +119,17 @@ const criarDados = asyncHandler(async (req, res) => {
 		objSemVazios.id_gerais = await gerarIdGerais(Modelo, objSemVazios);
 	}
 
+	// ========================================== //
+	// ================= SISTRA ================= //
+	// ========================================== //
+
+	if (Modelo.collection.name === 'sistragerais') {
+		objSemVazios.id_sistra = await gerarIdSistras(Modelo, objSemVazios);
+	}
+
+	// ========================================== //
+	// ================= Fim SISTRA ================= //
+	// ========================================== //
 	const objetoBson = await Modelo.create(objSemVazios);
 
 	if (!objetoBson) {
@@ -131,7 +143,18 @@ const criarDados = asyncHandler(async (req, res) => {
 	if (Modelo.collection.name === 'gerais') {
 		return res.status(201).json({ message: 'Criado com sucesso', id_gerais: objSemVazios.id_gerais, _id: objetoBson._id });//tem que sempre mandar o _id para o reset mudar a pagina Criar para Editar
 	}
+	// ========================================== //
+	// ================= SISTRA ================= //
+	// ========================================== //
 
+	if (Modelo.collection.name === 'sistragerais') {
+		return res.status(201).json({ message: 'Criado com sucesso', id_sistra: objSemVazios.id_sistra, _id: objetoBson._id });
+		//tem que sempre mandar o _id para o reset mudar a pagina Criar para Editar
+	}
+
+	// ========================================== //
+	// ================= Fim SISTRA ================= //
+	// ========================================== //
 	switch (Modelo.modelName) {
 		case 'Demanda': {
 			return res.status(201).json({ message: 'Criado com sucesso', id_demanda: objSemVazios.id_demanda });
@@ -214,7 +237,7 @@ const atualizarDados = asyncHandler(async (req, res) => {
 	}//--------------------------------------------------------------
 
 	if (docBeforeUpdate.arquivo_id && obj.arquivo_id) {//se houver arquivo antes e depois
-		if (docBeforeUpdate.arquivo_id.toString() !== obj.arquivo_id.toString()){//se houver mudança de arquivo
+		if (docBeforeUpdate.arquivo_id.toString() !== obj.arquivo_id.toString()) {//se houver mudança de arquivo
 			req.query.id = docBeforeUpdate.arquivo_id;
 			req.query.modo = 'metadados';
 			await deletarArquivo(req);//deletar arquivo antigo

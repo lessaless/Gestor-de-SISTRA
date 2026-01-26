@@ -67,10 +67,11 @@ const camposPermitidos = [
   // ================================== //
   // ============ sistra =============== //
   // ================================== //
-  'id_sistra_gerais',
+  'id_sistra',
   'data_ocorrencia',
   'status_final',
   'tipo_de_acidente',
+  'tipo_ocorrencia',
   'dia_da_semana',
   'data_envio_form',
   'natureza_atividade',
@@ -91,9 +92,12 @@ const camposPermitidos = [
   'militar_acidentado',
   'gravidade_acidente',
 
-  
+  'militar_acidentado',
+  'gravidade_acidente',
 
-  
+
+
+
   // ================================== //
   // ========== fim sistra ============ //
   // ================================== //
