@@ -73,8 +73,8 @@ const redirecionar = (subpagina, item, layout = 'main', origem) => {
     if (!tipoFluxo) console.error(`Erro interno do sistema: 'tipoFluxo' não recebido no 'redirecionar'. (${tipoFluxo})`)
 
     const _colecao = item?.colecao;
-    const id =  _colecao === 'demandas' ? item.id_demanda :  item?._id;
-    const endpoint = _colecao === 'demandas' ? `${id}` :  `${_colecao}/${id}`;
+    const id = _colecao === 'demandas' ? item.id_demanda : item?._id;
+    const endpoint = _colecao === 'demandas' ? `${id}` : `${_colecao}/${id}`;
     const edicaoTipo = _colecao === 'demandas' ? `editardemanda` : `editar`;
 
     const urls = {
@@ -90,18 +90,18 @@ const redirecionar = (subpagina, item, layout = 'main', origem) => {
 
     // Abre a URL em um pop-up
     if (layout === 'popup') {
-        
+
         const ePopup1 = window.innerWidth === 600 ? true : false;
         const larguraPopup1 = 600;
         const larguraPopup2 = 900;//popup 2 é para editar demandas, tem menu, deve ser mais largo
         const popupWidth = ePopup1 ? larguraPopup2 : larguraPopup1;
-        
+
         //Diminui 100px do popup1, e mantém a altura no popup2
         const popupHeight = ePopup1 ? window.innerHeight : window.innerHeight - 100;
-        
+
         const left = ePopup1 ? larguraPopup1 : 0;//posiciona popup2 à direita do popup1
         const top = 0;
-        
+
         const popupOptions = `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,location=no,toolbar=no,menubar=no,status=no`;
         return window.open(urls[subpagina], '_blank', popupOptions);
 
@@ -193,9 +193,11 @@ const onSubmit = async (data, pagina, listaChaves, confirmarID) => {
     const dadosPreenchidos = { ...data };//dados que vão para o BD
     console.log("Valor de dadosPreenchidos é ", dadosPreenchidos)
     dadosPreenchidos.colecao = data.colecao;
+    console.log("Valor de dadosPreenchidos.colecao é ", dadosPreenchidos.colecao)
+        console.log("Valor de pagina é ", pagina)
 
     if (pagina === 'Editar') {
-
+        console.log("Valor de pagina é ", pagina)
         listaChaves.forEach(chave => {
 
             const nome = chave.nome;//vem da lista do BD
@@ -224,7 +226,7 @@ const onSubmit = async (data, pagina, listaChaves, confirmarID) => {
         } else {//novo ou substituição
             const arquivo_id = await enviarArquivo(data.arquivo);
             if (arquivo_id) dadosPreenchidos.arquivo_id = arquivo_id;
-            
+
             else throw new Error('Erro ao enviar arquivo para o servidor!');
         }
 
@@ -273,7 +275,7 @@ const onSubmit = async (data, pagina, listaChaves, confirmarID) => {
         console.error(erro);
         throw new Error(erro.message);
     }
-}; 
+};
 
 
 

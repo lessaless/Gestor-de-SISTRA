@@ -1,6 +1,6 @@
 // const mongoose = require("mongoose");
 const mongoose = require("../db/connect");
-const { getModel } = require("../db/multiDB")
+// const { getModel } = require("../db/multiDB")
 
 const RoleSchema = new mongoose.Schema({
     _id: {
@@ -16,4 +16,5 @@ const RoleSchema = new mongoose.Schema({
     } // Exemplo: ["edicao_local", "remocao_local", "edicao_geral"]
 });
 
-module.exports = getModel('bibliotecatecnica', 'Role', RoleSchema, 'roles');
+// module.exports = getModel('bibliotecatecnica', 'Role', RoleSchema, 'roles');
+module.exports = mongoose.model('Role', RoleSchema);

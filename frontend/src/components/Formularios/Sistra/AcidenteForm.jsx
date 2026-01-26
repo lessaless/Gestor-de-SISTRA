@@ -150,7 +150,7 @@ const AcidenteForm = () => {
     const watchedDataOcorrencia = watch('data_ocorrencia');
     const watchedDiaSemanaCodigo = watch('dia_da_semana');
     const watchedDispensaAfastamento = watch('dispensa_afastamento');
-    const isDispensaDisabled = !watchedDispensaAfastamento?.includes('SIM');
+    const isDispensaDisabled = !watchedDispensaAfastamento?.includes('Sim');
     useEffect(() => {
         if (isDispensaDisabled) {
             setValue('descricao_dispensa', '', { shouldDirty: true });
@@ -863,18 +863,18 @@ const AcidenteForm = () => {
 
                     <DirinfraSelect
                         label='Tipo de Acidente'
-                        name='tipo_de_acidente'
+                        name='descricao'
                         registro={register}
                         required={true}
                         options={tipoDeAcidente.map(ta => ({
-                            value: String(ta.tipo_de_acidente),
-                            label: ta.tipo_de_acidente,
+                            value: String(ta.descricao),
+                            label: String(ta.descricao),
                         }))}
                         erros={errors}
                         placeholder='Selecione o Tipo de Acidente'
                         watch={watch}
                         setValue={setValue}
-                        value={watch('tipo_de_acidente') ?? ''}
+                        value={watch('descricao') ?? ''}
                     />
 
                     {/* <div className='linha'>
@@ -1080,7 +1080,7 @@ const AcidenteForm = () => {
                     {/* Fim de campos em Forms de avaliação */}
                     {/* ====================================== */}
 
-                    <div className='linha'>
+                    {/* <div className='linha'>
                         <DirinfraTextarea
                             name='acoes_treinamentos'
                             erros={errors}
@@ -1089,7 +1089,7 @@ const AcidenteForm = () => {
                             registro={register}
                             required={true}
                         />
-                    </div>
+                    </div> */}
                     <div className='linha'>
                         <DirinfraTextarea
                             name='obs_gerais'

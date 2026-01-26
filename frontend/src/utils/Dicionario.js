@@ -105,6 +105,7 @@ const traducoes = {
 
     // SISTRA
     "data_ocorrencia":"Data da Ocorrência",
+    "militar_acidentado": "Militar Acidentado",
     "agente_causador_acidente":"Agente Causador do Acidente",
     "situacao_geradora":"Situação Geradora",
     "parte_do_corpo_atingida":"Parte do Corpo Atingida",

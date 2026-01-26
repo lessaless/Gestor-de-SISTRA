@@ -1,6 +1,6 @@
 const mongoose = require("../db/connect")
 const { getModel } = require("../db/multiDB");
-const Role = require("../modelos/roleModel")
+// const Role = require("../modelos/roleModel")
 
 const userSchema = mongoose.Schema({
     nome: {

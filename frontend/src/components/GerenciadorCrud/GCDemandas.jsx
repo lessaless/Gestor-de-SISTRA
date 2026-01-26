@@ -908,7 +908,7 @@ const GCDemandas = () => {
                         >
                           {/* Antes: Acervo Técnico */}
                           {/* {doc.id_gerais || doc.titulo_doc} */}
-                          {/* Após - Implementaão do SISTRA */}
+                          {/* Após - Implementação do SISTRA */}
                           {doc.id_sistra}
 
                         </li>

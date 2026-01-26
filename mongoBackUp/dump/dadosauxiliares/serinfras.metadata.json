@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"17c92e23be8f49b6a4225f4feb0eac4a","collectionName":"serinfras","type":"collection"}

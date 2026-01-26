@@ -116,16 +116,21 @@ const colecaoModelo = (req, res) => {
 const criarDados = asyncHandler(async (req, res) => {
 
 	const { Modelo, obj } = colecaoModelo(req, res);
-
+	console.log("Valor de Modelo, obj é", Modelo, obj)
 	// ========================================
 	// Validar campos calculados
 	// ========================================
 	validarCamposCalculados(obj);
+	console.log("Valor de Modelo.modelName em crudController é", Modelo.modelName)
 	switch (Modelo.modelName) {
 		case 'Demanda': {
 			obj.id_demanda = await gerarIdDemanda(obj.ods_objeto);
 		}
 			console.log("Passou por crudController", obj.id_demanda)
+		// case 'Acidente': {
+		// 	obj.id_demanda = await gerarIdSistras(obj.ods_objeto);
+		// }
+		// 	console.log("Passou por crudController", obj.id_sistra)
 		case 'CN': {
 			obj.id_cn = await gerarIdCN(obj.id_demanda);
 		}
@@ -168,9 +173,9 @@ const criarDados = asyncHandler(async (req, res) => {
 	// ========================================== //
 	// ================= SISTRA ================= //
 	// ========================================== //
-	
-	if (Modelo.collection.name === 'sistra') {
-		console.log("Valor de obj é", obj)
+
+	if (Modelo.collection.name === 'sistragerais') {
+		console.log("Valor de obj, linha 178 é", obj)
 		obj.id_sistra = await gerarIdSistras(Modelo, obj);
 	}
 	// ========================================== //

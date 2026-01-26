@@ -1,4 +1,4 @@
-// const Gerais = require("../../modelos/geraisModel");
+// const SistraGerais = require("../../modelos/sistraModel");
 
 // Sequências iniciais para cada OM, para cada Modelo. Usa o que for maior, esse ou o último do banco
 // const sequenciasIniciais = require("./sequenciasIniciais");
@@ -13,7 +13,7 @@ const prefixo = (modelo) => {
 };
 
 
-
+let partes;
 const gerarIdSistras = async (subModelo, obj) => {
 	try {
 
@@ -26,6 +26,7 @@ const gerarIdSistras = async (subModelo, obj) => {
 				$addFields: {
 					// partes: { $split: ["$id_gerais", "-"] }, // Divide o ID em partes
 					partes: { $split: ["$id_sistra", "/"] }, // Divide o ID em partes
+					
 				},
 			},
 			{
@@ -46,6 +47,7 @@ const gerarIdSistras = async (subModelo, obj) => {
 				$limit: 1, // Retorna apenas o último registro encontrado
 			},
 		]);
+		console.log("Valor de partes em gerarIdSistras é", partes)
 
 		// Extrai o último ID, se encontrado
 		const ultimoId = ultimo.length > 0 ? ultimo[0].id_sistra : null;

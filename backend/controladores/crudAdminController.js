@@ -122,9 +122,10 @@ const criarDados = asyncHandler(async (req, res) => {
 	// ========================================== //
 	// ================= SISTRA ================= //
 	// ========================================== //
-
+	console.log("Valor de Modelo.collection.name  é", Modelo.collection.name)
 	if (Modelo.collection.name === 'sistragerais') {
 		objSemVazios.id_sistra = await gerarIdSistras(Modelo, objSemVazios);
+
 	}
 
 	// ========================================== //

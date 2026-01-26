@@ -10,13 +10,6 @@ const acidenteSchema = new mongoose.Schema({
     gravidade_acidente: {
         type: String,
         trim: true
-    },    militar_acidentado: {
-        type: String,
-        trim: true
-    },
-    gravidade_acidente: {
-        type: String,
-        trim: true
     },
 });
 

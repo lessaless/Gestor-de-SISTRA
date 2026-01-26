@@ -1,115 +1,81 @@
-// seedRoles.js - Script para criar as roles no banco de dados
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
-const mongoose = require("./db/connect");
-const { getModel } = require("./db/multiDB");
+const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 
-const RoleSchema = new mongoose.Schema({
-    _id: { type: String },
-    nivel: { type: Number },
-    permissions: { type: [String] }
-});
+const Role = require('./modelos/roleModel');
 
-const Role = getModel('bibliotecatecnica', 'Role', RoleSchema, 'roles');
+// Conectar ao MongoDB
+const MONGO_URI = process.env.MONGO_URI;
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const roles = [
     {
         _id: "admin_geral",
-        nivel: 5,
-        permissions: [
-            "leitura_geral",
-            "cadastramento_geral",
-            "edicao_geral",
-            "edicao_propria_geral",
-            "remocao_geral",
-            "remocao_propria_geral",
-            "setaradmin",
-            "removeradmin"
-        ]
-    },
-    {
-        _id: "admin_local",
-        nivel: 4,
-        permissions: [
-            "leitura_geral",
-            "cadastramento_local",
-            "edicao_local",
-            "edicao_propria_local",
-            "remocao_local",
-            "remocao_propria_local",
-            "setaradmin",
-            "removeradmin"
-        ]
-    },
-    {
-        _id: "usuario_geral",
         nivel: 3,
         permissions: [
-            "leitura_geral",
+            "setaradmin_geral", "removeradmin_geral",
+            "edicao_geral", "remocao_geral",
+            "edicao_propria_geral", "remocao_propria_geral",
             "cadastramento_geral",
-            "edicao_propria_geral",
-            "remocao_propria_geral"
-        ]
-    },
-    {
-        _id: "usuario_local",
-        nivel: 2,
-        permissions: [
-            "leitura_local",
-            "cadastramento_local",
+            
+            "setaradmin_local", "removeradmin_local",
+            
+            "edicao_local", "remocao_local",
+
+            "remocao_propria_local",
             "edicao_propria_local",
-            "remocao_propria_local"
-        ]
-    },
-    {
-        _id: "leitor_geral",
-        nivel: 1,
-        permissions: [
+            "cadastramento_local",
             "leitura_geral"
         ]
     },
     {
-        _id: "leitor_local",
-        nivel: 0,
+        _id: "admin_local",
+        nivel: 2,
         permissions: [
-            "leitura_local"
+            "setaradmin_local", "removeradmin_local",
+
+            "edicao_local", "remocao_local",
+
+            "remocao_propria_local",
+            "edicao_propria_local",
+            "cadastramento_local",
+            "leitura_geral"
         ]
+    },
+    {
+        _id: "usuario_local",
+        nivel: 1,
+        permissions: [
+            "remocao_propria_local",
+            "edicao_propria_local",
+            "cadastramento_local",
+            "leitura_geral"
+        ]
+    },
+    {
+        _id: "visitante",
+        nivel: 0,
+        permissions: ["leitura_geral"] // Visitantes só podem visualizar, que já é liberado por padrão
     }
 ];
 
-async function seedRoles() {
+// Função para inserir ou atualizar roles
+const seedRoles = async () => {
     try {
-        console.log("🌱 Iniciando seed das roles...");
-
-        // Limpa a coleção (opcional - remova se quiser manter roles existentes)
-        // await Role.deleteMany({});
-        // console.log("🗑️  Roles antigas removidas");
-
-        // Insere as roles
-        for (const roleData of roles) {
-            const exists = await Role.findById(roleData._id);
-            if (exists) {
-                console.log(`⚠️  Role ${roleData._id} já existe, pulando...`);
-                continue;
-            }
-            
-            await Role.create(roleData);
-            console.log(`✅ Role ${roleData._id} criada com sucesso`);
+        for (const role of roles) {
+            await Role.findByIdAndUpdate(role._id, role, { upsert: true, new: true });
         }
+        console.log("\nRoles inseridos/atualizados com sucesso!\n");
+        mongoose.connection.close();
 
-        console.log("\n🎉 Seed concluído com sucesso!");
-        console.log("\n📋 Roles disponíveis:");
-        const allRoles = await Role.find({}).sort({ nivel: -1 });
-        allRoles.forEach(role => {
-            console.log(`\n   ${role._id} (nível ${role.nivel}):`);
-            console.log(`   Permissões: ${role.permissions.join(', ')}`);
-        });
-
-        process.exit(0);
     } catch (error) {
-        console.error("❌ Erro ao criar roles:", error);
-        process.exit(1);
-    }
-}
+        console.error("\nErro ao inserir roles:", error, "\n");
+        mongoose.connection.close();
 
-// Executa o seed
+    }
+};
+
+// Executar o seed
 seedRoles();

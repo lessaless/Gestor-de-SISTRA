@@ -381,6 +381,7 @@ const determinarTipoDocumento = (Modelo) => {
 	// Mapeamento de modelos para tipos de documento
 	const mapeamento = {
 		// Por modelName (discriminator name)
+		'Acidente': 'Acidente',
 		'EstudoTecnicoPreliminarDeEngenharia': 'EstudoTecnicoPreliminarDeEngenharia',
 		'CadernoDeNecessidades': 'CadernoDeNecessidades',
 		'NotaTecnica': 'NotaTecnica',
@@ -452,6 +453,12 @@ const determinarTipoDocumento = (Modelo) => {
 				return 'OrdemTecnica';
 			}
 
+			return null;
+		},
+		'sistragerais': (Modelo) => {
+			if (Modelo.modelName === 'Acidente') {
+				return 'Acidente';
+			}
 			return null;
 		},
 		'ap': (Modelo) => {

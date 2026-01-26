@@ -10,43 +10,32 @@ const gerarChave = (userReq, userBD, objeto, operacao) => {
     let eLocal = false;
     let chavePermissao = operacao;
 
-    console.log('=== GERAR CHAVE DEBUG ===');
-    console.log('operacao:', operacao);
-    console.log('userReq:', userReq);
-    console.log('userBD.OM:', userBD.OM);
-    console.log('objeto:', objeto);
-
     if (operacao === "cadastramento") {
         if (userReq.OM) {//se tiver OM na requisição
-            console.log('userReq.OM existe:', userReq.OM);
-            if (userReq.OM === userBD.OM) {
-                eLocal = true;
-                console.log('OM matches - eLocal = true');
-            } else {
-                eLocal = false;
-                console.log('OM differs - eLocal = false');
-            }
-        } else {
-            eLocal = true;
-            console.log('userReq.OM não existe - eLocal = true');
-        }
+            // console.log("O valor de objeto:", objeto)
+            if (userReq.OM === userBD.OM) eLocal = true;//checa se não foi alterada em relação ao BD
+            else eLocal = false;//se foi alterada, sobe o privilégio
+        } else eLocal = true;//se não tem na requisição, valida
+
     }
     else if (["edicao", "remocao"].includes(operacao)) {
+        // console.log("O valor de userDB:", userBD)
+        // console.log("O valor de objeto:", objeto)
         ePropria = objeto.criado_por.toString() === userBD.SARAM.toString();
         eLocal = objeto.om_autora === userBD.OM;
         chavePermissao += ePropria ? "_propria" : "";
+
     } else {//alterarpermissao
-        chavePermissao = objeto.acao;
+        chavePermissao = objeto.acao;//setaradmin, removeradmin
         eLocal = objeto.pessoa.OM === userBD.OM;
+
     }
 
     chavePermissao += eLocal ? "_local" : "_geral";
 
-    console.log('chavePermissao final:', chavePermissao);
-    console.log('=== FIM DEBUG ===');
-
     return chavePermissao;
 }
+
 
 // Middleware para verificar permissões
 const checarPermissao = (operacao) => {
@@ -55,7 +44,7 @@ const checarPermissao = (operacao) => {
 
         const userReq = req.user;
 
-        let filtro = req.query.filtro;
+        let filtro = req.query.filtro;// requisições GET e DELETE
         if (typeof filtro === "string") {
             try {
                 filtro = JSON.parse(filtro);
@@ -66,46 +55,42 @@ const checarPermissao = (operacao) => {
             filtro = {};
         }
 
-        const obj = req.body;
+        const obj = req.body;// requisições POST e PATCH
+
         const id = ['PATCH', 'POST', 'PUT'].includes(req.method) ? obj._id : filtro._id;
+
         const colecao = obj?.colecao || req.query.colecao;
         const Modelo = objModelos[colecao]?.modelo;
 
+
         try {
-            const userBD = await User.findById(userReq._id);
+
+            //como no modelo User foi definido ref: 'Role', o populate traz os dados da Role no mesmo objeto
+            // Ex.: Se em userBD.role = "admin_geral", após o populate,
+            // userBD.role = { _id: "admin_geral", permissions: [...permissoes] }
+
+            const userBD = await User.findById(userReq._id).populate('role');
+            req.user = userBD;
+            // const userBD = userReq.populate('role');
 
             if (!userBD) {
-                logger.error(`Usuário não encontrado para o ID ${userReq._id}`);
+                logger.error(`Usuário (${userBD}) não encontrado para o ID ${userReq._id}`);
                 res.status(403);
                 throw new Error("Usuário não encontrado!");
             }
 
-            // MANUAL LOOKUP DA ROLE
-            const roleDoc = await Role.findById(userBD.role);
-
-            if (!roleDoc) {
-                logger.error(`Role ${userBD.role} não encontrada`);
-                res.status(403);
-                throw new Error("Permissões não configuradas!");
-            }
-
-            const permissoes = roleDoc.permissions || [];
-
-            console.log('User:', userBD.SARAM, userBD.nome);
-            console.log('Role:', userBD.role);
-            console.log('Permissions:', permissoes);
-
-            req.user = userBD;
+            const permissoes = userBD.role?.permissions || [];
 
             if (operacao === "leitura") {
+
                 if (permissoes.includes("leitura_geral")) return next();
 
-                if (permissoes.includes("leitura_local")) {
+                if (userBD.role?.permissions.includes("leitura_local")) {
                     req.query.filtro = JSON.stringify({ ...filtro, om_autora: userBD.OM });
                     return next();
                 }
 
-                if (permissoes.includes("leitura_propria_local")) {
+                if (userBD.role?.permissions.includes("leitura_propria_local")) {
                     req.query.filtro = JSON.stringify({ ...filtro, om_autora: userBD.OM, criado_por: userBD.SARAM });
                     return next();
                 }
@@ -115,7 +100,7 @@ const checarPermissao = (operacao) => {
             }
 
             if (operacao === "verusuarios") {
-                if (userBD.role === "admin_geral" || userBD.role === "admin_local") return next();
+                if (userBD.role?._id === "admin_geral" || userBD.role?._id === "admin_local") return next();
                 else {
                     res.status(403);
                     throw new Error("Acesso negado para essa operação.");
@@ -123,11 +108,11 @@ const checarPermissao = (operacao) => {
             }
 
             const objeto = await Modelo?.findById(id) || obj;
+
             const chavePermissao = gerarChave(userReq, userBD, objeto, operacao);
 
             if (!permissoes.includes(chavePermissao)) {
                 logger.error(`Acesso negado! Permissão necessária: ${chavePermissao} - ${userBD.SARAM}/${userBD.nome}`);
-                logger.error(`Permissões disponíveis: ${permissoes.join(', ')}`);
                 res.status(403);
                 throw new Error("Acesso negado para essa operação.");
             }
@@ -137,9 +122,11 @@ const checarPermissao = (operacao) => {
 
         } catch (err) {
             next(err);
+
         }
 
     });
 
 };
+
 module.exports = checarPermissao;

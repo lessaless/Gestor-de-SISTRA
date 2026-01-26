@@ -108,7 +108,7 @@ const DirinfraInputNumerico = ({
 
 	useEffect(() => {
 		if (valorAtual !== undefined && valorAtual !== null && valorAtual !== '') {
-			setValorExibido(`${valorAtual}`);
+			setValorExibido(`${valorAtual} dias`);
 		} else {
 			setValorExibido('');
 		}
@@ -116,7 +116,7 @@ const DirinfraInputNumerico = ({
 
 	const handleChange = (event) => {
 		const apenasNumeros = event.target.value.replace(/\D/g, '');
-		setValorExibido(apenasNumeros ? `${apenasNumeros}` : '');
+		setValorExibido(apenasNumeros ? `${apenasNumeros} dias` : '');  // ✅ Add "dias" suffix
 
 		if (props.onChange) props.onChange(event);
 	};
@@ -129,7 +129,7 @@ const DirinfraInputNumerico = ({
 		if (valor > max) valor = max;
 
 		setValue(name, valor);
-		setValorExibido(valor !== '' ? `${valor}` : '');
+		setValorExibido(valor !== '' ? `${valor} dias` : '');  // ✅ Add "dias" suffix
 	};
 
 	const handleIncrement = () => {

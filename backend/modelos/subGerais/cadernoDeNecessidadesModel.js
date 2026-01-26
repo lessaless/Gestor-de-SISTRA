@@ -83,7 +83,7 @@ const cadernoDeNecessidadesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tipo_de_acidente: {
+    descricao: {
         type: String,
         required: true
     },

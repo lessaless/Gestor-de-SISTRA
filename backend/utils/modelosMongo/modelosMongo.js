@@ -127,7 +127,7 @@ module.exports = {
         // ============================= //
         // Início Modelos SISTRA
         // ============================= //
-        "acidente": {
+        "acidentes": {
             "modelo": Acidente,
             "automaticos": ['_id', '__v']
         },

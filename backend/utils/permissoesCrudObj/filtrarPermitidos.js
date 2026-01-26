@@ -69,8 +69,9 @@ const camposPermitidos = [
   // ================================== //
   'id_sistra',
   'data_ocorrencia',
+  'acidentes',
   'status_final',
-  'tipo_de_acidente',
+  'descricao',
   'tipo_ocorrencia',
   'dia_da_semana',
   'data_envio_form',

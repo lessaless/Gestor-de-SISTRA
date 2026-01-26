@@ -76,7 +76,7 @@ const sistraGeraisSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	tipo_de_acidente: {
+	descricao: {
 		type: String,
 		required: true
 	},
@@ -104,6 +104,11 @@ const sistraGeraisSchema = mongoose.Schema({
 		trim: true,
 		required: true
 	},
+	duracao_dispensa: {
+		type: String,
+		trim: true,
+		required:false
+	},
 	causa_gerais: {
 		type: String,
 		trim: true,
@@ -130,11 +135,11 @@ const sistraGeraisSchema = mongoose.Schema({
 	//     trim: true,
 	//     required: true
 	// },
-	acoes_treinamentos: {
-		type: String,
-		trim: true,
-		required: true
-	},
+	// acoes_treinamentos: {
+	// 	type: String,
+	// 	trim: true,
+	// 	required: true
+	// },
 	// ================= //
 	// Fim para Campos texto
 	// ================= //
