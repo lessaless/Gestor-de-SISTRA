@@ -2,7 +2,7 @@ import React from 'react';
 import DirinfraCard from '../../components/DirinfraCard/DirinfraCard';
 import DirinfraCardHeader from '../../components/DirinfraCard/DirinfraCardHeader';
 import DirinfraCardBody from '../../components/DirinfraCard/DirinfraCardBody';
-import logo from '../../imgs/logo/logo-mask.png';
+import logo from '../../imgs/logo/logo-branco.png';
 
 
 const estilo = {
@@ -55,7 +55,7 @@ const estilo = {
     //     textAlign: 'center',
     //     backgroundColor: '#f4f4f4',
     // }
-    logo: {
+    logo: { // aqui testo para identificar a saída da imagem
         height: '300px',
         width: '300px',
         backgroundColor: 'var(--color-logo1)',
