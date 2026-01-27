@@ -38,6 +38,9 @@ const sistraGeraisSchema = mongoose.Schema({
 	// =============== //
 	// Início SISTRA //
 	// =============== //
+	arquivo_id: {
+		type: mongoose.Schema.Types.ObjectId,
+	},
 	id_sistra: {
 		type: String,
 		trim: true,
@@ -54,24 +57,38 @@ const sistraGeraisSchema = mongoose.Schema({
 		trim: true,
 		required: false,
 	},
+	
 	estado_demanda: {
 		type: String,
 		trim: true,
 		required: false,
 	},
+	serinfra: {
+		type: String,
+		
+		required: true,
+	},
 	natureza_atividade: {
 		type: String,
-		trim: true
+		trim: true,
+		required: true,
 	},
 
 	dispensa_afastamento: {
 		type: String,
-		trim: true
+		trim: true,
+		required: true,
 	},
 	parte_do_corpo_atingida: {
 		type: String,
 		trim: true
 	},
+	situacao_geradora: {
+		type: String,
+		trim: true
+	},
+
+
 	status_final: {
 		type: String,
 		required: true
@@ -107,7 +124,7 @@ const sistraGeraisSchema = mongoose.Schema({
 	duracao_dispensa: {
 		type: String,
 		trim: true,
-		required:false
+		required: false
 	},
 	causa_gerais: {
 		type: String,
@@ -117,12 +134,17 @@ const sistraGeraisSchema = mongoose.Schema({
 	descricao_dispensa: {
 		type: String,
 		trim: true,
-		required: true
+		required: false
 	},
 	local_ocorrencia: {
 		type: String,
 		trim: true,
 		required: true
+	},
+	obs_gerais: {
+		type: String,
+		trim: true,
+		required: false
 	},
 
 	// recomendacoes_csmt: {

@@ -64,10 +64,15 @@ const useStyles = makeStyles({
         minHeight: '15px',
         minWidth: 'min-content',
         padding: '5px',
-    }
+    },
+    requiredAsterisk: {
+        color: 'var(--color-borderError, red)',
+        marginLeft: '4px',
+        fontWeight: 'bold',
+    },
 });
 
-const DirinfraTextarea = ({ registro, erros, ...props }) => {
+const DirinfraTextArea = ({ registro, erros, ...props }) => {
     const classes = useStyles();
     const temErro = erros && erros[props.name];
     const persistirDisabled = true;//desabilita o clique-duplo-para-reabilitar elementos com disabled
@@ -93,6 +98,9 @@ const DirinfraTextarea = ({ registro, erros, ...props }) => {
                 style={{ width: '30%' }}
             >
                 {props.label || props.name}
+                {props.required && (
+                        <span className={classes.requiredAsterisk}>*</span>
+                    )}
             </label>
             <textarea
                 className={`${classes.inputDirinfra} ${temErro ? classes.inputDirinfraErro : classes.inputDirinfraOk} ${props.className}`}
@@ -108,4 +116,4 @@ const DirinfraTextarea = ({ registro, erros, ...props }) => {
     );
 };
 
-export default DirinfraTextarea;
+export default DirinfraTextArea;

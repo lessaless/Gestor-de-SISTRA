@@ -8,7 +8,7 @@ import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquiv
 import AutorForm from '../AutorForms';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 // import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 import utilService from '../../../services/utilService';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -678,12 +678,12 @@ const AcidenteForm = () => {
                         name='militar_acidentado'
                         erros={errors}
                         label={Dicionario('militar_acidentado')}
-                        placeholder='Ex.: 2T QOCON Leonnyo'
+                        placeholder='Ex.: 7304013'
                         registro={register}
                         required={true}
                     />
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='local_ocorrencia'
                             erros={errors}
                             label='Local da Ocorrência'
@@ -693,7 +693,7 @@ const AcidenteForm = () => {
                         />
                     </div>
                     <div className='linha'>
-                        <DirinfraListSelect
+                        <DirinfraSelect
                             label='Gravidade do Acidente'
                             name='gravidade_acidente'
                             registro={register}
@@ -734,7 +734,7 @@ const AcidenteForm = () => {
                             label='SERINFRA'
                             placeholder='Preenchido ao selecionar o Estado'
                             registro={register}
-                            required={true}
+                            required={false}
                             readOnly={true}
                             value={watch('serinfra') ?? ''}
                         />
@@ -797,7 +797,7 @@ const AcidenteForm = () => {
                         label='Natureza da Atividade'
                         name='natureza_atividade'
                         registro={register}
-                        required={false}
+                        required={true}
                         options={naturezaDaAtividade.map(na => ({
                             value: String(na.descricao),
                             label: na.descricao,
@@ -814,7 +814,7 @@ const AcidenteForm = () => {
                         label='Dispensa ou Afastamento'
                         name='dispensa_afastamento'
                         registro={register}
-                        required={false}
+                        required={true}
                         options={houveDispensa.map(da => ({
                             value: String(da.descricao),
                             label: da.descricao,
@@ -827,7 +827,7 @@ const AcidenteForm = () => {
                     />
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='descricao_dispensa'
                             erros={errors}
                             label='Descrição da Dispensa'
@@ -882,89 +882,6 @@ const AcidenteForm = () => {
                         value={watch('descricao') ?? ''}
                     />
 
-                    {/* <div className='linha'>
-                        <em className="obrigatorios">*</em>
-                        <DirinfraInput
-                            name='data_doc'
-                            erros={errors}
-                            label='Data do Caderno de Necessidades'
-                            placeholder='DD/MM/AAAA'
-                            registro={register}
-                            required={true}
-                            type='date'
-                        />
-                    </div>
-
-                    <div className='linha'>
-                        <DirinfraInput
-                            name='codigo_documento_bim'
-                            erros={errors}
-                            label='Código Documento BIM'
-                            placeholder='Apenas se atrelado a demanda.'
-                            registro={register}
-                            required={false}
-                            disabled={true}
-                            addon={
-                                <CopyBtn
-                                    name="codigo_documento_bim"
-                                    label="Código Documento BIM"
-                                    // optional: pass inputProps.getValues if you want copy to use a provided getValues function:
-                                    inputProps={{ getValues }}
-                                    size={34}
-                                />
-                            }
-                        />
-                    </div> */}
-
-                    {/* <div className='linha'>
-                        <DirinfraInput
-                            name='doc_sigadaer'
-                            erros={errors}
-                            label={Dicionario('doc_sigadaer')}
-                            placeholder='Ex.: Ofício nº XXX/YYYYY/ZZZZ'
-                            registro={register}
-                            required={false}
-                        />
-                    </div> */}
-
-
-
-                    {/* <DisciplinasForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} /> */}
-
-                    {/* <PalavrasChaveForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} /> */}
-
-                    {/* <AutorForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} /> */}
-                    {/* <div className='linha'>
-                        <DirinfraInput
-                            name='data_inicio_confecc_doc'
-                            erros={errors}
-                            label={Dicionario('data_inicio_confecc_doc')}
-                            placeholder='DD/MM/AAAA'
-                            registro={register}
-                            required={false}
-                            type='date'
-                        />
-                    </div>
-                    <div className='linha'>
-                        <DirinfraInput
-                            name='data_entrega_doc'
-                            erros={errors}
-                            label={Dicionario('data_entrega_doc')}
-                            placeholder='DD/MM/AAAA'
-                            registro={register}
-                            required={false}
-                            type='date'
-                            min={watch('data_inicio_confecc_doc') || undefined} // ✅ HTML5 validation
-                            validar={{  // ✅ React Hook Form validation (already supported by DirinfraInput)
-                                afterOrEqualStart: (value) => {
-                                    const dataInicio = watch('data_inicio_confecc_doc');
-                                    if (!value || !dataInicio) return true;
-                                    return value >= dataInicio ||
-                                        'A data de entrega não pode ser anterior à data de início';
-                                }
-                            }}
-                        />
-                    </div> */}
                     <div className='linha'>
                         <DirinfraInput
                             name='data_ocorrencia'
@@ -972,7 +889,7 @@ const AcidenteForm = () => {
                             label={Dicionario('data_ocorrencia')}
                             placeholder='DD/MM/AAAA'
                             registro={register}
-                            required={false}
+                            required={true}
                             type='date'
                         />
                     </div>
@@ -981,9 +898,9 @@ const AcidenteForm = () => {
                             name='dia_da_semana'
                             erros={errors}
                             label='Dia da Semana'
-                            placeholder='Preenchido automaticamente pela Data da Ocorrência'
+                            placeholder='Preenchido a partir da Data'
                             registro={register}
-                            required={true}
+                            required={false}
                             readOnly={true}
                             value={
                                 // se dia_da_semana for codigo, mostra descricao; se for texto, mostra o próprio valor
@@ -1003,7 +920,7 @@ const AcidenteForm = () => {
                             label={Dicionario('data_envio_form')}
                             placeholder='DD/MM/AAAA'
                             registro={register}
-                            required={false}
+                            required={true}
                             type='date'
                             min={watch('data_ocorrencia') || undefined} // ✅ HTML5 validation
                             validar={{  // ✅ React Hook Form validation (already supported by DirinfraInput)
@@ -1031,7 +948,7 @@ const AcidenteForm = () => {
 
                     {/* ====== Campos dissertativos ====== */}
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='descricao_gerais'
                             erros={errors}
                             label='Descrição Geral'
@@ -1042,7 +959,7 @@ const AcidenteForm = () => {
                     </div>
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='causa_gerais'
                             erros={errors}
                             label='Causa Geral'
@@ -1061,7 +978,7 @@ const AcidenteForm = () => {
                     {/* ====================================== */}
 
                     {/* <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='recomendacoes_csmt'
                             erros={errors}
                             label='Recomendações CSMT'
@@ -1072,7 +989,7 @@ const AcidenteForm = () => {
                     </div>
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='recomendacoes_cipa'
                             erros={errors}
                             label='Recomendações CIPA'
@@ -1086,7 +1003,7 @@ const AcidenteForm = () => {
                     {/* ====================================== */}
 
                     {/* <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='acoes_treinamentos'
                             erros={errors}
                             label='Ações e Treinamentos'
@@ -1096,7 +1013,7 @@ const AcidenteForm = () => {
                         />
                     </div> */}
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'
@@ -1105,7 +1022,7 @@ const AcidenteForm = () => {
                         />
                     </div>
                     {/* <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'

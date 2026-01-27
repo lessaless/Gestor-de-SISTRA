@@ -73,6 +73,11 @@ const useStyles = makeStyles({
         minWidth: 'min-content',
         padding: '5px',
     },
+    requiredAsterisk: {
+        color: 'var(--color-borderError, red)',
+        marginLeft: '4px',
+        fontWeight: 'bold',
+    },
 });
 
 const buscarErro = (objErros, propsName) => {
@@ -157,6 +162,10 @@ const DirinfraInput = ({
                     {...labelProps}
                 >
                     {props.label || props.name}
+                    {/* Asterisco vermelho para campos obrigatórios */}
+                    {props.required && (
+                        <span className={classes.requiredAsterisk}>*</span>
+                    )}
                 </label>
             )}
 

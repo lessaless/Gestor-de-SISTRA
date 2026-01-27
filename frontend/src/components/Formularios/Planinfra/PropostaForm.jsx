@@ -17,7 +17,7 @@ import {
     receberArquivo,
     redirecionar
 } from '../../../utils/gerCrud';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 
 const formatarMoeda = (valor) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -522,7 +522,7 @@ const PropostaForm = () => {
                     </div>
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_proposta'
                             erros={errors}
                             label='Observações'

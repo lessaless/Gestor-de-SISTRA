@@ -15,7 +15,7 @@ import utilService from '../../../services/utilService';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
 import DirinfraSelect from '../../DirinfraSelect/DirinfraSelect';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 import { useSalvar } from '../../../utils/SalvarContext';
 
@@ -780,7 +780,7 @@ const PLANINFRAForm = () => {
 						/>
 					</div>
 					<div className='linha'>
-						<DirinfraTextarea
+						<DirinfraTextArea
 							name='obs_etpe'
 							erros={errors}
 							label='Observações'

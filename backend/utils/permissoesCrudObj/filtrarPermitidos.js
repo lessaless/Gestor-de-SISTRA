@@ -68,6 +68,7 @@ const camposPermitidos = [
   // ============ sistra =============== //
   // ================================== //
   'id_sistra',
+  'serinfra',
   'data_ocorrencia',
   'acidentes',
   'status_final',

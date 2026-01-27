@@ -5,7 +5,7 @@ import { Search, Tune, SearchOff } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 
 import DirinfraSelect from '../DirinfraSelect/DirinfraSelect';
-import { formulariosGerais } from "../../utils/ColecaoModelo";
+import { formulariosGerais, formulariosSistra } from "../../utils/ColecaoModelo";
 import { sistraGerais } from "../../utils/ColecaoModelo";
 import TextoEmIcone from '../TextoEmIcone/TextoEmIcone';
 import verificarPadraoId from '../../utils/verificarPadraoId';
@@ -111,7 +111,7 @@ const extrairAnos = (dados) => {
 };
 
 const conerterParaModelo = (tipo) => {
-    const entry = Object.entries(formulariosGerais).find(([key, value]) => value.nome === tipo);
+    const entry = Object.entries(formulariosSistra).find(([key, value]) => value.nome === tipo);
     return entry ? entry[1].modelo : tipo;
 };
 
@@ -176,6 +176,7 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
         { key: 'tipoDocumento', label: 'Tipo de Documento' },
         { key: 'disciplina', label: 'Disciplina' },
         { key: 'om', label: 'OM' },
+        // { key: 'serinfra', label: 'SERINFRA' },
         { key: 'ano', label: 'Ano' },
     ];
 

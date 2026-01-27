@@ -78,7 +78,7 @@ const obterSerinfraPorUFs = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
 		const serinfraPorUf = await SerinfraPorUf.find({}, { serinfra: 1, area_atuacao: 1, _id: 0 });
-		console.log("Valor de serinfra em utilController é ", serinfraPorUf)
+		// console.log("Valor de serinfra em utilController é ", serinfraPorUf)
 		// Retornar a lista de valores 'serinfras'
 		return res.status(200).json(serinfraPorUf);
 	} catch (error) {
@@ -91,7 +91,7 @@ const obterGravidadeAcidentes = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
 		const gravidadeAcidente = await GravidadeAcidente.find({}, { gravidade_acidente: 1, _id: 0 });
-		console.log("Valor de gravidadeAcidente em utilController é ", gravidadeAcidente)
+		// console.log("Valor de gravidadeAcidente em utilController é ", gravidadeAcidente)
 		// Retornar a lista de valores 'gravidadeAcidentes'
 		return res.status(200).json(gravidadeAcidente);
 	} catch (error) {
@@ -105,7 +105,7 @@ const obterDiaDaSemanas = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'agentescausadores'
 		const diaDaSemana = await DiaDaSemana.find({}, { dia_da_semana: 1, _id: 0 });
-		console.log("Valor de diaDaSemana  é ", diaDaSemana)
+		// console.log("Valor de diaDaSemana  é ", diaDaSemana)
 		// Retornar a lista de valores 'agentescausadores'
 		return res.status(200).json(diaDaSemana);
 	} catch (error) {
@@ -182,7 +182,7 @@ const obterTipoDeAcidentes = asyncHandler(async (req, res) => {
 	try {
 		// Buscar todos os documentos na coleção 'tipodeacidentes'
 		const tipoDeAcidente = await TipoDeAcidente.find({}, { descricao: 1, _id: 0 });
-		console.log("Valor de tipoDeAcidente é ", tipoDeAcidente)
+		// console.log("Valor de tipoDeAcidente é ", tipoDeAcidente)
 		// Retornar a lista de valores 'tipodeacidentes'
 		return res.status(200).json(tipoDeAcidente);
 	} catch (error) {

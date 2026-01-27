@@ -1,6 +1,6 @@
 import React from 'react';
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import DirinfraSelect from '../../DirinfraSelect/DirinfraSelect';
 import { DirinfraCopyButton as CopyBtn } from '../../DirinfraCopiaButton/DirinfraCopiaButton';
 import DisciplinasForm from '../DisciplinasForm';
@@ -208,7 +208,7 @@ const PEIForm = ({
                     />
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name={observacaoFieldName}
                             erros={errors}
                             label={observacaoLabel}

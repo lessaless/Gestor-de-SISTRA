@@ -8,7 +8,7 @@ import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquiv
 import AutorForm from '../AutorForms';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
@@ -561,7 +561,7 @@ const CadernoDeNecessidadesForm = () => {
 
                     <div className='linha'>
                         {/* <em className="obrigatorios">*</em> */}
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'

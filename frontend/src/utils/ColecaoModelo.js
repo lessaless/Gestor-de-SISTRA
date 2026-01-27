@@ -67,7 +67,7 @@ export const formulariosSistra = {
   // ========================== //
 
   "acidentes": {
-    "nome": "Acidentes",
+    "nome": "Acidente",
     "componente": <AcidenteForm />,
     "modelo": "Acidentes"
   },

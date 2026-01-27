@@ -7,7 +7,7 @@ import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquiv
 import AutorForm from '../AutorForms';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -616,7 +616,7 @@ const EstudoTPEngenhariaForm = () => {
 
                     <div className='linha'>
                         {/* <em className="obrigatorios">*</em> */}
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'

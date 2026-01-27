@@ -8,7 +8,7 @@ import { onError } from "../../utils/gerCrud";
 
 import DirinfraInput from '../DirinfraInput/DirinfraInput';
 import DirinfraSelect from '../DirinfraSelect/DirinfraSelect';
-import DirinfraTextarea from "../DirinfraTextarea/DirinfraTextarea";
+import DirinfraTextArea from "../DirinfraTextArea/DirinfraTextArea";
 //import DirinfraListSelect from "../DirinfraSelect/DirinfraListSelect"
 
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -124,7 +124,7 @@ const Contato = () => {
 
             <div className='linha'>
                 <em className="obrigatorios">*</em>
-                <DirinfraTextarea
+                <DirinfraTextArea
                     name="DESCRICAO"
                     type="text"
                     erros={errors}

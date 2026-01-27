@@ -10,12 +10,12 @@ const useStyles = makeStyles({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        paddingLeft:'12px',
+        paddingLeft: '12px',
         gap: '5px',
         width: '100%',
         maxWidth: '750px',
         position: 'relative',
-        
+
     },
     labelDirinfra: { //Título, à esquerda
         alignItems: 'center',
@@ -25,15 +25,31 @@ const useStyles = makeStyles({
         fontWeight: '450',
         justifyContent: 'start',
         minHeight: '15px',
-        paddingLeft:'10px',
+        paddingLeft: '10px',
         minWidth: 'min-content',
         padding: '5px'
     },
+    // selectDisplay: {
+    //     display: 'flex',
+    //     justifyContent: 'space-between',
+    //     alignItems: 'center',
+    //     // boxShadow: '0 0 8px 0px var(--color-shadow)',
+    //     backgroundColor: 'var(--color-bg1)',
+    //     borderRadius: '5px',
+    //     border: 'solid 1px',
+    //     color: 'var(--color-font4light)',
+    //     padding: '16px 12px',
+    //     fontSize: '.7rem',
+    //     fontWeight: '500',
+    //     marginLeft:'16px',
+    //     transition: 'all 200ms ease',
+    //     gap: '8px',
+    //     pointerEvents: 'none', // Not clickable
+    // },
     selectDisplay: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        // boxShadow: '0 0 8px 0px var(--color-shadow)',
         backgroundColor: 'var(--color-bg1)',
         borderRadius: '5px',
         border: 'solid 1px',
@@ -41,10 +57,13 @@ const useStyles = makeStyles({
         padding: '16px 12px',
         fontSize: '.7rem',
         fontWeight: '500',
-        marginLeft:'16px',
+        marginLeft: '16px',
         transition: 'all 200ms ease',
         gap: '8px',
-        pointerEvents: 'none', // Not clickable
+        pointerEvents: 'none',
+        flex: 1,           // ← Adicione
+        minWidth: 0,       // ← Adicione - permite que o elemento encolha
+        width: '100%',     // ← Adicione
     },
     selectDisplayOk: {
         borderColor: 'var(--color-borderdefault)',
@@ -69,7 +88,7 @@ const useStyles = makeStyles({
         cursor: 'pointer',
         transition: 'all 200ms ease',
         boxShadow: '0 0 8px 0px var(--color-shadow)',
-        color: 'var(--color-font4light)', 
+        color: 'var(--color-font4light)',
 
         '&:hover': {
             borderColor: 'var(--color-borderfocus)',
@@ -319,7 +338,12 @@ const useStyles = makeStyles({
     icon: {
         marginLeft: '8px',
         fontSize: '1rem',
-    }
+    },
+    requiredAsterisk: {
+        color: 'var(--color-borderError, red)',
+        marginLeft: '4px',
+        fontWeight: 'bold',
+    },
 });
 
 const DirinfraSelectModal = ({ registro, erros, options, watch, setValue, showCode, ...preProps }) => {
@@ -410,22 +434,26 @@ const DirinfraSelectModal = ({ registro, erros, options, watch, setValue, showCo
                     style={{ width: '30%' }}
                 >
                     {props.label || props.name}
+                    {props.required && (
+                        <span className={classes.requiredAsterisk}>*</span>
+                    )}
                 </label>
 
                 <div
                     className={classes.displayWrapper}
                     style={{
                         width: props.l ? `${props.l}px` : '65%',
-                        marginTop:'10px',
+                        marginTop: '10px',
                     }}
                 >
                     <div
                         className={`${classes.selectDisplay} ${temErro
-                                ? classes.selectDisplayErro
-                                : classes.selectDisplayOk
+                            ? classes.selectDisplayErro
+                            : classes.selectDisplayOk
                             } ${props.disabled ? classes.selectDisplayDisabled : ''}`}
                         style={{
-                            minHeight: selectedLabel ? '100px' : '60px',
+                            // minHeight: selectedLabel ? '100px' : '60px',
+                            minHeight: '100px',
                             height: 'auto',
                             flex: 1,
                         }}

@@ -14,7 +14,7 @@ import cnService from '../../../services/cnService';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
 import DirinfraSelect from '../../DirinfraSelect/DirinfraSelect';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Dicionario from '../../../utils/Dicionario';
@@ -329,7 +329,7 @@ const ETPEForm = () => {
 					</div> */}
 
 					<div className='linha'>
-						<DirinfraTextarea
+						<DirinfraTextArea
 							name='obs_etpe'
 							erros={errors}
 							label='Observações'

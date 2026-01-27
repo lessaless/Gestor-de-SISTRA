@@ -26,14 +26,29 @@ const colecaoModelo = (req, res) => {
 	switch (metodo) {
 		case 'GET':
 			buscarChaves = !!req.query.chaves;
+			console.log("Valor de buscarChaves é", buscarChaves)
 			let filtroOriginal = req.query.filtro;
-			// console.log("Valor de req.query é", req.query)
+			console.log("Valor de req.query.filtro é", req.query.filtro)
+			// console.log("CRUD CONTROLLER: Filtro original:", filtroOriginal)
+
 			// logger.info("CRUD CONTROLLER: Filtro original:", filtroOriginal);
 
-			// obj = req.query.filtro ? JSON.parse(req.query.filtro) : {};
+			// obj = req.query.filtro ? JSON.parse(req.query.filtro) : {}; usado no Acervo Técnico
+			// Verifica se é string antes de fazer parse
+			obj = req.query.filtro
+				? (typeof req.query.filtro === 'string'
+					? JSON.parse(req.query.filtro)
+					: req.query.filtro)
+				: {};
+			// console.log("Valor de obj em crudController é", obj)
 			try {
-				obj = filtroOriginal ? sanitizeMongoFilter(JSON.parse(filtroOriginal)) : {};
-				// console.log("Valor de obj é", obj)
+				if (req.query.filtro) {
+					obj = typeof req.query.filtro === 'string'
+						? JSON.parse(req.query.filtro)
+						: req.query.filtro;
+				}
+				// obj = filtroOriginal ? sanitizeMongoFilter(JSON.parse(filtroOriginal)) : {};
+				console.log("Valor de obj é", obj)
 			} catch (err) {
 				console.log('\n', err.message, '\n');
 				logger.error(`${err.message} - ${user.SARAM}/${user.nome}. Filtro: ${filtroOriginal}`);
@@ -63,7 +78,12 @@ const colecaoModelo = (req, res) => {
 			break;
 
 		case 'DELETE':
-			let filtroStrToObj = JSON.parse(req.query.filtro);
+			// let filtroStrToObj = JSON.parse(req.query.filtro);
+			let filtroStrToObj = req.query.filtro
+				? (typeof req.query.filtro === 'string'
+					? JSON.parse(req.query.filtro)
+					: req.query.filtro)
+				: {};
 			let id = filtroStrToObj._id;
 			if (!id) {
 				logger.error(`_id de objeto não especificado ou é inválido! - ${user.SARAM}/${user.nome}`)
@@ -126,7 +146,7 @@ const criarDados = asyncHandler(async (req, res) => {
 		case 'Demanda': {
 			obj.id_demanda = await gerarIdDemanda(obj.ods_objeto);
 		}
-			// console.log("Passou por crudController", obj.id_demanda)
+		// console.log("Passou por crudController", obj.id_demanda)
 		// case 'Acidente': {
 		// 	obj.id_demanda = await gerarIdSistras(obj.ods_objeto);
 		// }
@@ -146,7 +166,7 @@ const criarDados = asyncHandler(async (req, res) => {
 	// Determinar se este tipo de documento precisa de códigos BIM
 	// ======================================================== //
 	const tipoDocumento = determinarTipoDocumento(Modelo);
-	console.log("Valor de tipoDocumento é", tipoDocumento)
+	// console.log("Valor de tipoDocumento é", tipoDocumento)
 	if (tipoDocumento && obj.id_demanda) {
 		try {
 			// Gerar códigos BIM automaticamente (não precisa passar Modelo)

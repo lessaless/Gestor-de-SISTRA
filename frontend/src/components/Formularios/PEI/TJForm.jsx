@@ -8,7 +8,7 @@ import AutorForm from '../AutorForms';
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
 import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquivo';
 import DirinfraSelect from '../../DirinfraSelect/DirinfraSelect';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 import DirinfraCopiaButton from '../../DirinfraCopiaButton/DirinfraCopiaButton';
 import { DirinfraCopyButton as CopyBtn } from '../../DirinfraCopiaButton/DirinfraCopiaButton';
@@ -493,7 +493,7 @@ const TJForm = () => {
                     </div>
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_tj'
                             erros={errors}
                             label='Observações'

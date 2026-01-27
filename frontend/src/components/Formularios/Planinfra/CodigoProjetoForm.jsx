@@ -7,7 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
 import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquivo';
 import DirinfraSelect from '../../DirinfraSelect/DirinfraSelect';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 
 
@@ -536,7 +536,7 @@ const CodigoProjForm = () => {
                     </div>
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_prj'
                             erros={errors}
                             label='Observações'

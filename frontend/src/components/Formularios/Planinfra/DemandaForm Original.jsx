@@ -8,7 +8,7 @@ import arquivoService from '../../../services/arquivoService';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
 import DirinfraSelect from '../../DirinfraSelect/DirinfraSelect';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 
 import utilService from '../../../services/utilService';
@@ -765,7 +765,7 @@ const DemandaForm = () => {
                         {fatoOriginador === 'Despacho Pessoal' && (
                             <>
                                 <div className='linha'>
-                                    <DirinfraTextarea
+                                    <DirinfraTextArea
                                         // orientacao="column"
                                         name='detalhes_despacho'
                                         erros={errors}
@@ -782,7 +782,7 @@ const DemandaForm = () => {
                         {fatoOriginador === 'Outro' && (
                             <>
                                 <div className='linha'>
-                                    <DirinfraTextarea
+                                    <DirinfraTextArea
                                         // orientacao="column"
                                         name='outro_fato_originador'
                                         erros={errors}
@@ -827,7 +827,7 @@ const DemandaForm = () => {
                         {/* <input type="hidden" {...register('id_demanda')} /> */}
 
                         <div className='linha'>
-                            <DirinfraTextarea
+                            <DirinfraTextArea
                                 // orientacao="column"
                                 name='obs_demanda'
                                 erros={errors}

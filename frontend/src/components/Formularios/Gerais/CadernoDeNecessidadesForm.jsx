@@ -8,7 +8,7 @@ import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquiv
 import AutorForm from '../AutorForms';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 // import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 import utilService from '../../../services/utilService';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -773,7 +773,7 @@ const CadernoDeNecessidadesForm = () => {
                     />
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='descricao_dispensa'
                             erros={errors}
                             label='Descrição da Dispensa'
@@ -977,7 +977,7 @@ const CadernoDeNecessidadesForm = () => {
 
                     {/* ====== Campos dissertativos ====== */}
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='descricao_gerais'
                             erros={errors}
                             label='Descrição Geral'
@@ -988,7 +988,7 @@ const CadernoDeNecessidadesForm = () => {
                     </div>
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='causa_gerais'
                             erros={errors}
                             label='Causa Geral'
@@ -1001,7 +1001,7 @@ const CadernoDeNecessidadesForm = () => {
 
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='local_ocorrencia'
                             erros={errors}
                             label='Local da Ocorrência'
@@ -1016,7 +1016,7 @@ const CadernoDeNecessidadesForm = () => {
                     {/* ====================================== */}
 
                     {/* <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='recomendacoes_csmt'
                             erros={errors}
                             label='Recomendações CSMT'
@@ -1027,7 +1027,7 @@ const CadernoDeNecessidadesForm = () => {
                     </div>
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='recomendacoes_cipa'
                             erros={errors}
                             label='Recomendações CIPA'
@@ -1041,7 +1041,7 @@ const CadernoDeNecessidadesForm = () => {
                     {/* ====================================== */}
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='acoes_treinamentos'
                             erros={errors}
                             label='Ações e Treinamentos'
@@ -1051,7 +1051,7 @@ const CadernoDeNecessidadesForm = () => {
                         />
                     </div>
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'
@@ -1060,7 +1060,7 @@ const CadernoDeNecessidadesForm = () => {
                         />
                     </div>
                     {/* <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'

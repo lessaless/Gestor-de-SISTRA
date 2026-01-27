@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         width: '100%',
         position: 'relative',
         padding: '1px',
-        paddingTop:'7px',
+        paddingTop: '7px',
     },
     customSelectContainer: {
         position: 'relative',
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
         fontWeight: '500',
         cursor: 'pointer',
         userSelect: 'none',
-        
+
         '&:focus, &:focus-visible': {
             outline: 'none !important',
         }
@@ -56,7 +56,7 @@ const useStyles = makeStyles({
         fontStyle: 'italic',
         color: 'var(--color-placeholder)',
         fontSize: '.95rem',
-        
+
     },
     customSelectDropdown: {
         position: 'absolute',
@@ -64,7 +64,7 @@ const useStyles = makeStyles({
         left: 0,
         right: 0,
         backgroundColor: 'var(--color-bg1)',
-        
+
         border: 'solid 1px var(--color-borderdefault)',
         borderRadius: '5px',
         marginTop: '2px',
@@ -81,7 +81,7 @@ const useStyles = makeStyles({
         wordWrap: 'break-word',
         whiteSpace: 'normal',
         lineHeight: '1.4',
-        
+
         '&:hover': {
             backgroundColor: 'var(--color-borderfocus)',
             color: '#fff'
@@ -114,6 +114,11 @@ const useStyles = makeStyles({
         padding: '5px',
         width: '30%'
     },
+    requiredAsterisk: {
+        color: 'var(--color-borderError, red)',
+        marginLeft: '4px',
+        fontWeight: 'bold',
+    },
 });
 
 const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps }) => {
@@ -122,7 +127,7 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
     const classes = useStyles();
     const temErro = erros && erros[props.name];
     const registroProps = registro && registro(props.name, { required: props.required });
-    
+
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const dropdownRef = useRef(null);
@@ -132,7 +137,7 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
         if (options && options.length > 0) {
             const initial = watchSelect || defaultValue || props.value;
             if (initial) {
-                const found = options.find(opt => 
+                const found = options.find(opt =>
                     (opt.value !== undefined ? opt.value : opt) === initial
                 );
                 setSelectedOption(found);
@@ -151,7 +156,7 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
         if (isOpen) {
             document.addEventListener('mousedown', handleClickOutside);
         }
-        
+
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -161,17 +166,17 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
         const value = option.value !== undefined ? option.value : option;
         setSelectedOption(option);
         setIsOpen(false);
-        
+
         // Update React Hook Form
         if (setValue) {
             setValue(props.name, value, { shouldValidate: true });
         }
-        
+
         // Call onChange handlers
         const syntheticEvent = {
             target: { name: props.name, value: value }
         };
-        
+
         if (registroProps?.onChange) {
             registroProps.onChange(syntheticEvent);
         }
@@ -199,9 +204,13 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
         <div className={`${className || classes.main}`}>
             <label className={classes.labelDirinfra}>
                 {props.label || props.name}
+                {/* Asterisco vermelho para campos obrigatórios */}
+                {props.required && (
+                    <span className={classes.requiredAsterisk}>*</span>
+                )}
             </label>
-            
-            <div 
+
+            <div
                 className={classes.customSelectContainer}
                 style={{ width: props.l ? `${props.l}px` : '65%' }}
                 ref={dropdownRef}
@@ -212,7 +221,7 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
                     {...registroProps}
                     value={selectedOption ? (selectedOption.value !== undefined ? selectedOption.value : selectedOption) : ''}
                 />
-                
+
                 {/* Custom Select Header */}
                 <div
                     className={`
@@ -235,7 +244,7 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
                         ▼
                     </span>
                 </div>
-                
+
                 {/* Dropdown Options */}
                 {isOpen && (
                     <div className={classes.customSelectDropdown}>
@@ -244,7 +253,7 @@ const DirinfraSelect = ({ registro, erros, options, watch, setValue, ...preProps
                                 const optionValue = option.value !== undefined ? option.value : option;
                                 const optionLabel = option.label !== undefined ? option.label : option;
                                 const isDisabled = option.disabled;
-                                
+
                                 return (
                                     <div
                                         key={index}

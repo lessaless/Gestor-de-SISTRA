@@ -8,7 +8,7 @@ import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquiv
 import AutorForm from '../AutorForms';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import utilService from '../../../services/utilService';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import DirinfraCopiaButton from '../../DirinfraCopiaButton/DirinfraCopiaButton';
@@ -495,7 +495,7 @@ const ParecerTecnicoForm = () => {
                     />
                     <div className='linha'>
                         {/* <em className="obrigatorios">*</em> */}
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'

@@ -8,7 +8,7 @@ import GerenciadorDeArquivo from '../../GerenciadorDeArquivo/GerenciadorDeArquiv
 import AutorForm from '../AutorForms';
 
 import DirinfraInput from '../../DirinfraInput/DirinfraInput';
-import DirinfraTextarea from '../../DirinfraTextarea/DirinfraTextarea';
+import DirinfraTextArea from '../../DirinfraTextArea/DirinfraTextArea';
 import DirinfraListSelect from '../../DirinfraSelect/DirinfraListSelect';
 import utilService from '../../../services/utilService';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -371,7 +371,7 @@ const CadernoDeNecessidadesForm = () => {
                     <AutorForm register={register} errors={errors} control={control} setValue={setValue} watch={watch} />
 
                     <div className='linha'>
-                        <DirinfraTextarea
+                        <DirinfraTextArea
                             name='obs_gerais'
                             erros={errors}
                             label='Observações'
