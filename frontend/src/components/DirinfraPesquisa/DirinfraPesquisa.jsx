@@ -103,6 +103,13 @@ const extrairOMs = (dados) => {
         .map(om => ({ value: om, label: om }))];
 };
 
+const extrairSerinfras = (dados) => {
+    const serinfrasSet = new Set(dados.map(item => item.serinfra).filter(Boolean));
+    return [{ value: '*', label: 'Todas' }, ...Array.from(serinfrasSet)
+        .sort((a, b) => a.localeCompare(b))
+        .map(serinfra=> ({ value: serinfra, label: serinfra }))];
+};
+
 const extrairAnos = (dados) => {
     const anosSet = new Set(dados.map(item => new Date(item.data_doc).getFullYear()).filter(Boolean));
     return [{ value: '*', label: 'Todos' }, ...Array.from(anosSet)
@@ -160,21 +167,22 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
 
     const [opcoes, setOpcoes] = useState({
         tipoDocumento: [],
-        disciplina: [],
+        // disciplina: [],
+        serinfra: [],
         om: [],
         ano: []
     });
 
     const [filtros, setFiltros] = useState({
         tipoDocumento: '*',
-        disciplina: '*',
+        serinfra: '*',
         om: '*',
         ano: '*'
     });
 
     const campos = [
         { key: 'tipoDocumento', label: 'Tipo de Documento' },
-        { key: 'disciplina', label: 'Disciplina' },
+        { key: 'serinfra', label: 'SERINFRA' },
         { key: 'om', label: 'OM' },
         // { key: 'serinfra', label: 'SERINFRA' },
         { key: 'ano', label: 'Ano' },
@@ -182,7 +190,8 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
 
     const extratores = {
         tipoDocumento: extrairDocumentoTipos,
-        disciplina: extrairDisciplinas,
+        // disciplina: extrairDisciplinas,
+        serinfra: extrairSerinfras,
         om: extrairOMs,
         ano: extrairAnos
     };
