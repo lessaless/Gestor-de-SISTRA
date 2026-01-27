@@ -660,20 +660,6 @@ const AcidenteForm = () => {
             <div className='formulario-main'>
 
                 <div className='formulario-content'>
-                    {/* <div className='linha'>
-                        <DirinfraListSelect
-                            label='OM'
-                            name='om_responsavel'
-                            registro={register}
-                            required={true}
-                            options={oms.map(om => ({ value: om, label: om }))}
-                            erros={errors}
-                            placeholder='Selecione o nome da OM'
-                            setValue={setValue} //Obrigatório para o componente DirinfraListSelect
-                            watch={watch}
-
-                        />
-                    </div> */}
                     <DirinfraInput
                         name='militar_acidentado'
                         erros={errors}

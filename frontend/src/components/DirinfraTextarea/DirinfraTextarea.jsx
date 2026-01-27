@@ -57,7 +57,7 @@ const useStyles = makeStyles({
     labelDirinfra: {
         alignItems: 'center',
         color: 'var(--color-font4light)',
-        display: 'flex',
+        // display: 'flex',
         fontSize: '.95rem',
         fontWeight: '450',
         justifyContent: 'start',

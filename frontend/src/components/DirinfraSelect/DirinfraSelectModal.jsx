@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     labelDirinfra: { //Título, à esquerda
         alignItems: 'center',
         color: 'var(--color-font4light)',
-        display: 'flex',
+        // display: 'flex',
         fontSize: '.95rem',
         fontWeight: '450',
         justifyContent: 'start',
@@ -54,7 +54,7 @@ const useStyles = makeStyles({
         borderRadius: '5px',
         border: 'solid 1px',
         color: 'var(--color-font4light)',
-        padding: '16px 12px',
+        padding: '16px 8px',
         fontSize: '.7rem',
         fontWeight: '500',
         marginLeft: '16px',
