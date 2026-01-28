@@ -36,7 +36,7 @@ import {
 } from '../../utils/gerCrud';
 
 import { formulariosGerais } from "../../utils/ColecaoModelo"
-import { formulariosSistra} from "../../utils/ColecaoModelo"
+import { formulariosSistra } from "../../utils/ColecaoModelo"
 
 import verificarPadraoId from '../../utils/verificarPadraoId';
 import exportarExcel from '../../utils/exportarExcel';
@@ -448,11 +448,11 @@ const GCListar = () => {
         const prioridade = [
             '__t',
             'id_sistra',
-            
+
             // ====================================== //
             // Variáveis utilizadas no Acervo Técnico
             // ====================================== //
-            
+
             // 'titulo_doc',
 
             // 'disciplinas',
@@ -652,7 +652,7 @@ const GCListar = () => {
 
             {(dados?.length > 0 && tamCamposVisiveisLista) ? (
                 <>
-                    {/* {console.count("render")} */}
+
                     <Paginacao
                         /* uso no SeletorMultiplo */
                         titulo="Selecionar colunas"
@@ -710,6 +710,7 @@ const GCListar = () => {
                             <tbody className={classes.conteudoTabela}>
                                 {dadosPaginados.map((obj, index) => {
                                     const linhaClassName = index % 2 === 0 ? classes.linhaPar : classes.linhaImpar;
+
                                     return (
                                         <tr key={index} className={linhaClassName}>
                                             {camposVisiveisLista.map((campo, idx) => (

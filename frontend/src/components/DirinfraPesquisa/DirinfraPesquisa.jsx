@@ -75,26 +75,27 @@ const extrairDocumentoTipos = (dados) => {
     const tiposSet = new Set();
     dados.forEach(item => {
         if (item.__t) tiposSet.add(item.__t);
+        console.log("Valores de tiposSet em DirinfraPesquisa é", tiposSet)
     });
     return [{ value: '*', label: 'Todos' }, ...Array.from(tiposSet)
         .sort((a, b) => a.localeCompare(b))
         .map(t => ({ value: t, label: t }))];
 };
 
-const extrairDisciplinas = (dados) => {
-    const disciplinasSet = new Set();
-    dados.forEach(item => {
-        if (item.disciplinas) {
-            item.disciplinas
-                .split(',')
-                .map(d => d.trim())
-                .forEach(d => disciplinasSet.add(d));
-        }
-    });
-    return [{ value: '*', label: 'Todas' }, ...Array.from(disciplinasSet)
-        .sort((a, b) => a.localeCompare(b))
-        .map(d => ({ value: d, label: d }))];
-};
+// const extrairDisciplinas = (dados) => {
+//     const disciplinasSet = new Set();
+//     dados.forEach(item => {
+//         if (item.disciplinas) {
+//             item.disciplinas
+//                 .split(',')
+//                 .map(d => d.trim())
+//                 .forEach(d => disciplinasSet.add(d));
+//         }
+//     });
+//     return [{ value: '*', label: 'Todas' }, ...Array.from(disciplinasSet)
+//         .sort((a, b) => a.localeCompare(b))
+//         .map(d => ({ value: d, label: d }))];
+// };
 
 const extrairOMs = (dados) => {
     const omsSet = new Set(dados.map(item => item.om_autora).filter(Boolean));
@@ -107,11 +108,12 @@ const extrairSerinfras = (dados) => {
     const serinfrasSet = new Set(dados.map(item => item.serinfra).filter(Boolean));
     return [{ value: '*', label: 'Todas' }, ...Array.from(serinfrasSet)
         .sort((a, b) => a.localeCompare(b))
-        .map(serinfra=> ({ value: serinfra, label: serinfra }))];
+        .map(serinfra => ({ value: serinfra, label: serinfra }))];
 };
 
 const extrairAnos = (dados) => {
-    const anosSet = new Set(dados.map(item => new Date(item.data_doc).getFullYear()).filter(Boolean));
+    const anosSet = new Set(dados.map(item => new Date(item.data_ocorrencia).getFullYear()).filter(Boolean));
+    console.log("Valores de anosSet em DirinfraPesquisa é", anosSet)
     return [{ value: '*', label: 'Todos' }, ...Array.from(anosSet)
         .sort((a, b) => a - b) // ordem cronológica crescente
         .map(ano => ({ value: ano, label: ano }))];
@@ -119,6 +121,7 @@ const extrairAnos = (dados) => {
 
 const conerterParaModelo = (tipo) => {
     const entry = Object.entries(formulariosSistra).find(([key, value]) => value.nome === tipo);
+    console.log("Valor de entry em DirinfraPesquisa é", entry)
     return entry ? entry[1].modelo : tipo;
 };
 
@@ -168,22 +171,22 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
     const [opcoes, setOpcoes] = useState({
         tipoDocumento: [],
         // disciplina: [],
-        serinfra: [],
-        om: [],
+        // serinfra: [],
+        // om: [],
         ano: []
     });
 
     const [filtros, setFiltros] = useState({
         tipoDocumento: '*',
-        serinfra: '*',
-        om: '*',
+        // serinfra: '*',
+        // om: '*',
         ano: '*'
     });
 
     const campos = [
         { key: 'tipoDocumento', label: 'Tipo de Documento' },
-        { key: 'serinfra', label: 'SERINFRA' },
-        { key: 'om', label: 'OM' },
+        // { key: 'serinfra', label: 'SERINFRA' },
+        // { key: 'om', label: 'OM' },
         // { key: 'serinfra', label: 'SERINFRA' },
         { key: 'ano', label: 'Ano' },
     ];
@@ -191,14 +194,16 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
     const extratores = {
         tipoDocumento: extrairDocumentoTipos,
         // disciplina: extrairDisciplinas,
-        serinfra: extrairSerinfras,
-        om: extrairOMs,
+        // serinfra: extrairSerinfras,
+        // om: extrairOMs,
         ano: extrairAnos
     };
 
     // -------------------- Atualização de filtros --------------------
     const atualizarOpcoes = useCallback(() => {
+        console.log("Valor de dados", dados)
         if (!dados?.length) return;
+
         const novasOpcoes = {};
         campos.forEach(({ key }) => {
             const extrator = extratores[key] || (() => []);
@@ -209,6 +214,8 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
             const antigoStr = JSON.stringify(prev);
             return novoStr !== antigoStr ? novasOpcoes : prev;
         });
+        console.log("valor de dados é ", dados)
+
     }, [dados]);
 
     const handleFiltroChange = useCallback((campo, valor) => {
@@ -216,11 +223,13 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
     }, []);
 
     const adicionarFiltros = (consulta) => {
-        let { tipoDocumento, disciplina, om, ano } = filtros;
+        let { tipoDocumento, ano } = filtros;
         if (tipoDocumento && tipoDocumento !== '*') consulta.__t = conerterParaModelo(tipoDocumento);
-        if (disciplina && disciplina !== '*') consulta.disciplinas = disciplina;
-        if (om && om !== '*') consulta.om_autora = om;
-        if (ano && ano !== '*') consulta.data_doc = { $gte: `${ano}-01-01T00:00:00Z`, $lt: `${ano}-12-31T23:59:59Z` };
+        console.log("valor de tipoDocumento é ", tipoDocumento)
+        // if (disciplina && disciplina !== '*') consulta.disciplinas = disciplina;
+        // if (om && om !== '*') consulta.om_autora = om;
+        if (ano && ano !== '*') consulta.data_ocorrencia = { $gte: `${ano}-01-01T00:00:00Z`, $lt: `${ano}-12-31T23:59:59Z` };
+        // console.log("Valor de consulta", consulta)
         return consulta;
     };
 
@@ -254,7 +263,7 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
 
     const Resetar = () => {
         inputRef.current.value = '';
-        setFiltros({ disciplina: '*', tipoDocumento: '*', om: '*', ano: '*' });
+        setFiltros({ tipoDocumento: '*', ano: '*' });
         if (debouncePesquisaRef.current) clearTimeout(debouncePesquisaRef.current);
         debouncePesquisaRef.current = setTimeout(() => {
             setFiltro({});
@@ -269,9 +278,11 @@ const DirinfraPesquisa = ({ setFiltro, dados }) => {
     useEffect(() => {
         if (dados?.length && dadosOriginaisRef.current.length === 0) {
             dadosOriginaisRef.current = [...dados];
+            
         }
 
         if (dados?.length === 0 && !regexUsado && !buscaInicialFeita.current) {
+            console.log("Valor de dados?.length ", dados?.length)
             const termoBusca = valorAtualInput() || undefined;
             let consulta = {};
             if (termoBusca) {

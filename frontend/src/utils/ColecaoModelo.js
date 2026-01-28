@@ -66,8 +66,13 @@ export const formulariosSistra = {
   // subModelos SISTRA
   // ========================== //
 
-  "acidentes": {
-    "nome": "Acidente",
+  // "acidentes": {
+  //   "nome": "Acidente",
+  //   "componente": <AcidenteForm />,
+  //   "modelo": "Acidentes"
+  // },
+   "acidentes": {
+    "nome": "Acidentes",
     "componente": <AcidenteForm />,
     "modelo": "Acidentes"
   },

@@ -77,33 +77,41 @@ const useStyles = makeStyles(theme => ({
     },
     colecaoEscolhaBoxes: {
         alignItems: 'center',
-        border: '1px solid var(--color-borderdefault)',
-        borderRadius: '4px',
+        border: '2px solid var(--color-borderdefault)', // thicker border
+        borderRadius: '6px',
         boxShadow: '0 0 8px 0px var(--color-shadow)',
         cursor: 'pointer',
         display: 'flex',
-        height: '200px',  // Reduced from 400px
+
+        backgroundColor: 'var(--color-bg2)', // <<< ADD THIS (important)
+
+        height: '200px',
         justifyContent: 'center',
-        width: '30%',      // Reduced from 40% to fit 3 per row
-        minWidth: '200px', // Added to prevent boxes from getting too small
+        width: '30%',
+        minWidth: '200px',
+
         transition: 'all 0.3s ease',
+
         '&:hover': {
             backgroundColor: 'var(--color-hover)',
             boxShadow: '0 8px 16px 2px var(--color-shadow)',
             color: 'var(--color-font4light)',
             transform: 'translateY(-10px)',
+
             '& > label': {
-                fontWeight: 'bold',           // Makes it bold (negrito)
-                textDecoration: 'underline',  // Adds underline
-            } // 
+                fontWeight: 'bold',
+                // textDecoration: 'underline',
+            }
         },
 
         '& > label': {
-            fontSize: '20px',  // Reduced from 30px
+            fontSize: '20px',
             textAlign: 'center',
-            padding: '10px',   // Added padding for better text spacing
+            padding: '10px',
+            color: 'var(--color-font1)' // ensures visibility
         }
     },
+
     marginTop: {
         marginTop: '40px'
     },

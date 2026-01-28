@@ -101,13 +101,14 @@ const colecaoModelo = (req, res) => {
 			throw new Error(`Método não permitido: ${metodo}.`);
 	}
 
-
+	// console.log("Valor de objModelos", objModelos)
 	if (!colecao) {
 		logger.error(`Não foi especificada a coleção! - ${user.SARAM}/${user.nome}`)
 		res.status(400);
 		throw new Error("Não foi especificada a coleção!");
 	}
 	if (!(colecao in objModelos)) {
+		// console.log("Valor de objModelos", objModelos)
 		logger.error(`Coleção inválida! (${colecao}) - ${user.SARAM}/${user.nome}`)
 		res.status(400);
 		throw new Error("Coleção inválida!");

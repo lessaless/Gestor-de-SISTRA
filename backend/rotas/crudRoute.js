@@ -2,14 +2,15 @@ const express = require("express");
 const router = express.Router();
 const User = require("../modelos/userModel.js");
 const checarPermissao = require("../middleWare/permissoesMiddleware.js");
+const authMiddleware = require("../middleWare/authMiddleware.js"); // Add your auth middleware
 const crudAdminController = require("../controladores/crudAdminController.js");
 const crudController = require("../controladores/crudController.js");
 
 // Middleware para obter as funções do controlador com base nos privilégios do usuário
 const qualController = async (req, res, next) => {
-    // const id = req.user._id;
-    // const isAdmin = (await User.findById(id)).isAdmin;
-    const isAdmin = false;
+    const id = req.user._id;
+    const user = await User.findById(id);
+    const isAdmin = user.isAdmin;
     req.controller = isAdmin ? crudAdminController : crudController;
     next();
 };
@@ -18,17 +19,37 @@ const qualController = async (req, res, next) => {
 const funcaoController = (nomeFuncao) => {
     return async (req, res, next) => {
         const { [nomeFuncao]: funcaoController } = await req.controller;
-        // console.log("Passa por funcaoController", nomeFuncao)
         return funcaoController(req, res, next);
     };
 };
 
+// All routes with proper middleware chain
+router.post("/criar", 
+    authMiddleware,
+    checarPermissao('cadastramento'), 
+    qualController, 
+    funcaoController('criarDados')
+);
 
-router.post("/criar", checarPermissao('cadastramento'), qualController, funcaoController('criarDados'));
-router.get("/ler", qualController, funcaoController('lerDados'));
-// router.get("/ler", checarPermissao("leitura"), qualController, funcaoController('lerDados'));
-router.patch("/atualizar", checarPermissao('edicao'), qualController, funcaoController('atualizarDados'));
-router.delete("/deletar", checarPermissao('remocao'), qualController, funcaoController('deletarDados'));
-//router.put("/substituir", qualController, funcaoController('substituirDados'));
+router.get("/ler", 
+    authMiddleware,
+    checarPermissao("leitura"),  // ← Make sure this is uncommented!
+    qualController, 
+    funcaoController('lerDados')
+);
+
+router.patch("/atualizar", 
+    authMiddleware,
+    checarPermissao('edicao'), 
+    qualController, 
+    funcaoController('atualizarDados')
+);
+
+router.delete("/deletar", 
+    authMiddleware,
+    checarPermissao('remocao'), 
+    qualController, 
+    funcaoController('deletarDados')
+);
 
 module.exports = router;

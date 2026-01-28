@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../modelos/userModel");
-const Role = require("../modelos/roleModel");//Não pode remover, mesmo não usando de forma explícita
+const Role = require("../modelos/roleModel");
 const { objModelos } = require('../utils/modelosMongo/modelosMongo');
 const logger = require("../utils/logs/logger");
 
@@ -11,31 +11,27 @@ const gerarChave = (userReq, userBD, objeto, operacao) => {
     let chavePermissao = operacao;
 
     if (operacao === "cadastramento") {
-        if (userReq.OM) {//se tiver OM na requisição
-            // console.log("O valor de objeto:", objeto)
-            if (userReq.OM === userBD.OM) eLocal = true;//checa se não foi alterada em relação ao BD
-            else eLocal = false;//se foi alterada, sobe o privilégio
-        } else eLocal = true;//se não tem na requisição, valida
+        if (userReq.OM) {
+            if (userReq.OM === userBD.OM) eLocal = true;
+            else eLocal = false;
+        } else eLocal = true;
 
     }
     else if (["edicao", "remocao"].includes(operacao)) {
-        // console.log("O valor de userDB:", userBD)
-        // console.log("O valor de objeto:", objeto)
         ePropria = objeto.criado_por.toString() === userBD.SARAM.toString();
         eLocal = objeto.om_autora === userBD.OM;
         chavePermissao += ePropria ? "_propria" : "";
 
-    } else {//alterarpermissao
-        chavePermissao = objeto.acao;//setaradmin, removeradmin
+    } else {
+        chavePermissao = objeto.acao;
         eLocal = objeto.pessoa.OM === userBD.OM;
-
     }
 
     chavePermissao += eLocal ? "_local" : "_geral";
+    console.log("Valor de chavePermissao é", chavePermissao)
 
     return chavePermissao;
 }
-
 
 // Middleware para verificar permissões
 const checarPermissao = (operacao) => {
@@ -44,7 +40,9 @@ const checarPermissao = (operacao) => {
 
         const userReq = req.user;
 
-        let filtro = req.query.filtro;// requisições GET e DELETE
+        // Handle filtro from both query (GET) and body (POST)
+        let filtro = req.query.filtro || req.body.filtro;
+        
         if (typeof filtro === "string") {
             try {
                 filtro = JSON.parse(filtro);
@@ -55,24 +53,15 @@ const checarPermissao = (operacao) => {
             filtro = {};
         }
 
-        const obj = req.body;// requisições POST e PATCH
-
+        const obj = req.body;
         const id = ['PATCH', 'POST', 'PUT'].includes(req.method) ? obj._id : filtro._id;
-
         const colecao = obj?.colecao || req.query.colecao;
         const Modelo = objModelos[colecao]?.modelo;
 
-
         try {
-
-            //como no modelo User foi definido ref: 'Role', o populate traz os dados da Role no mesmo objeto
-            // Ex.: Se em userBD.role = "admin_geral", após o populate,
-            // userBD.role = { _id: "admin_geral", permissions: [...permissoes] }
-
             const userBD = await User.findById(userReq._id).populate('role');
-            console.log("Valor de userBD é", userBD)
+            console.log("Valor de userBD é", userBD);
             req.user = userBD;
-            // const userBD = userReq.populate('role');
 
             if (!userBD) {
                 logger.error(`Usuário (${userBD}) não encontrado para o ID ${userReq._id}`);
@@ -82,40 +71,108 @@ const checarPermissao = (operacao) => {
 
             const permissoes = userBD.role?.permissions || [];
 
+            // ========================================
+            // SPECIAL HANDLING FOR LEITURA (READ) OPERATION
+            // ========================================
             if (operacao === "leitura") {
 
-                if (permissoes.includes("leitura_geral")) return next();
-
-                if (userBD.role?.permissions.includes("leitura_local")) {
-                    req.query.filtro = JSON.stringify({ ...filtro, om_autora: userBD.OM });
+                // Priority 1: leitura_geral - see everything (no filter)
+                if (permissoes.includes("leitura_geral")) {
                     return next();
                 }
 
-                if (userBD.role?.permissions.includes("leitura_propria_local")) {
-                    req.query.filtro = JSON.stringify({ ...filtro, om_autora: userBD.OM, criado_por: userBD.SARAM });
+                // Priority 2: leitura_local - see only documents from their OM
+                if (permissoes.includes("leitura_local")) {
+                    const filtroComOM = { ...filtro, om_autora: userBD.OM };
+                    req.query.filtro = JSON.stringify(filtroComOM);
+                    req.body.filtro = filtroComOM;
                     return next();
                 }
 
+                // Priority 3: leitura_propria_local - see only their own documents in their OM
+                if (permissoes.includes("leitura_propria_local")) {
+                    const filtroComOMeProprio = { 
+                        ...filtro, 
+                        om_autora: userBD.OM, 
+                        criado_por: userBD.SARAM 
+                    };
+                    req.query.filtro = JSON.stringify(filtroComOMeProprio);
+                    req.body.filtro = filtroComOMeProprio;
+                    return next();
+                }
+
+                // No read permission
                 res.status(403);
                 throw new Error("Acesso negado para essa operação.");
             }
 
+            // ========================================
+            // SPECIAL HANDLING FOR VERUSUARIOS
+            // ========================================
             if (operacao === "verusuarios") {
-                if (userBD.role?._id === "admin_geral" || userBD.role?._id === "admin_local") return next();
-                else {
+                if (userBD.role?._id === "admin_geral" || userBD.role?._id === "admin_local") {
+                    return next();
+                } else {
                     res.status(403);
                     throw new Error("Acesso negado para essa operação.");
                 }
             }
 
+            // ========================================
+            // FOR EDICAO, REMOCAO, CADASTRAMENTO
+            // ========================================
             const objeto = await Modelo?.findById(id) || obj;
-
             const chavePermissao = gerarChave(userReq, userBD, objeto, operacao);
 
-            if (!permissoes.includes(chavePermissao)) {
+            // Check permission hierarchy for edit/delete operations
+            let temPermissao = false;
+            let precisaChecarOM = false;
+
+            if (["edicao", "remocao"].includes(operacao)) {
+                // Check permission hierarchy: _geral > _local > _propria_local
+                
+                // Highest level: _geral (can do anything, any OM)
+                if (permissoes.includes(`${operacao}_geral`)) {
+                    temPermissao = true;
+                    precisaChecarOM = false; // No OM restriction
+                }
+                // Middle level: _local (can do in their OM only)
+                else if (permissoes.includes(`${operacao}_local`)) {
+                    temPermissao = true;
+                    precisaChecarOM = true; // Must be in their OM
+                }
+                // Lowest level: _propria_local (can only do their own docs in their OM)
+                else if (permissoes.includes(`${operacao}_propria_local`)) {
+                    // Must be their own document
+                    if (objeto.criado_por.toString() === userBD.SARAM.toString()) {
+                        temPermissao = true;
+                        precisaChecarOM = true; // Must be in their OM
+                    }
+                }
+                // Fallback: check exact generated permission
+                else if (permissoes.includes(chavePermissao)) {
+                    temPermissao = true;
+                    precisaChecarOM = chavePermissao.includes("_local");
+                }
+                
+            } else {
+                // For cadastramento and other operations, use original logic
+                temPermissao = permissoes.includes(chavePermissao);
+                precisaChecarOM = chavePermissao.includes("_local");
+            }
+
+            // Check if user has required permission
+            if (!temPermissao) {
                 logger.error(`Acesso negado! Permissão necessária: ${chavePermissao} - ${userBD.SARAM}/${userBD.nome}`);
                 res.status(403);
                 throw new Error("Acesso negado para essa operação.");
+            }
+
+            // Verify OM match if needed
+            if (precisaChecarOM && objeto.om_autora !== userBD.OM) {
+                logger.error(`Acesso negado! Documento de OM diferente: ${objeto.om_autora} (doc) vs ${userBD.OM} (user)`);
+                res.status(403);
+                throw new Error("Você só pode acessar documentos da sua OM.");
             }
 
             logger.info(`Operação permitida: ${chavePermissao} - ${userBD.SARAM}/${userBD.nome}`);
@@ -123,7 +180,6 @@ const checarPermissao = (operacao) => {
 
         } catch (err) {
             next(err);
-
         }
 
     });
